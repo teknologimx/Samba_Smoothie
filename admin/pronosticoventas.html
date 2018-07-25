@@ -35,41 +35,50 @@
       <div class="side-navbar-wrapper">
         <!-- Sidebar Header    -->
         <div class="sidenav-header d-flex align-items-center justify-content-center">
-          <!-- User Info-->
-          <div class="sidenav-header-inner text-center"><img src="img/avatar-1.jpg" alt="person" class="img-fluid rounded-circle">
-            <h2 class="h5">Anderson Hardy</h2><span>Web Developer</span>
+          <!-- Info usuario-->
+          <div class="sidenav-header-inner text-center"><img src="img/user.png" alt="person" class="img-fluid rounded-circle">
+            <h2 class="h5">Administrador</h2><span>Bienvenido</span>
           </div>
-          <!-- Small Brand information, appears on minimized sidebar-->
-          <div class="sidenav-header-logo"><a href="index.html" class="brand-small text-center"> <strong>B</strong><strong class="text-primary">D</strong></a></div>
+          <!-- Small Brand ,cuando minimizas el menu-->
+          <div class="sidenav-header-logo"><a href="#" class="brand-small text-center"><img src="img/SAMBA%20FREH.png"></a></div>
         </div>
         <!-- Sidebar Navigation Menus-->
         <div class="main-menu">
-          <h5 class="sidenav-heading">Main</h5>
+          <h5 class="sidenav-heading">Menú</h5>
           <ul id="side-main-menu" class="side-menu list-unstyled">                  
-            <li><a href="index.html"> <i class="icon-home"></i>Home                             </a></li>
-            <li class="active"><a href="forms.html"> <i class="icon-form"></i>Forms                             </a></li>
-            <li><a href="charts.html"> <i class="fa fa-bar-chart"></i>Charts                             </a></li>
-            <li><a href="tables.html"> <i class="icon-grid"></i>Tables                             </a></li>
-            <li><a href="#exampledropdownDropdown" aria-expanded="false" data-toggle="collapse"> <i class="icon-interface-windows"></i>Example dropdown </a>
+            <li><a href="index.html"> <i class="fa fa-home"></i>Inicio                             </a></li>
+            <li><a href="#"> <i class="fa fa-truck"></i>Embarques                             </a></li>
+            <li><a href="#"> <i class="fa fa-users"></i>Empleados                             </a></li>
+            <li><a href="#exampledropdownDropdown" aria-expanded="false" data-toggle="collapse"> <i class="fa fa-cubes"></i>Catálogos </a>
               <ul id="exampledropdownDropdown" class="collapse list-unstyled ">
                 <li><a href="#">Page</a></li>
                 <li><a href="#">Page</a></li>
                 <li><a href="#">Page</a></li>
               </ul>
             </li>
-            <li><a href="login.html"> <i class="icon-interface-windows"></i>Login page                             </a></li>
-            <li> <a href="#"> <i class="icon-mail"></i>Demo
-                <div class="badge badge-warning">6 New</div></a></li>
-          </ul>
-        </div>
-        <div class="admin-menu">
-          <h5 class="sidenav-heading">Second menu</h5>
-          <ul id="side-admin-menu" class="side-menu list-unstyled"> 
-            <li> <a href="#"> <i class="icon-screen"> </i>Demo</a></li>
-            <li> <a href="#"> <i class="icon-flask"> </i>Demo
-                <div class="badge badge-info">Special</div></a></li>
-            <li> <a href=""> <i class="icon-flask"> </i>Demo</a></li>
-            <li> <a href=""> <i class="icon-picture"> </i>Demo</a></li>
+            <li><a href="#"> <i class="fa fa-cutlery"></i>Platillos                             </a></li>
+            <li><a href="#"> <i class="fa fa-industry"></i>Empresas                             </a></li>
+            <li><a href="#"> <i class="fa fa-building-o"></i>Cocinas                             </a></li>
+            <li><a href="#submenuBI" aria-expanded="false" data-toggle="collapse"> <i class="fa fa-cogs"></i>Bussines Inteligence </a>
+              <ul id="submenuBI" class="collapse list-unstyled ">
+                <li><a href="#tercermenu1" aria-expanded="false" data-toggle="collapse"> <i class="fa fa-certificate"></i>Promociones</a>
+                      <ul id="tercermenu1" class="collapse list-unstyled ">
+                        <li><a href="promoventas.html"> <i class="fa fa-shopping-cart"></i>Crear promoción basado en ventas</a></li>
+                        <li><a href="promopreferencias.html"> <i class="fa fa-shopping-basket"></i>Crear promoción basada en preferencias</a></li>
+                        <li><a href="promoespecial.html"> <i class="fa fa-star"></i>Crear promoción especial</a></li>
+                        <li><a href="gestionpromo.html"> <i class="fa fa-list-ol"></i>Gestionar promociones</a></li>
+                      </ul>
+                </li>
+                <li><a href="#tercermenu2" aria-expanded="false" data-toggle="collapse"> <i class="fa fa-briefcase"></i>Inteligencia de negocios</a>
+                      <ul id="tercermenu2" class="collapse list-unstyled ">
+                        <li><a href="dashboard.html"> <i class="fa fa-tachometer"></i>Dashboard</a></li>
+                        <li><a href="reportegeneral.html"> <i class="fa fa-shopping-cart"></i>Pronostico de ventas</a></li>
+                        <li><a href="reportegeneral.html"> <i class="fa fa-shopping-cart"></i>Reportes generales</a></li>
+                        <li><a href="reporteespecifico.html"> <i class="fa fa-shopping-cart"></i>Reportes específicos</a></li>
+                      </ul>
+                </li>
+              </ul>
+            </li>
           </ul>
         </div>
       </div>
@@ -80,10 +89,10 @@
         <nav class="navbar">
           <div class="container-fluid">
             <div class="navbar-holder d-flex align-items-center justify-content-between">
-              <div class="navbar-header"><a id="toggle-btn" href="#" class="menu-btn"><i class="icon-bars"> </i></a><a href="index.html" class="navbar-brand">
-                  <div class="brand-text d-none d-md-inline-block"><span>Bootstrap </span><strong class="text-primary">Dashboard</strong></div></a></div>
+              <div class="navbar-header"><a id="toggle-btn" href="#" class="menu-btn"><i class="icon-bars"> </i></a><a href="#" class="navbar-brand">
+                  <div class="brand-text d-none d-md-inline-block"><span><img id="logo" src="img/samba_white.png" width="150px"></span></div></a></div>
               <ul class="nav-menu list-unstyled d-flex flex-md-row align-items-md-center">
-                <!-- Notifications dropdown-->
+                <!-- Notificaciones
                 <li class="nav-item dropdown"> <a id="notifications" rel="nofollow" data-target="#" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link"><i class="fa fa-bell"></i><span class="badge badge-warning">12</span></a>
                   <ul aria-labelledby="notifications" class="dropdown-menu">
                     <li><a rel="nofollow" href="#" class="dropdown-item"> 
@@ -108,8 +117,8 @@
                         </div></a></li>
                     <li><a rel="nofollow" href="#" class="dropdown-item all-notifications text-center"> <strong> <i class="fa fa-bell"></i>view all notifications                                            </strong></a></li>
                   </ul>
-                </li>
-                <!-- Messages dropdown-->
+                </li>-->
+                <!-- Mensajes 
                 <li class="nav-item dropdown"> <a id="messages" rel="nofollow" data-target="#" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link"><i class="fa fa-envelope"></i><span class="badge badge-info">10</span></a>
                   <ul aria-labelledby="notifications" class="dropdown-menu">
                     <li><a rel="nofollow" href="#" class="dropdown-item d-flex"> 
@@ -129,16 +138,11 @@
                         </div></a></li>
                     <li><a rel="nofollow" href="#" class="dropdown-item all-notifications text-center"> <strong> <i class="fa fa-envelope"></i>Read all messages    </strong></a></li>
                   </ul>
-                </li>
-                <!-- Languages dropdown    -->
-                <li class="nav-item dropdown"><a id="languages" rel="nofollow" data-target="#" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link language dropdown-toggle"><img src="img/flags/16/GB.png" alt="English"><span class="d-none d-sm-inline-block">English</span></a>
-                  <ul aria-labelledby="languages" class="dropdown-menu">
-                    <li><a rel="nofollow" href="#" class="dropdown-item"> <img src="img/flags/16/DE.png" alt="English" class="mr-2"><span>German</span></a></li>
-                    <li><a rel="nofollow" href="#" class="dropdown-item"> <img src="img/flags/16/FR.png" alt="English" class="mr-2"><span>French                                                         </span></a></li>
-                  </ul>
-                </li>
+                </li>-->
+                <!-- Languages   -->
+
                 <!-- Log out-->
-                <li class="nav-item"><a href="login.html" class="nav-link logout"> <span class="d-none d-sm-inline-block">Logout</span><i class="fa fa-sign-out"></i></a></li>
+                <li class="nav-item"><a href="login.html" class="nav-link logout"> <span class="d-none d-sm-inline-block" style="font-size: 1.5em;">Salir</span><i class="fa fa-power-off" style="font-size: 1.5em;"></i></a></li>
               </ul>
             </div>
           </div>
