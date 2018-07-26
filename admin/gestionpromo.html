@@ -30,9 +30,10 @@
     <!-- Tweaks for older IEs--><!--[if lt IE 9]>
         <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
         <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
-      <script src="js/Script.js"></script>
+    <script type="text/javascript" src="js/Script.js"></script>    
+        
   </head>
-  <body>
+  <body onload="javascript:cambiarPestana(pestanas,ventas)">
     <!-- Side Navbar -->
     <nav class="side-navbar">
       <div class="side-navbar-wrapper">
@@ -577,6 +578,23 @@
         </div>
       </section>
 -->
+        <div class="contenedor">
+          <!--<div class="titulo">Promociones</div>-->
+          <div id="pestanas">
+            <ul id="lista">
+              <li id="ventas">
+                <a href='javascript:cambiarPestana(pestanas,ventas);'>Ventas</a>
+              </li>
+              <li id="preferencias">
+                <a href='javascript:cambiarPestana(pestanas,preferencias);'>Preferencias</a>
+              </li>
+              <li id="especiales">
+                <a href='javascript:cambiarPestana(pestanas,especiales);'>Especiales</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        
         <div  class="col-lg-20">
               <div class="card">
                 <div class="card-header">
@@ -587,52 +605,48 @@
                     <table class="table table-striped">
                       <thead>
                         <tr>
-                          <th>No.</th>
-                          <th>Grupo</th>
+                          <!--<th>Grupo</th>-->
                           <th>Línea</th>
                           <th>Tipo de Producto</th>
                           <th>Producto</th>
                           <th>Tipo de Promoción</th>
+                          <th></th>
                           <th></th>
                         </tr>
                       </thead>
                       <tbody>
                         <tr>
                           <th scope="row">1</th>
-                          <td>Bebidas</td>
+                          <!--<td>Bebidas</td>-->
                           <td>Energy</td>
                           <td>Smoothies</td>
                           <td>Coffe Nut</td>
                           <td>2x1</td>
-                          <td></td>
                           <td>
                               <input type="button" id="modificar" value=" Modificar " class="btn btn-primary">
-                              <!--<input type="button" id="eliminar" value=" Eliminar " class="btn btn-primary">-->
                               <button type="button" class="btn btn-secondary"> Eliminar</button>
                           </td>
                         </tr>
-                        <tr><th scope="row">2</th>
-                          <td>Ensaladas</td>
+                        <tr>
+                          <th scope="row">2</th>
+                          <!--<td>Ensaladas</td>-->
                           <td>Ensaladas</td>
                           <td>Ensaladas</td>
                           <td>Griega</td>
                           <td>Descuento</td>
-                          <td></td>
                           <td>
                               <input type="button" id="modificar" value=" Modificar " class="btn btn-primary">
-                              <!--<input type="button" id="eliminar" value=" Eliminar " class="btn btn-primary">-->
                               <button type="button" class="btn btn-secondary"> Eliminar</button>
                           </td>
                         </tr>
                         <tr>
                             <th scope="row">3</th>
-                            <td>Ensaladas</td>
-                            <td>Ensaladas</td>
+                            <td>Postres</td>
+                            <td>Sin azucar</td>
+                            <td>Muffin de elote</td>
                             <td>Combo</td>
-                            <td></td>
                             <td>
                                 <input type="button" id="modificar" value=" Modificar " class="btn btn-primary">
-                                <!--<input type="button" id="eliminar" value=" Eliminar " class="btn btn-primary">-->
                                 <button type="button" class="btn btn-secondary"> Eliminar</button>
                             </td>
                         </tr>
@@ -640,83 +654,21 @@
                             <th scope="row">4</th>
                             <td>Emparedados</td>
                             <td>Emparedados</td>
-                            <td>Combo</td>
-                            <td></td>
+                            <td>Atún</td>
+                            <td>2x1</td>
                             <td>
                                 <input type="button" id="modificar" value=" Modificar " class="btn btn-primary">
-                                <!--<input type="button" id="eliminar" value=" Eliminar " class="btn btn-primary">-->
                                 <button type="button" class="btn btn-secondary"> Eliminar</button>
                             </td>
                         </tr>
                         <tr>
                             <th scope="row">5</th>
-                            <td>Postres</td>
-                            <td>Sin azucar</td>
-                            <td>2x1</td>
-                            <td></td>
-                            <td>
-                                <input type="button" id="modificar" value=" Modificar " class="btn btn-primary">
-                                <!--<input type="button" id="eliminar" value=" Eliminar " class="btn btn-primary">-->
-                                <button type="button" class="btn btn-secondary"> Eliminar</button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <th scope="row">6</th>
-                            <td>Flats</td>
-                            <td>Flats</td>
+                            <td>Comida Completa</td>
+                            <td>Samba Fresh</td>
+                            <td>Pollo, vegetales y pasta</td>
                             <td>Descuento</td>
-                            <td></td>
                             <td>
                                 <input type="button" id="modificar" value=" Modificar " class="btn btn-primary">
-                                <!--<input type="button" id="eliminar" value=" Eliminar " class="btn btn-primary">-->
-                                <button type="button" class="btn btn-secondary"> Eliminar</button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <th scope="row">7</th>
-                            <td>Desayunos</td>
-                            <td>Desayunos</td>
-                            <td>2x1</td>
-                            <td></td>
-                            <td>
-                                <input type="button" id="modificar" value=" Modificar " class="btn btn-primary">
-                                <!--<input type="button" id="eliminar" value=" Eliminar " class="btn btn-primary">-->
-                                <button type="button" class="btn btn-secondary"> Eliminar</button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <th scope="row">8</th>
-                            <td>Snacks</td>
-                            <td>Snacks</td>
-                            <td>2x1</td>
-                            <td></td>
-                            <td>
-                                <input type="button" id="modificar" value=" Modificar " class="btn btn-primary">
-                                <!--<input type="button" id="eliminar" value=" Eliminar " class="btn btn-primary">-->
-                                <button type="button" class="btn btn-secondary"> Eliminar</button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <th scope="row">9</th>
-                            <td>Comida completa</td>
-                            <td>Comida completa</td>
-                            <td>Descuento</td>
-                            <td></td>
-                            <td>
-                                <input type="button" id="modificar" value=" Modificar " class="btn btn-primary">
-                                <!--<input type="button" id="eliminar" value=" Eliminar " class="btn btn-primary">-->
-                                <button type="button" class="btn btn-secondary"> Eliminar</button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <th scope="row">7</th>
-                            <td>Crema, pastas y sopas</td>
-                            <td>Crema, pastas y sopas</td>
-                            <td>2x1</td>
-                            <td></td>
-                            <td>
-                                <input type="button" id="modificar" value=" Modificar " class="btn btn-primary">
-                                <!--<input type="button" id="eliminar" value=" Eliminar " class="btn btn-primary">-->
                                 <button type="button" class="btn btn-secondary"> Eliminar</button>
                             </td>
                         </tr>
@@ -726,7 +678,6 @@
                 </div>
               </div>
         </div>
-        
         
       <footer class="main-footer">
         <div class="container-fluid">
