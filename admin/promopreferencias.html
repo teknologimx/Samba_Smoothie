@@ -158,8 +158,9 @@
         </div>
       </div>
       
-      <!-- contenido -->
-       <div class="container-fluid">
+
+       <!--Contenido_____________________ -->
+      <div class="container-fluid">
        <div class="row content">
         <div class="col-md-8"><br>
          <div class="card">
@@ -176,31 +177,44 @@
           <form>
            <div class="form group">
            <div class="form-group row">
-            <div class="col-sm-4">
-             <label>Tipo de promoción:</label>
-             <select id="tipo" onchange="myFunction()" name="account" class="form-control">
-               <option value="2x1">2x1</option>
-               <option value="Descuento">Descuento</option>
+            <div class="col-sm-3">
+             <label>Grupo:</label>
+             <select name="account" class="form-control">
+               <option>Grupo 1</option>
+               <option>Grupo 2</option>
+               <option>Grupo 3</option>
              </select>
             </div>
-           <div class="col-sm-4">
+            <div class="col-sm-3">
+             <label>Tipo de promoción:</label>
+             <select id="tipo" onchange="myFunction1()" name="account" class="form-control">
+               <option>2x1</option>
+               <option>Descuento</option>
+             </select>
+            </div>
+           <div class="col-sm-3">
              <label>Inicio:</label>
              <input type="date" placeholder="Fecha Inicial" class="form-control">
            </div>
-           <div class="col-sm-4">
+           <div class="col-sm-3">
              <label>Fin:</label>
              <input type="date" placeholder="Fecha Final" class="form-control">
            </div>
            </div><!--form group row-->
            <div class="form-group row">
+              <div class="col-sm-12">
+                <center><label><b>Producto 1</b></label></center>
+              </div>
+           </div> 
+           <div class="form-group row">
             <div class="col-sm-4">
              <label>Categoría:</label>
-              <select name="account" class="form-control">
+             <select name="account" class="form-control">
                <option>Categoría1</option>
                <option>Categoría2</option>
                <option>Categoría3</option>
-              </select>
-            </div> 
+             </select>
+            </div>
             <div class="col-sm-4">
              <label>Línea:</label>
              <select name="account" class="form-control">
@@ -217,7 +231,7 @@
                <option>Producto3</option>
              </select>
             </div>
-           </div> <!-- form-group-row -->
+            </div>
            <div class="form-group row">
             <label class="col-sm-2">Sucursal:</label>
              <div class="col-sm-4">
@@ -241,9 +255,9 @@
              </div>
             </div> <!-- form-group-row -->
             <div class="form-group row">
-             <div class="col-sm-12 offset-sm-7">
-               <button type="submit" class="btn btn-secondary">Cancelar</button>
-               <button type="submit" class="btn btn-primary">Guardar Promoción</button>
+              <div class="col-sm-12">
+               <center><button type="submit" class="btn btn-secondary">Cancelar</button>
+               <button type="submit" class="btn btn-primary">Guardar Promoción</button></center>
               </div>
             </div>
            </div> <!-- form group -->
@@ -251,7 +265,7 @@
          </div> <!-- cierra card -->
          </div> <!-- cierra card-body -->
         </div> 
-        <div class="col-md-4"><br> 
+        <div class="col-md-4"><br><br> 
            <div class="coupon">
             <div class="container">
               <h3>Promoción</h3>
@@ -268,7 +282,7 @@
           </div>
         </div>
        </div>
-      </div> <!-- finaliza contenido -->  
+      </div> <!-- finaliza contenido -->
 
       <footer class="main-footer">
         <div class="container-fluid">
@@ -286,7 +300,7 @@
     </div>
 
     <script>
-      function myFunction() {
+      function myFunction1() {
         var x = document.getElementById("tipo").value;
         if (x=="Descuento") {
            document.getElementById("label_desc").style.display = "block";
