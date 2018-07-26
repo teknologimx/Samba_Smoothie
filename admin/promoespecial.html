@@ -191,11 +191,10 @@
             </div>
             <div class="col-sm-3">
              <label>Tipo de promoción:</label>
-             <select name="account" class="form-control">
+             <select id="tipo" onchange="myFunction()" name="account" class="form-control">
                <option>2x1</option>
                <option>Descuento</option>
                <option>Combo</option>
-               <option>option 4</option>
              </select>
             </div>
            <div class="col-sm-3">
@@ -208,27 +207,28 @@
            </div>
            </div><!--form group row-->
            <div class="form-group row">
-              <div class="col-sm-6">
-                <center><label>Producto 1</label></center>
-              </div>
-              <div class="col-sm-6">
-                <center><label>Producto 2</label></center>
+              <div class="col-sm-12">
+                <center><label><b>Producto 1</b></label></center>
               </div>
            </div> 
            <div class="form-group row">
-            <div class="col-sm-6">
+            <div class="col-sm-4">
              <label>Categoría:</label>
              <select name="account" class="form-control">
                <option>Categoría1</option>
                <option>Categoría2</option>
                <option>Categoría3</option>
              </select>
+            </div>
+            <div class="col-sm-4">
              <label>Línea:</label>
              <select name="account" class="form-control">
                <option>Línea1</option>
                <option>Línea2</option>
                <option>Línea3</option>
              </select>
+            </div>
+            <div class="col-sm-4">
              <label>Producto:</label>
              <select name="account" class="form-control">
                <option>Producto1</option>
@@ -236,19 +236,30 @@
                <option>Producto3</option>
              </select>
             </div>
-            <div class="col-sm-6">
+            </div>
+            <div id="producto2" style="display:none;" class="form-group row">
+              <div class="col-sm-12">
+                <center><label><b>Producto 2</b></label></center>
+              </div>
+            </div>
+            <div class="form-group row">
+            <div style="display:none;" id="div_cat" class="col-sm-4">
              <label>Categoría:</label>
              <select name="account" class="form-control">
                <option>Categoría1</option>
                <option>Categoría2</option>
                <option>Categoría3</option>
              </select>
+            </div>
+            <div style="display:none;" id="div_linea" class="col-sm-4"> 
              <label>Línea:</label>
              <select name="account" class="form-control">
                <option>Línea1</option>
                <option>Línea2</option>
                <option>Línea3</option>
              </select>
+            </div>
+            <div style="display:none;" id="div_prod" class="col-sm-4">
              <label>Producto:</label>
              <select name="account" class="form-control">
                <option>Producto1</option>
@@ -267,9 +278,9 @@
                <option>Sucursal 3</option>
               </select>
              </div>
-             <label class="col-sm-2">Descuento:</label>
+             <label id="label_desc" style="display:none;" class="col-sm-2">Descuento:</label>
              <div class="col-sm-4">
-              <select name="account" class="form-control">
+              <select id="select_desc" style="display:none;" name="account" class="form-control">
                <option>5%</option>
                <option>10%</option>
                <option>15%</option>
@@ -309,7 +320,6 @@
        </div>
       </div> <!-- finaliza contenido --> 
 
-
       <footer class="main-footer">
         <div class="container-fluid">
           <div class="row">
@@ -324,6 +334,39 @@
         </div>
       </footer>
     </div>
+
+     <script>
+      function myFunction() {
+        var x = document.getElementById("tipo").value;
+        if (x=="Descuento") {
+           document.getElementById("label_desc").style.display = "block";
+           document.getElementById("select_desc").style.display = "block";
+           document.getElementById("producto2").style.display = "none";
+           document.getElementById("div_prod").style.display = "none";
+           document.getElementById("div_cat").style.display = "none";
+           document.getElementById("div_linea").style.display = "none";
+
+        };
+        if (x=="2x1") {
+           document.getElementById("label_desc").style.display = "none";
+           document.getElementById("select_desc").style.display = "none";
+           document.getElementById("producto2").style.display = "none";
+           document.getElementById("div_prod").style.display = "none";
+           document.getElementById("div_cat").style.display = "none";
+           document.getElementById("div_linea").style.display = "none";
+        };
+        if (x=="Combo") {
+           document.getElementById("label_desc").style.display = "none";
+           document.getElementById("select_desc").style.display = "none";
+           document.getElementById("producto2").style.display = "block";
+           document.getElementById("div_prod").style.display = "block";
+           document.getElementById("div_cat").style.display = "block";
+           document.getElementById("div_linea").style.display = "block";
+           
+        };
+      }
+    </script>
+
     <!-- JavaScript files-->
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/popper.js/umd/popper.min.js"> </script>

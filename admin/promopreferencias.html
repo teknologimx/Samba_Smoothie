@@ -178,9 +178,9 @@
            <div class="form-group row">
             <div class="col-sm-4">
              <label>Tipo de promoción:</label>
-             <select name="account" class="form-control">
-               <option>2x1</option>
-               <option>Descuento</option>
+             <select id="tipo" onchange="myFunction()" name="account" class="form-control">
+               <option value="2x1">2x1</option>
+               <option value="Descuento">Descuento</option>
              </select>
             </div>
            <div class="col-sm-4">
@@ -228,9 +228,9 @@
                <option>Sucursal 3</option>
               </select>
              </div>
-             <label class="col-sm-2">Descuento:</label>
+             <label id="label_desc" class="col-sm-2" style="display:none;">Descuento:</label>
              <div class="col-sm-4">
-              <select name="account" class="form-control">
+              <select id="select_desc" name="account" class="form-control" style="display:none;">
                <option>5%</option>
                <option>10%</option>
                <option>15%</option>
@@ -284,6 +284,21 @@
         </div>
       </footer>
     </div>
+
+    <script>
+      function myFunction() {
+        var x = document.getElementById("tipo").value;
+        if (x=="Descuento") {
+           document.getElementById("label_desc").style.display = "block";
+           document.getElementById("select_desc").style.display = "block";
+        };
+        if (x=="2x1") {
+           document.getElementById("label_desc").style.display = "none";
+           document.getElementById("select_desc").style.display = "none";
+        };
+      }
+    </script>
+
     <!-- JavaScript files-->
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/popper.js/umd/popper.min.js"> </script>
