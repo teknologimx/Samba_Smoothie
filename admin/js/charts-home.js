@@ -80,14 +80,13 @@ $(document).ready(function () {
         type: 'doughnut',
         data: {
             labels: [
-                "First",
-                "Second",
-                "Third"
+                "Ganancias",
+                "Gastos"
             ],
             datasets: [
                 {
-                    data: [300, 50, 100],
-                    borderWidth: [1, 1, 1],
+                    data: [600, 300],
+                    borderWidth: [1, 1],
                     backgroundColor: [
                         brandPrimary,
                         "rgba(75,192,192,1)",
