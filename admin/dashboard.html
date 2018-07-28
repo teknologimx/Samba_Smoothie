@@ -23,8 +23,10 @@
     <link rel="stylesheet" href="css/style.default.css" id="theme-stylesheet">
     <!-- Custom stylesheet - for your changes-->
     <link rel="stylesheet" href="css/custom.css">
-          <!-- Custom stylesheet - for your changes-->
+    <!-- Custom stylesheet - for your changes-->
     <link rel="stylesheet" href="css/mystyles.css">
+    <!-- Custom stylesheet - for your changes-->
+    <link rel="stylesheet" href="css/tabla-home.css">
     <!-- Favicon-->
     <link rel="shortcut icon" href="img/samba.ico">
     <!-- Tweaks for older IEs--><!--[if lt IE 9]>
@@ -216,17 +218,67 @@
         <div class="container-fluid">
           <div class="row d-flex align-items-md-stretch">
             <!-- To Do List-->
-            <!-- Line Chart -->
-            <div class="col-lg-6 col-md-12 flex-lg-last flex-md-first align-self-baseline">
-              <div class="card sales-report">
-                <h2 class="display h4">Gráfico de ventas</h2>
-                <p> </p>
-                <div class="line-chart">
-                  <canvas id="lineCahrt"></canvas>
+                <!-- Line Chart -->
+                <div class="col-lg-6 col-md-12 flex-lg-last flex-md-first align-self-baseline">
+                  <div class="card sales-report">
+                    <h2 class="display h4">Gráfico de ventas</h2>
+                    <p> </p>
+                    <div class="line-chart">
+                      <canvas id="lineCahrt"></canvas>
+                    </div>
+                  </div>
                 </div>
-              </div>
+                <div class="col-lg-6 col-md-6">
+                  <div class="wrapper count-title d-flex">
+                        <div class="table-responsive">
+                            <h2 class="display h4">&nbsp;&nbsp;</h2>
+                            <p> </p>
+                            <table class="table">
+                              <thead>
+                                <tr>
+                                  <th></th>
+                                  <th>Fecha</th>
+                                  <th>Ventas totales</th>
+                                  <th>Ordenes</th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                <tr>
+                                  <th scope="row">1</th>
+                                  <td class="display h4">Hoy</td>
+                                  <td class="display h4">Otto</td>
+                                  <td class="display h4">@mdo</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row">2</th>
+                                  <td>Ayer</td>
+                                  <td>Thornton</td>
+                                  <td>@fat</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row">3</th>
+                                  <td>Hace 7 días</td>
+                                  <td>the Bird</td>
+                                  <td>@twitter</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row">4</th>
+                                  <td>Hace 30 días</td>
+                                  <td>the Bird</td>
+                                  <td>@twitter</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row">5</th>
+                                  <td>Hace 90 días</td>
+                                  <td>the Bird</td>
+                                  <td>@twitter</td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </div>
+                  </div>
+                </div>
             </div>
-          </div>
         </div>
       </section>
       <!--seccion gastos ganancias-->
@@ -243,7 +295,7 @@
                             <!-- Pie Chart-->
                               <div class=" col-lg-4 ">
                                 <div>
-                                  <canvas id="pieChart"> </canvas>
+                                  <canvas id="pieChart" width="300" height="200"> </canvas>
                                 </div>
                               </div>
                             <!--datos gastos ventas-->
@@ -252,7 +304,7 @@
                                       <div class="strong">VS</div>
    
                                     <div class="d-flex justify-content-between">
-                                        <div class="page-statistics-left"><span style="font-size:12">Gastos</span><br/><strong class="text-primary strongText">230</strong></div>
+                                        <div class="page-statistics-left"><span>Gastos</span><br/><strong class="text-primary strongText">230</strong></div>
                                       <div class="page-statistics-right"><span>Ganancias</span><br/><strong class="text-primary strongText">230</strong></div>
                                     </div>
                                   </div>
@@ -261,7 +313,7 @@
                             <div class="col-lg-1">
                             </div>
                             <!--recomendaciones-->
-                               <div class="col-lg-3">
+                               <div class="col-lg-4">
                                   <div class="to-do">
                                     <h2 class="display h4 strongh2Text">Recomendaciones</h2>
                                     <p>Estas son algunas de la recomendaciones que le hacemos:</p>
@@ -285,10 +337,6 @@
                                       <li class="d-flex align-items-center"> 
                                         <input type="checkbox" id="list-5" name="list-5" class="form-control-custom">
                                         <label for="list-5">Similique sunt in culpa qui officia</label>
-                                      </li>
-                                      <li class="d-flex align-items-center"> 
-                                        <input type="checkbox" id="list-6" name="list-6" class="form-control-custom">
-                                        <label for="list-6">At vero eos et accusamus et iusto </label>
                                       </li>
                                     </ul>
                                    </div>
@@ -348,167 +396,139 @@
       <section class="mt-30px mb-30px">
         <div class="container-fluid">
           <div class="row">
-            <div class="col-lg-4 col-md-12">
+            <div class="col-lg-8 col-md-12">
               <!-- Recent Updates Widget          -->
               <div id="new-updates" class="card updates recent-updated">
                 <div id="updates-header" class="card-header d-flex justify-content-between align-items-center">
-                  <h2 class="h5 display"><a data-toggle="collapse" data-parent="#new-updates" href="#updates-box" aria-expanded="true" aria-controls="updates-box">News Updates</a></h2><a data-toggle="collapse" data-parent="#new-updates" href="#updates-box" aria-expanded="true" aria-controls="updates-box"><i class="fa fa-angle-down"></i></a>
+                          <div class="tab">
+                          <button class="tablinks" onclick="openTable(event, 'Tiendas')" id="defaultOpen">Top Sucursales</button>
+                          <button class="tablinks" onclick="openTable(event, 'Productos')">Top productos</button>
+          
+                        </div>
+                    <a data-toggle="collapse" data-parent="#new-updates" href="#updates-box" aria-expanded="true" aria-controls="updates-box"><i class="fa fa-angle-down"></i></a>
                 </div>
+                  
+                  
                 <div id="updates-box" role="tabpanel" class="collapse show">
                   <ul class="news list-unstyled">
                     <!-- Item-->
-                    <li class="d-flex justify-content-between"> 
-                      <div class="left-col d-flex">
-                        <div class="icon"><i class="icon-rss-feed"></i></div>
-                        <div class="title"><strong>Lorem ipsum dolor sit amet.</strong>
-                          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor.</p>
+                        <div id="Tiendas" class="tabcontent">
+                            <div class="card-body">
+                              <div class="table-responsive">
+                                <table class="table table-striped table-sm">
+                                  <thead>
+                                    <tr>
+                                      <th>#</th>
+                                      <th>Sucursal</th>
+                                      <th>Ventas generadas</th>
+                                      <th>Responsable</th>
+                                    </tr>
+                                  </thead>
+                                  <tbody>
+                                    <tr>
+                                      <th scope="row">1</th>
+                                      <td>Mark</td>
+                                      <td>Otto</td>
+                                      <td>@mdo</td>
+                                    </tr>
+                                    <tr>
+                                      <th scope="row">2</th>
+                                      <td>Jacob</td>
+                                      <td>Thornton</td>
+                                      <td>@fat</td>
+                                    </tr>
+                                    <tr>
+                                      <th scope="row">3</th>
+                                      <td>Larry</td>
+                                      <td>the Bird</td>
+                                      <td>@twitter      </td>
+                                    </tr>
+                                    <tr>
+                                      <th scope="row">4</th>
+                                      <td>Mark</td>
+                                      <td>Otto</td>
+                                      <td>@mdo</td>
+                                    </tr>
+                                    <tr>
+                                      <th scope="row">5</th>
+                                      <td>Jacob</td>
+                                      <td>Thornton</td>
+                                      <td>@fat</td>
+                                    </tr>
+                                    <tr>
+                                      <th scope="row">6</th>
+                                      <td>Larry</td>
+                                      <td>the Bird</td>
+                                      <td>@twitter       </td>
+                                    </tr>
+                                  </tbody>
+                                </table>
+                              </div>
+                            </div>
                         </div>
-                      </div>
-                      <div class="right-col text-right">
-                        <div class="update-date">24<span class="month">Jan</span></div>
-                      </div>
-                    </li>
-                    <!-- Item-->
-                    <li class="d-flex justify-content-between"> 
-                      <div class="left-col d-flex">
-                        <div class="icon"><i class="icon-rss-feed"></i></div>
-                        <div class="title"><strong>Lorem ipsum dolor sit amet.</strong>
-                          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor.</p>
+
+                        <div id="Productos" class="tabcontent">
+                            <div class="card-body">
+                              <div class="table-responsive">
+                                <table class="table table-striped table-sm">
+                                  <thead>
+                                    <tr>
+                                      <th>#</th>
+                                      <th>Producto</th>
+                                      <th>Unidades vendidas</th>
+                                      <th>Ventas generadas</th>
+                                    </tr>
+                                  </thead>
+                                  <tbody>
+                                    <tr>
+                                      <th scope="row">1</th>
+                                      <td>Mark</td>
+                                      <td>Otto</td>
+                                      <td>@mdo</td>
+                                    </tr>
+                                    <tr>
+                                      <th scope="row">2</th>
+                                      <td>Jacob</td>
+                                      <td>Thornton</td>
+                                      <td>@fat</td>
+                                    </tr>
+                                    <tr>
+                                      <th scope="row">3</th>
+                                      <td>Larry</td>
+                                      <td>the Bird</td>
+                                      <td>@twitter      </td>
+                                    </tr>
+                                    <tr>
+                                      <th scope="row">4</th>
+                                      <td>Mark</td>
+                                      <td>Otto</td>
+                                      <td>@mdo</td>
+                                    </tr>
+                                    <tr>
+                                      <th scope="row">5</th>
+                                      <td>Jacob</td>
+                                      <td>Thornton</td>
+                                      <td>@fat</td>
+                                    </tr>
+                                    <tr>
+                                      <th scope="row">6</th>
+                                      <td>Larry</td>
+                                      <td>the Bird</td>
+                                      <td>@twitter       </td>
+                                    </tr>
+                                  </tbody>
+                                </table>
+                              </div>
+                            </div>
                         </div>
-                      </div>
-                      <div class="right-col text-right">
-                        <div class="update-date">24<span class="month">Jan</span></div>
-                      </div>
-                    </li>
-                    <!-- Item-->
-                    <li class="d-flex justify-content-between"> 
-                      <div class="left-col d-flex">
-                        <div class="icon"><i class="icon-rss-feed"></i></div>
-                        <div class="title"><strong>Lorem ipsum dolor sit amet.</strong>
-                          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor.</p>
-                        </div>
-                      </div>
-                      <div class="right-col text-right">
-                        <div class="update-date">24<span class="month">Jan</span></div>
-                      </div>
-                    </li>
-                    <!-- Item-->
-                    <li class="d-flex justify-content-between"> 
-                      <div class="left-col d-flex">
-                        <div class="icon"><i class="icon-rss-feed"></i></div>
-                        <div class="title"><strong>Lorem ipsum dolor sit amet.</strong>
-                          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor.</p>
-                        </div>
-                      </div>
-                      <div class="right-col text-right">
-                        <div class="update-date">24<span class="month">Jan</span></div>
-                      </div>
-                    </li>
-                    <!-- Item-->
-                    <li class="d-flex justify-content-between"> 
-                      <div class="left-col d-flex">
-                        <div class="icon"><i class="icon-rss-feed"></i></div>
-                        <div class="title"><strong>Lorem ipsum dolor sit amet.</strong>
-                          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor.</p>
-                        </div>
-                      </div>
-                      <div class="right-col text-right">
-                        <div class="update-date">24<span class="month">Jan</span></div>
-                      </div>
-                    </li>
-                    <!-- Item-->
-                    <li class="d-flex justify-content-between"> 
-                      <div class="left-col d-flex">
-                        <div class="icon"><i class="icon-rss-feed"></i></div>
-                        <div class="title"><strong>Lorem ipsum dolor sit amet.</strong>
-                          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor.</p>
-                        </div>
-                      </div>
-                      <div class="right-col text-right">
-                        <div class="update-date">24<span class="month">Jan</span></div>
-                      </div>
-                    </li>
+
+                      <!--item-->
                   </ul>
                 </div>
               </div>
               <!-- Recent Updates Widget End-->
             </div>
-            <div class="col-lg-4 col-md-6">
-              <!-- Daily Feed Widget-->
-              <div id="daily-feeds" class="card updates daily-feeds">
-                <div id="feeds-header" class="card-header d-flex justify-content-between align-items-center">
-                  <h2 class="h5 display"><a data-toggle="collapse" data-parent="#daily-feeds" href="#feeds-box" aria-expanded="true" aria-controls="feeds-box">Your daily Feeds </a></h2>
-                  <div class="right-column">
-                    <div class="badge badge-primary">10 messages</div><a data-toggle="collapse" data-parent="#daily-feeds" href="#feeds-box" aria-expanded="true" aria-controls="feeds-box"><i class="fa fa-angle-down"></i></a>
-                  </div>
-                </div>
-                <div id="feeds-box" role="tabpanel" class="collapse show">
-                  <div class="feed-box">
-                    <ul class="feed-elements list-unstyled">
-                      <!-- List-->
-                      <li class="clearfix">
-                        <div class="feed d-flex justify-content-between">
-                          <div class="feed-body d-flex justify-content-between"><a href="#" class="feed-profile"><img src="img/avatar-5.jpg" alt="person" class="img-fluid rounded-circle"></a>
-                            <div class="content"><strong>Aria Smith</strong><small>Posted a new blog </small>
-                              <div class="full-date"><small>Today 5:60 pm - 12.06.2014</small></div>
-                            </div>
-                          </div>
-                          <div class="date"><small>5min ago</small></div>
-                        </div>
-                      </li>
-                      <!-- List-->
-                      <li class="clearfix">
-                        <div class="feed d-flex justify-content-between">
-                          <div class="feed-body d-flex justify-content-between"><a href="#" class="feed-profile"><img src="img/avatar-2.jpg" alt="person" class="img-fluid rounded-circle"></a>
-                            <div class="content"><strong>Frank Williams</strong><small>Posted a new blog </small>
-                              <div class="full-date"><small>Today 5:60 pm - 12.06.2014</small></div>
-                              <div class="CTAs"><a href="#" class="btn btn-xs btn-dark"><i class="fa fa-thumbs-up"> </i>Like</a><a href="#" class="btn btn-xs btn-dark"><i class="fa fa-heart"> </i>Love</a></div>
-                            </div>
-                          </div>
-                          <div class="date"><small>5min ago</small></div>
-                        </div>
-                      </li>
-                      <!-- List-->
-                      <li class="clearfix">
-                        <div class="feed d-flex justify-content-between">
-                          <div class="feed-body d-flex justify-content-between"><a href="#" class="feed-profile"><img src="img/avatar-3.jpg" alt="person" class="img-fluid rounded-circle"></a>
-                            <div class="content"><strong>Ashley Wood</strong><small>Posted a new blog </small>
-                              <div class="full-date"><small>Today 5:60 pm - 12.06.2014</small></div>
-                            </div>
-                          </div>
-                          <div class="date"><small>5min ago</small></div>
-                        </div>
-                      </li>
-                      <!-- List-->
-                      <li class="clearfix">
-                        <div class="feed d-flex justify-content-between">
-                          <div class="feed-body d-flex justify-content-between"><a href="#" class="feed-profile"><img src="img/avatar-1.jpg" alt="person" class="img-fluid rounded-circle"></a>
-                            <div class="content"><strong>Jason Doe</strong><small>Posted a new blog </small>
-                              <div class="full-date"><small>Today 5:60 pm - 12.06.2014</small></div>
-                            </div>
-                          </div>
-                          <div class="date"><small>5min ago</small></div>
-                        </div>
-                        <div class="message-card"> <small>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s. Over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</small></div>
-                        <div class="CTAs pull-right"><a href="#" class="btn btn-xs btn-dark"><i class="fa fa-thumbs-up"> </i>Like</a></div>
-                      </li>
-                      <!-- List-->
-                      <li class="clearfix">
-                        <div class="feed d-flex justify-content-between">
-                          <div class="feed-body d-flex justify-content-between"><a href="#" class="feed-profile"><img src="img/avatar-6.jpg" alt="person" class="img-fluid rounded-circle"></a>
-                            <div class="content"><strong>Sam Martinez</strong><small>Posted a new blog </small>
-                              <div class="full-date"><small>Today 5:60 pm - 12.06.2014</small></div>
-                            </div>
-                          </div>
-                          <div class="date"><small>5min ago</small></div>
-                        </div>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-              <!-- Daily Feed Widget End-->
-            </div>
+
             <div class="col-lg-4 col-md-6">
               <!-- Recent Activities Widget      -->
               <div id="recent-activities-wrapper" class="card updates activities">
@@ -576,11 +596,11 @@
         <div class="container-fluid">
           <div class="row">
             <div class="col-sm-6">
-              <p>Your company &copy; 2017-2019</p>
+              <p>Teknologi &copy; 2018</p>
             </div>
             <div class="col-sm-6 text-right">
-              <p>Design by <a href="https://bootstrapious.com" class="external">Bootstrapious</a></p>
-              <!-- Please do not remove the backlink to us unless you support further theme's development at https://bootstrapious.com/donate. It is part of the license conditions and it helps me to run Bootstrapious. Thank you for understanding :)-->
+              <p>Design by <a href="#" class="external">Teknologi</a></p>
+
             </div>
           </div>
         </div>
@@ -596,6 +616,7 @@
     <script src="vendor/jquery-validation/jquery.validate.min.js"></script>
     <script src="vendor/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js"></script>
     <script src="js/charts-home.js"></script>
+    <script src="js/tabla-home.js"></script>
     <!-- Main File-->
     <script src="js/front.js"></script>
   </body>
