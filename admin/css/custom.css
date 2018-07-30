@@ -23,3 +23,12 @@
 .expire {
     color: red;
 }
+
+.strongText { 
+    font-size:48px;
+}
+
+.strongh2Text { 
+    font-size:23px;
+    color: darkgreen;
+}

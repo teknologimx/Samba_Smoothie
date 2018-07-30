@@ -80,25 +80,17 @@ $(document).ready(function () {
         type: 'doughnut',
         data: {
             labels: [
-                "First",
-                "Second",
-                "Third"
+                "Ganancias",
+                "Gastos"
             ],
-            datasets: [
-                {
-                    data: [300, 50, 100],
-                    borderWidth: [1, 1, 1],
-                    backgroundColor: [
-                        brandPrimary,
-                        "rgba(75,192,192,1)",
-                        "#FFCE56"
-                    ],
-                    hoverBackgroundColor: [
-                        brandPrimary,
-                        "rgba(75,192,192,1)",
-                        "#FFCE56"
-                    ]
-                }]
+    datasets: [
+        {
+            data: [133.3, 86.2],
+            backgroundColor: [
+                "#33b35a",
+                "#4bc0c0"
+            ]
+        }]
         }
     });
 

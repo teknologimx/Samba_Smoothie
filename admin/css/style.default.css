@@ -2968,3 +2968,56 @@ a > code {
     margin-left: 15px;
   }
 }
+
+
+/*Pestanas*/
+.contenedor{
+  width: auto;
+  margin: auto;
+  /*background: black;
+  color: bisque;*/
+  padding: 0px 0px 10px 10px;
+  border-radius: 10px;
+  /*box-shadow: 0 0px 0px 0px rgba(0,0,0,0.8);*/
+}
+
+/*.contenedor .titulo{
+  font-size: 3.5ex;
+  font-weight: bold;
+  margin-left: 10px;
+  margin-bottom: 10px;
+}*/
+
+#pestanas ul{
+  margin-left: -40px;
+}
+
+#pestanas li{
+  list-style-type: none;
+  float: left;
+  text-align: center;
+  margin: 0px 0.5px -2px -0px;
+  background: #868e96;
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
+  /*border: 2px solid bisque;*/
+  border: none;
+  border-bottom: none;
+  padding: 0px 20px 0px 20px;
+}
+
+#pestanas a:link{
+  text-decoration: none;
+  color: black;
+}
+
+#contenidoPestanas{
+  clear: both;
+  background: white;
+  padding: 20px 0px 20px 20px;
+  border-radius: 5px;
+  border-top-left-radius: 0px;
+  border: 2px solid bisque;
+  width: 1025px;
+}
+
