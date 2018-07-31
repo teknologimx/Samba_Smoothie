@@ -4,12 +4,12 @@ error_reporting(0);
 $link = mysql_connect('localhost', 'root', '')
     or die('No se pudo conectar: ' . mysql_error());
 //echo 'Connected successfully';
+mysqli_set_charset($link,"utf8");
 mysql_select_db('prueba') or die('No se pudo seleccionar la base de datos');
 
 // Realizar una consulta MySQL
 $query = 'SELECT establecimientos.nombre AS "sucursal", userlg.nombre, establecimientos.ciudad, establecimientos.codigo, establecimientos.domicilio, establecimientos.telefono, establecimientos.total_vendido FROM establecimientos INNER JOIN userlg ON establecimientos.administrador_id=userlg.id ORDER BY establecimientos.total_vendido DESC';
 $result = mysql_query($query) or die('Consulta fallida: ' . mysql_error());
-
 // Imprimir los resultados en HTML
 /* Desplegamos cada uno de los registros dentro de una tabla */  
 	echo "<div class='card-body'>
@@ -19,13 +19,13 @@ $result = mysql_query($query) or die('Consulta fallida: ' . mysql_error());
 	/*Primero los encabezados*/
                     echo "<thead>
                             <tr>
-                              <th>#</th>
-                              <th>nombre</th>
+                              <th>N°</th>
+                              <th>Nombre</th>
                               <th>Responsable</th>
-                              <th>ciudad</th>
-                              <th>codigo</th>
-                              <th>domicilio</th>
-                              <th>telefono</th>
+                              <th>Ciudad</th>
+                              <th>Código</th>
+                              <th>Domicilio</th>
+                              <th>Teléfono</th>
                               <th>Ventas totales</th>
                             </tr>
                           </thead>
@@ -51,5 +51,6 @@ $result = mysql_query($query) or die('Consulta fallida: ' . mysql_error());
                         </table>
                     </div>
                   </div>"
+
 
 ?>
