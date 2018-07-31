@@ -1,3 +1,10 @@
+<?php session_start();
+   include("conexion.php"); 
+   $link=Conectarse(); 
+   $categorias = mysqli_query($link, "SELECT id_categoria, categoria FROM cat_categorias");
+   $sucursales = mysqli_query($link, "SELECT nombre FROM establecimientos");
+?>
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -27,6 +34,7 @@
     <link rel="stylesheet" href="css/cupon.css">
     <!-- Favicon-->
     <link rel="shortcut icon" href="img/samba.ico">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <!-- Tweaks for older IEs--><!--[if lt IE 9]>
         <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
         <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
@@ -94,55 +102,6 @@
               <div class="navbar-header"><a id="toggle-btn" href="#" class="menu-btn"><i class="icon-bars"> </i></a><a href="#" class="navbar-brand">
                   <div class="brand-text d-none d-md-inline-block"><span><img id="logo" src="img/samba_white.png" width="150px"></span></div></a></div>
               <ul class="nav-menu list-unstyled d-flex flex-md-row align-items-md-center">
-                <!-- Notificaciones
-                <li class="nav-item dropdown"> <a id="notifications" rel="nofollow" data-target="#" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link"><i class="fa fa-bell"></i><span class="badge badge-warning">12</span></a>
-                  <ul aria-labelledby="notifications" class="dropdown-menu">
-                    <li><a rel="nofollow" href="#" class="dropdown-item"> 
-                        <div class="notification d-flex justify-content-between">
-                          <div class="notification-content"><i class="fa fa-envelope"></i>You have 6 new messages </div>
-                          <div class="notification-time"><small>4 minutes ago</small></div>
-                        </div></a></li>
-                    <li><a rel="nofollow" href="#" class="dropdown-item"> 
-                        <div class="notification d-flex justify-content-between">
-                          <div class="notification-content"><i class="fa fa-twitter"></i>You have 2 followers</div>
-                          <div class="notification-time"><small>4 minutes ago</small></div>
-                        </div></a></li>
-                    <li><a rel="nofollow" href="#" class="dropdown-item"> 
-                        <div class="notification d-flex justify-content-between">
-                          <div class="notification-content"><i class="fa fa-upload"></i>Server Rebooted</div>
-                          <div class="notification-time"><small>4 minutes ago</small></div>
-                        </div></a></li>
-                    <li><a rel="nofollow" href="#" class="dropdown-item"> 
-                        <div class="notification d-flex justify-content-between">
-                          <div class="notification-content"><i class="fa fa-twitter"></i>You have 2 followers</div>
-                          <div class="notification-time"><small>10 minutes ago</small></div>
-                        </div></a></li>
-                    <li><a rel="nofollow" href="#" class="dropdown-item all-notifications text-center"> <strong> <i class="fa fa-bell"></i>view all notifications                                            </strong></a></li>
-                  </ul>
-                </li>-->
-                <!-- Mensajes 
-                <li class="nav-item dropdown"> <a id="messages" rel="nofollow" data-target="#" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link"><i class="fa fa-envelope"></i><span class="badge badge-info">10</span></a>
-                  <ul aria-labelledby="notifications" class="dropdown-menu">
-                    <li><a rel="nofollow" href="#" class="dropdown-item d-flex"> 
-                        <div class="msg-profile"> <img src="img/avatar-1.jpg" alt="..." class="img-fluid rounded-circle"></div>
-                        <div class="msg-body">
-                          <h3 class="h5">Jason Doe</h3><span>sent you a direct message</span><small>3 days ago at 7:58 pm - 10.06.2014</small>
-                        </div></a></li>
-                    <li><a rel="nofollow" href="#" class="dropdown-item d-flex"> 
-                        <div class="msg-profile"> <img src="img/avatar-2.jpg" alt="..." class="img-fluid rounded-circle"></div>
-                        <div class="msg-body">
-                          <h3 class="h5">Frank Williams</h3><span>sent you a direct message</span><small>3 days ago at 7:58 pm - 10.06.2014</small>
-                        </div></a></li>
-                    <li><a rel="nofollow" href="#" class="dropdown-item d-flex"> 
-                        <div class="msg-profile"> <img src="img/avatar-3.jpg" alt="..." class="img-fluid rounded-circle"></div>
-                        <div class="msg-body">
-                          <h3 class="h5">Ashley Wood</h3><span>sent you a direct message</span><small>3 days ago at 7:58 pm - 10.06.2014</small>
-                        </div></a></li>
-                    <li><a rel="nofollow" href="#" class="dropdown-item all-notifications text-center"> <strong> <i class="fa fa-envelope"></i>Read all messages    </strong></a></li>
-                  </ul>
-                </li>-->
-                <!-- Languages   -->
-
                 <!-- Log out-->
                 <li class="nav-item"><a href="login.html" class="nav-link logout"> <span class="d-none d-sm-inline-block" style="font-size: 1.5em;">Salir</span><i class="fa fa-power-off" style="font-size: 1.5em;"></i></a></li>
               </ul>
@@ -175,24 +134,24 @@
              <img id="img-recomendadas" style="width:70px; heigth:70px;"src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQdxSY3swLDGNus2cyl2-AqbdI2Dac_Mn___5gI_n0k0zPsT3bV2w" class="round" alt="Producto 5"> <br><br>
            </div></center>
           <center><h4>Detalles de la promoción</h4></center>
-          <form>
+          <form enctype='multipart/form-data' action="validarPromoVentas.php" method="post">
            <div class="form group">
            <div class="form-group row">
             <div class="col-sm-4">
              <label>Tipo de promoción:</label>
-             <select id="tipo" onchange="myFunction()" name="account" class="form-control">
-               <option>2x1</option>
-               <option>Descuento</option>
-               <option>Combo</option>
+             <select id="tipo" onchange="myFunction()" name="tipo_oferta" class="form-control">
+               <option value="2x1">2x1</option>
+               <option value="Descuento">Descuento</option>
+               <option value="Combo">Combo</option>
              </select>
             </div>
            <div class="col-sm-4">
              <label>Inicio:</label>
-             <input type="date" placeholder="Fecha Inicial" class="form-control">
+             <input name="fecha_inicio" type="date" placeholder="Fecha Inicial" class="form-control">
            </div>
            <div class="col-sm-4">
              <label>Fin:</label>
-             <input type="date" placeholder="Fecha Final" class="form-control">
+             <input name="fecha_final" type="date" placeholder="Fecha Final" class="form-control">
            </div>
            </div><!--form group row-->
            <div class="form-group row">
@@ -203,30 +162,31 @@
            <div class="form-group row">
             <div class="col-sm-4">
              <label>Categoría:</label>
-             <select name="account" class="form-control">
-               <option>Categoría1</option>
-               <option>Categoría2</option>
-               <option>Categoría3</option>
+             <select name="categoria" class="form-control" id="cat">
+              <option value="">Selecciona una</option>
+               <?php
+                while($row = mysqli_fetch_row($categorias))
+                {
+                  echo "<option value='$row[0]'>$row[1]</option> ";
+                }
+               ?>
              </select>
             </div>
             <div class="col-sm-4">
              <label>Línea:</label>
-             <select name="account" class="form-control">
-               <option>Línea1</option>
-               <option>Línea2</option>
-               <option>Línea3</option>
+             <select name="linea" id="lineas" class="form-control">
+               <option value="">Selecciona una</option>
              </select>
             </div>
             <div class="col-sm-4">
              <label>Producto:</label>
-             <select name="account" class="form-control">
-               <option>Producto1</option>
-               <option>Producto2</option>
-               <option>Producto3</option>
+             <select name="producto" id="producto" class="form-control">
+               <option value="">Selecciona</option>
              </select>
             </div>
-            </div>
-            <div id="producto2" style="display:none;" class="form-group row">
+            </div> 
+            <!-- producto numero dos inicia -->
+            <div id="producto_2" style="display:none;" class="form-group row">
               <div class="col-sm-12">
                 <center><label><b>Producto 2</b></label></center>
               </div>
@@ -234,26 +194,27 @@
             <div class="form-group row">
             <div style="display:none;" id="div_cat" class="col-sm-4">
              <label>Categoría:</label>
-             <select name="account" class="form-control">
-               <option>Categoría1</option>
-               <option>Categoría2</option>
-               <option>Categoría3</option>
+             <select name="categoria2" class="form-control" id="cat2">
+              <option value="">Selecciona una</option>
+               <?php
+                $categorias1 = mysqli_query($link, "SELECT id_categoria, categoria FROM cat_categorias");
+                while($row1 = mysqli_fetch_row($categorias1))
+                {
+                  echo "<option value='$row1[0]'>$row1[1]</option> ";
+                }
+               ?>
              </select>
             </div>
             <div style="display:none;" id="div_linea" class="col-sm-4"> 
              <label>Línea:</label>
-             <select name="account" class="form-control">
-               <option>Línea1</option>
-               <option>Línea2</option>
-               <option>Línea3</option>
+             <select name="linea2" id="lineas2" class="form-control">
+               <option value="">Selecciona una</option>
              </select>
             </div>
             <div style="display:none;" id="div_prod" class="col-sm-4">
              <label>Producto:</label>
-             <select name="account" class="form-control">
-               <option>Producto1</option>
-               <option>Producto2</option>
-               <option>Producto3</option>
+             <select name="producto2" id="producto2" class="form-control">
+               <option value="">Selecciona</option>
              </select>
             </div>
            </div> <!-- form-group-row -->
@@ -268,16 +229,19 @@
              </label>
             </div> -->
              <div class="col-sm-4">
-              <select name="account" class="form-control">
-               <option>Todas</option>
-               <option>Sucursal 1</option>
-               <option>Sucursal 2</option>
-               <option>Sucursal 3</option>
+              <select name="sucursales" class="form-control">
+               <option value="">Todas</option>
+               <?php
+                while($row_suc = mysqli_fetch_row($sucursales))
+                {
+                  echo "<option value='$row_suc[0]'>$row_suc[0]</option> ";
+                }
+               ?>
               </select>
              </div>
              <label id="label_desc" class="col-sm-2" style="display:none;">Descuento:</label>
              <div class="col-sm-4">
-              <select id="select_desc" name="account" class="form-control" style="display:none;">
+              <select id="select_desc" name="descuento" class="form-control" style="display:none;">
                <option>5%</option>
                <option>10%</option>
                <option>15%</option>
@@ -287,6 +251,20 @@
               </select>
              </div>
             </div> <!-- form-group-row -->
+            <div class="form-group row">
+              <div class="col-sm-12">
+                <label><b>Imagen de Promoción</b></label>
+                  <div class="input-group">
+                      <span class="input-group-btn">
+                          <span class="btn btn-default btn-file">
+                              Upload… <input type="file" id="imgInp">
+                          </span>
+                      </span>
+                      <input name="img_promo" type="text" class="form-control" readonly>
+                  </div>
+                  <img id='img-upload'/>
+              </div>
+            </div>
             <div class="form-group row">
               <div class="col-sm-12">
                <center><button type="submit" class="btn btn-secondary">Cancelar</button>
@@ -337,7 +315,83 @@
       </footer>
     </div>
 
-    <script>
+    <script type="text/javascript">
+     //producto 1
+      $(document).ready(function(){
+          $('#cat').on('change',function(){
+              var catID = $(this).val();
+              if(catID){
+                  $.ajax({
+                      type:'POST',
+                      url:'ajaxData.php',
+                      data:'cat_id='+catID,
+                      success:function(html){
+                          $('#lineas').html(html);
+                          $('#producto').html('<option value="">Selecciona...</option>'); 
+                      }
+                  }); 
+              }else{
+                  $('#lineas').html('<option value="">Selecciona...</option>');
+                  $('#producto').html('<option value="">Selecciona...</option>'); 
+              }
+          });
+          
+          $('#lineas').on('change',function(){
+              var lineaID = $(this).val();
+              if(lineaID){
+                  $.ajax({
+                      type:'POST',
+                      url:'ajaxData.php',
+                      data:'linea_id='+lineaID,
+                      success:function(html){
+                          $('#producto').html(html);
+                      }
+                  }); 
+              }else{
+                  $('#producto').html('<option value="">Selecciona</option>'); 
+              }
+          });
+      });
+        
+      //producto 2
+      $(document).ready(function(){
+          $('#cat2').on('change',function(){
+              var catID2 = $(this).val();
+              if(catID2){
+                  $.ajax({
+                      type:'POST',
+                      url:'ajaxData.php',
+                      data:'cat_id2='+catID2,
+                      success:function(html){
+                          $('#lineas2').html(html);
+                          $('#producto2').html('<option value="">Selecciona...</option>'); 
+                      }
+                  }); 
+              }else{
+                  $('#lineas2').html('<option value="">Selecciona...</option>');
+                  $('#producto2').html('<option value="">Selecciona...</option>'); 
+              }
+          });
+          
+          $('#lineas2').on('change',function(){
+              var lineaID2 = $(this).val();
+              if(lineaID2){
+                  $.ajax({
+                      type:'POST',
+                      url:'ajaxData.php',
+                      data:'linea_id2='+lineaID2,
+                      success:function(html){
+                          $('#producto2').html(html);
+                      }
+                  }); 
+              }else{
+                  $('#producto2').html('<option value="">Selecciona</option>'); 
+              }
+          });
+      });
+    </script>
+
+    <script type="text/javascript">
       function myFunction() {
         var x = document.getElementById("tipo").value;
         if (x=="Descuento") {
@@ -368,9 +422,48 @@
         };
       }
     </script>
+    <!-- script para upload image de promoción -->
+    <script>
+         $(document).ready( function() {
+          $(document).on('change', '.btn-file :file', function() {
+        var input = $(this),
+          label = input.val().replace(/\\/g, '/').replace(/.*\//, '');
+        input.trigger('fileselect', [label]);
+        });
+
+        $('.btn-file :file').on('fileselect', function(event, label) {
+            
+            var input = $(this).parents('.input-group').find(':text'),
+                log = label;
+            
+            if( input.length ) {
+                input.val(log);
+            } else {
+                if( log ) alert(log);
+            }
+          
+        });
+        function readURL(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+                
+                reader.onload = function (e) {
+                    $('#img-upload').attr('src', e.target.result);
+                }
+                
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+
+        $("#imgInp").change(function(){
+            readURL(this);
+        });   
+      });
+    </script>
 
 
     <!-- JavaScript files-->
+
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/popper.js/umd/popper.min.js"> </script>
     <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
