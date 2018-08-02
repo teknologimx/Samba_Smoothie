@@ -420,8 +420,8 @@
                   <ul class="news list-unstyled">
                     <!-- Item-->
                         <div id="Tiendas" class="tabcontent">
-
-                            <?
+                            <!--este el el llamadao a php-->
+                            <?php
                               include("php/dashboard/ventas.php");
                             ?>
                         </div>

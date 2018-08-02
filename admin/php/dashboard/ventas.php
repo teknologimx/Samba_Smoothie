@@ -5,7 +5,7 @@ $link = mysql_connect('localhost', 'root', '')
     or die('No se pudo conectar: ' . mysql_error());
 //echo 'Connected successfully';
 mysqli_set_charset($link,"utf8");
-mysql_select_db('prueba') or die('No se pudo seleccionar la base de datos');
+mysql_select_db('samba') or die('No se pudo seleccionar la base de datos');
 
 // Realizar una consulta MySQL
 $query = 'SELECT establecimientos.nombre AS "sucursal", userlg.nombre, establecimientos.ciudad, establecimientos.codigo, establecimientos.domicilio, establecimientos.telefono, establecimientos.total_vendido FROM establecimientos INNER JOIN userlg ON establecimientos.administrador_id=userlg.id ORDER BY establecimientos.total_vendido DESC';
