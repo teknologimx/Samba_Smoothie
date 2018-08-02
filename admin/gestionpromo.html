@@ -75,9 +75,7 @@
                 </li>
                 <li><a href="#tercermenu2" aria-expanded="false" data-toggle="collapse"> <i class="fa fa-briefcase"></i>Inteligencia de negocios</a>
                       <ul id="tercermenu2" class="collapse list-unstyled ">
-                        <li><a href="dashboard.html"> <i class="fa fa-tachometer"></i>Dashboard</a></li>
-                        <li><a href="reportegeneral.html"> <i class="fa fa-shopping-cart"></i>Pronostico de ventas</a></li>
-                        <li><a href="reportegeneral.html"> <i class="fa fa-shopping-cart"></i>Reportes generales</a></li>
+                        <li><a href="dashboard.php"> <i class="fa fa-tachometer"></i>Reporte general</a></li>
                         <li><a href="reporteespecifico.html"> <i class="fa fa-shopping-cart"></i>Reportes específicos</a></li>
                       </ul>
                 </li>

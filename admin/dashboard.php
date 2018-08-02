@@ -75,9 +75,7 @@
                 </li>
                 <li><a href="#tercermenu2" aria-expanded="false" data-toggle="collapse"> <i class="fa fa-briefcase"></i>Inteligencia de negocios</a>
                       <ul id="tercermenu2" class="collapse list-unstyled ">
-                        <li><a href="dashboard.html"> <i class="fa fa-tachometer"></i>Dashboard</a></li>
-                        <li><a href="reportegeneral.html"> <i class="fa fa-shopping-cart"></i>Pronostico de ventas</a></li>
-                        <li><a href="reportegeneral.html"> <i class="fa fa-shopping-cart"></i>Reportes generales</a></li>
+                        <li><a href="dashboard.php"> <i class="fa fa-tachometer"></i>Reporte general</a></li>
                         <li><a href="reporteespecifico.html"> <i class="fa fa-shopping-cart"></i>Reportes específicos</a></li>
                       </ul>
                 </li>
@@ -157,7 +155,7 @@
         <div class="container-fluid">
           <div class="row">
             <!-- Count item widget-->
-            <div class="col-xl-2 col-md-4 col-6">
+            <div class="col-xl-3 col-md-4 col-6">
               <div class="wrapper count-title d-flex">
                 <div class="icon"><i class="icon-user"></i></div>
                 <div class="name"><strong class="text-uppercase">New Clients</strong><span>Last 7 days</span>
@@ -175,14 +173,7 @@
               </div>
             </div>
             <!-- Count item widget-->
-            <div class="col-xl-2 col-md-4 col-6">
-              <div class="wrapper count-title d-flex">
-                <div class="icon"><i class="icon-check"></i></div>
-                <div class="name"><strong class="text-uppercase">New Quotes</strong><span>Last 2 months</span>
-                  <div class="count-number">342</div>
-                </div>
-              </div>
-            </div>
+
             <!-- Count item widget-->
             <div class="col-xl-2 col-md-4 col-6">
               <div class="wrapper count-title d-flex">
@@ -193,7 +184,7 @@
               </div>
             </div>
             <!-- Count item widget-->
-            <div class="col-xl-2 col-md-4 col-6">
+            <div class="col-xl-3 col-md-4 col-6">
               <div class="wrapper count-title d-flex">
                 <div class="icon"><i class="icon-list"></i></div>
                 <div class="name"><strong class="text-uppercase">Open Cases</strong><span>Last 3 months</span>
