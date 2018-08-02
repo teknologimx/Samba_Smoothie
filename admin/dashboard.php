@@ -230,7 +230,7 @@
                   <div class="card sales-report">
                     <h2 class="display h4">Gráfico de ventas</h2>
                     <p> </p>
-                    <div class="line-chart">
+                    <div class="bar-chart">
                       <canvas id="barChartVentas"></canvas>
                     </div>
                   </div>
@@ -421,7 +421,7 @@
                     <!-- Item-->
                         <div id="Tiendas" class="tabcontent">
 
-                            <?php
+                            <?
                               include("php/dashboard/ventas.php");
                             ?>
                         </div>
