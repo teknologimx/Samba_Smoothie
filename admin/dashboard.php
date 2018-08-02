@@ -225,7 +225,7 @@
         <div class="container-fluid">
           <div class="row d-flex align-items-md-stretch">
             <!-- To Do List-->
-                <!-- Line Chart -->
+                <!-- Bar Chart -->
                 <div class="col-lg-6 col-md-12 flex-lg-last flex-md-first align-self-baseline">
                   <div class="card sales-report">
                     <h2 class="display h4">Gráfico de ventas</h2>

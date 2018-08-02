@@ -1,3 +1,4 @@
+//Grafica de barras para dashboard
 $(document).ready(function () {
 
     'use strict';
