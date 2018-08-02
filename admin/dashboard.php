@@ -155,40 +155,38 @@
         <div class="container-fluid">
           <div class="row">
             <!-- Count item widget-->
-            <div class="col-xl-3 col-md-4 col-6">
+            <div class="col-xl-2 col-md-4 col-  6">
               <div class="wrapper count-title d-flex">
-                <div class="icon"><i class="icon-user"></i></div>
-                <div class="name"><strong class="text-uppercase">New Clients</strong><span>Last 7 days</span>
+                <div class="icon"><i class="fa fa-users"></i></div>
+                <div class="name"><strong class="text-uppercase">Clientes Totales</strong>
                   <div class="count-number">25</div>
                 </div>
               </div>
             </div>
             <!-- Count item widget-->
-            <div class="col-xl-2 col-md-4 col-6">
+            <div class="col-xl-2 col-md-8 col-6">
               <div class="wrapper count-title d-flex">
                 <div class="icon"><i class="icon-padnote"></i></div>
-                <div class="name"><strong class="text-uppercase">Work Orders</strong><span>Last 5 days</span>
+                <div class="name"><strong class="text-uppercase">Ordenes Realizadas</strong>
                   <div class="count-number">400</div>
                 </div>
               </div>
             </div>
             <!-- Count item widget-->
-
-            <!-- Count item widget-->
             <div class="col-xl-2 col-md-4 col-6">
               <div class="wrapper count-title d-flex">
-                <div class="icon"><i class="icon-bill"></i></div>
-                <div class="name"><strong class="text-uppercase">New Invoices</strong><span>Last 2 days</span>
-                  <div class="count-number">123</div>
+                <div class="icon"><i class="icon-check"></i></div>
+                <div class="name"><strong class="text-uppercase">Calificación Producto</strong>
+                  <div class="count-number">342</div>
                 </div>
               </div>
             </div>
             <!-- Count item widget-->
-            <div class="col-xl-3 col-md-4 col-6">
+            <div class="col-xl-2 col-md-4 col-6">
               <div class="wrapper count-title d-flex">
-                <div class="icon"><i class="icon-list"></i></div>
-                <div class="name"><strong class="text-uppercase">Open Cases</strong><span>Last 3 months</span>
-                  <div class="count-number">92</div>
+                <div class="icon"><i class="icon-check"></i></div>
+                <div class="name"><strong class="text-uppercase">Calificación Servicio</strong>
+                  <div class="count-number">342</div>
                 </div>
               </div>
             </div>
@@ -196,11 +194,29 @@
             <div class="col-xl-2 col-md-4 col-6">
               <div class="wrapper count-title d-flex">
                 <div class="icon"><i class="icon-list-1"></i></div>
+                <div class="name"><strong class="text-uppercase">Ordenes Entregadas</strong>
+                  <div class="count-number">123</div>
+                </div>
+              </div>
+            </div>
+            <!-- Count item widget-->
+            <div class="col-xl-2 col-md-4 col-6">
+              <div class="wrapper count-title d-flex">
+                <div class="icon"><i class="icon-list"></i></div>
+                <div class="name"><strong class="text-uppercase">Ordenes Canceladas</strong>
+                  <div class="count-number">92</div>
+                </div>
+              </div>
+            </div>
+            <!-- Count item widget-->
+            <!--<div class="col-xl-2 col-md-4 col-6">
+              <div class="wrapper count-title d-flex">
+                <div class="icon"><i class="icon-list-1"></i></div>
                 <div class="name"><strong class="text-uppercase">New Cases</strong><span>Last 7 days</span>
                   <div class="count-number">70</div>
                 </div>
               </div>
-            </div>
+            </div>-->
           </div>
         </div>
       </section>
@@ -215,7 +231,7 @@
                     <h2 class="display h4">Gráfico de ventas</h2>
                     <p> </p>
                     <div class="line-chart">
-                      <canvas id="lineCahrt"></canvas>
+                      <canvas id="barChartVentas"></canvas>
                     </div>
                   </div>
                 </div>
@@ -229,45 +245,45 @@
                                 <tr>
                                   <th></th>
                                   <th>Fecha</th>
-                                  <th>Ventas totales</th>
-                                  <th>Ordenes</th>
+                                  <th>Ganancias</th>
+                                  <th>Órdenes</th>
                                 </tr>
                               </thead>
                               <tbody>
                                 <tr>
                                   <th scope="row">1</th>
                                   <td class="display h4">Hoy</td>
-                                  <td class="display h4">Otto</td>
-                                  <td class="display h4">@mdo</td>
+                                  <td class="display h4">65</td>
+                                  <td class="display h4">35</td>
                                 </tr>
                                 <tr>
                                   <th scope="row">2</th>
                                   <td>Ayer</td>
-                                  <td>Thornton</td>
-                                  <td>@fat</td>
+                                  <td>50</td>
+                                  <td>15</td>
                                 </tr>
                                 <tr>
                                   <th scope="row">3</th>
                                   <td>Hace 7 días</td>
-                                  <td>the Bird</td>
-                                  <td>@twitter</td>
+                                  <td>80</td>
+                                  <td>30</td>
                                 </tr>
                                 <tr>
                                   <th scope="row">4</th>
                                   <td>Hace 30 días</td>
-                                  <td>the Bird</td>
-                                  <td>@twitter</td>
+                                  <td>120</td>
+                                  <td>50</td>
                                 </tr>
                                 <tr>
                                   <th scope="row">5</th>
                                   <td>Hace 90 días</td>
-                                  <td>the Bird</td>
-                                  <td>@twitter</td>
+                                  <td>81</td>
+                                  <td>40</td>
                                 </tr>
                               </tbody>
                             </table>
                           </div>
-                  </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -560,6 +576,7 @@
     <script src="vendor/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js"></script>
     <script src="js/charts-home.js"></script>
     <script src="js/tabla-home.js"></script>
+    <script src="js/chart_dashboard.js"></script>
     <!-- Main File-->
     <script src="js/front.js"></script>
   </body>
