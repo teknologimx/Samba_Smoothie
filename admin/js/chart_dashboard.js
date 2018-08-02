@@ -96,7 +96,7 @@ $(document).ready(function () {
                     spanGaps: false
                 },
                 {
-                    label: "Ordenes",
+                    label: "Órdenes",
                     fill: true,
                     lineTension: 0.3,
                     backgroundColor: "rgba(75,192,192,0.4)",

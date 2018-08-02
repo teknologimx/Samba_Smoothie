@@ -1,7 +1,6 @@
 <?php session_start();
    include("conexion.php"); 
    $link=Conectarse(); 
-   $categorias = mysqli_query($link, "SELECT id_categoria, categoria FROM cat_categorias");
    $sucursales = mysqli_query($link, "SELECT nombre FROM establecimientos");
 ?>
 
@@ -132,12 +131,13 @@
              <img id="img-recomendadas" style="width:70px; heigth:70px;"src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQdxSY3swLDGNus2cyl2-AqbdI2Dac_Mn___5gI_n0k0zPsT3bV2w" class="round" alt="Producto 5"> <br><br>
            </div></center>
           <center><h4>Detalles de la promoción</h4></center>
-          <form enctype='multipart/form-data' action="validarPromoVentas.php" method="post">
+          <form id="MiFormulario" enctype='multipart/form-data' action="validarPromoVentas.php" method="post">
            <div class="form group">
            <div class="form-group row">
             <div class="col-sm-4">
-             <label>Tipo de promoción:</label>
-             <select id="tipo" onchange="myFunction()" name="tipo_oferta" class="form-control">
+             <label>Promoción:</label>
+             <select id="tipo_promo" onchange="myFunction()" name="tipo_promo" class="form-control" required>
+               <option value="">Selecciona una</option>
                <option value="2x1">2x1</option>
                <option value="Descuento">Descuento</option>
                <option value="Combo">Combo</option>
@@ -145,11 +145,11 @@
             </div>
            <div class="col-sm-4">
              <label>Inicio:</label>
-             <input name="fecha_inicio" type="date" placeholder="Fecha Inicial" class="form-control">
+             <input id="fecha_inicio" name="fecha_inicio" type="date" placeholder="Fecha Inicial" class="form-control" oninput="funcion_fechainicial()" required>
            </div>
            <div class="col-sm-4">
              <label>Fin:</label>
-             <input name="fecha_final" type="date" placeholder="Fecha Final" class="form-control">
+             <input id="fecha_final" name="fecha_final" type="date" placeholder="Fecha Final" class="form-control" oninput="funcion_fechafinal()" required>
            </div>
            </div><!--form group row-->
            <div class="form-group row">
@@ -160,25 +160,21 @@
            <div class="form-group row">
             <div class="col-sm-4">
              <label>Categoría:</label>
-             <select name="categoria" class="form-control" id="cat">
-              <option value="">Selecciona una</option>
-               <?php
-                while($row = mysqli_fetch_row($categorias))
-                {
-                  echo "<option value='$row[0]'>$row[1]</option> ";
-                }
-               ?>
+             <select name="categoria" class="form-control" id="cat" required>
+               <option value="">Selecciona una</option>
+               <option value="Comidas">Comidas</option>
+               <option value="Bebidas">Bebidas</option>
              </select>
             </div>
             <div class="col-sm-4">
-             <label>Línea:</label>
-             <select name="linea" id="lineas" class="form-control">
+             <label>Tipo:</label>
+             <select name="tipo" id="tipo" class="form-control" required>
                <option value="">Selecciona una</option>
              </select>
             </div>
             <div class="col-sm-4">
              <label>Producto:</label>
-             <select name="producto" id="producto" class="form-control">
+             <select onchange="funcion_producto()" name="producto" id="producto" class="form-control" required>
                <option value="">Selecciona</option>
              </select>
             </div>
@@ -193,42 +189,30 @@
             <div style="display:none;" id="div_cat" class="col-sm-4">
              <label>Categoría:</label>
              <select name="categoria2" class="form-control" id="cat2">
-              <option value="">Selecciona una</option>
-               <?php
-                $categorias1 = mysqli_query($link, "SELECT id_categoria, categoria FROM cat_categorias");
-                while($row1 = mysqli_fetch_row($categorias1))
-                {
-                  echo "<option value='$row1[0]'>$row1[1]</option> ";
-                }
-               ?>
+               <option value="">Selecciona una</option>
+               <option value="Comidas">Comidas</option>
+               <option value="Bebidas">Bebidas</option>
              </select>
             </div>
             <div style="display:none;" id="div_linea" class="col-sm-4"> 
              <label>Línea:</label>
-             <select name="linea2" id="lineas2" class="form-control">
+             <select name="tipo2" id="tipo2" class="form-control">
                <option value="">Selecciona una</option>
              </select>
             </div>
             <div style="display:none;" id="div_prod" class="col-sm-4">
              <label>Producto:</label>
-             <select name="producto2" id="producto2" class="form-control">
+             <select onchange="funcion_producto2()" name="producto2" id="producto2" class="form-control">
                <option value="">Selecciona</option>
              </select>
             </div>
            </div> <!-- form-group-row -->
            <div class="form-group row">
             <label class="col-sm-2 form-control-label">Sucursal:</label>
-            <!-- <div class="col-sm-4">
-             <label class="checkbox-inline">
-               <input id="inlineCheckbox1" type="checkbox" value="option1"> Todas
-             </label>
-             <label class="checkbox-inline">
-               <input id="inlineCheckbox2" type="checkbox" value="option2"> Específica
-             </label>
-            </div> -->
              <div class="col-sm-4">
-              <select name="sucursales" class="form-control">
-               <option value="">Todas</option>
+              <select onchange="funcion_sucursal()" name="sucursales" id="sucursales" class="form-control" required>
+               <option value="todas">Selecciona una</option>
+               <option value="todas">Todas</option>
                <?php
                 while($row_suc = mysqli_fetch_row($sucursales))
                 {
@@ -239,14 +223,7 @@
              </div>
              <label id="label_desc" class="col-sm-2" style="display:none;">Descuento:</label>
              <div class="col-sm-4">
-              <select id="select_desc" name="descuento" class="form-control" style="display:none;">
-               <option>5%</option>
-               <option>10%</option>
-               <option>15%</option>
-               <option>20%</option>
-               <option>25%</option>
-               <option>30%</option>
-              </select>
+              <input oninput="funcion_desc()" style="display:none;" id="select_desc" name="descuento" class="form-control" type="number" min="1" max="30" >
              </div>
             </div> <!-- form-group-row -->
             <div class="form-group row">
@@ -258,9 +235,9 @@
                               Upload… <input type="file" id="imgInp">
                           </span>
                       </span>
-                      <input name="img_promo" type="text" class="form-control" readonly>
+                      <input name="img_promo" type="text" class="form-control" readonly required>
                   </div>
-                  <img id='img-upload'/>
+                  <!-- <img id='img-upload'/> -->
               </div>
             </div>
             <div class="form-group row">
@@ -276,17 +253,24 @@
         </div> 
         <div class="col-md-4"><br><br> 
                 <div class="dl coupon">     
-                    <div class="discount alizarin">30%
-                        <div class="type" style="font-size:30px;">de descuento<img class="logo" src="img/sambalogo.png"></div>
+                    <div class="discount alizarin"  style="font-size:40px;">
+                        <span id="preview_promo"></span>
+                        <div class="type" style="font-size:30px;">
+                          <span id="preview_slogan"></span>
+                          <img class="logo" src="img/sambalogo.png"></div>
                     </div>
                     <div>
-                      <img class="foto" src="img/fondocupon.jpg">
+                      <img class="foto" id="img-upload" >
                     </div>
                     <div class="descr">
-                        <strong>En nuestro productos XXXX</strong>  
+                        <span id="preview_prod"><strong></strong></span>
+                        <span id="preview_productos"><strong></strong></span>
+                        <span id="preview_productos2"><strong></strong></span>
                     </div>
                     <div class="ends">
-                        <small>* Valido en las sucursales XXX. Vigencia de XX/XX/XX a XX/XX/XX.</small>
+                        <center><p id="preview_sucursal"></p></center>
+                        <center><p id="preview_fechainicio"></p></center>
+                        <center><p id="preview_fechafin"></p></center>
                     </div>
                     <div class="getcode">
                         <a data-toggle="collapse" href="#code-1" class="open-code">Obtener código</a>
@@ -313,6 +297,53 @@
       </footer>
     </div>
 
+
+    <!-- Script para creación del cupón de forma dinamica -->
+    <script type="text/javascript">
+      function funcion_producto()
+      {
+        var x = document.getElementById("producto");
+        var y = x.options[x.selectedIndex].text;
+        document.getElementById("preview_prod").innerHTML = "En nuestro producto";
+        document.getElementById('preview_productos').innerHTML = y;
+        document.getElementById('preview_productos').style.color = "green";
+        document.getElementById('preview_productos').style.fontSize = "larger";
+      }
+      function funcion_sucursal()
+      {
+        var x = document.getElementById("sucursales").value;
+        if(x == "todas"){ 
+          x= "todas las sucursales (Samba cuernavaca, Flor de canela, Cocina Bambu)";
+        };
+        document.getElementById('preview_sucursal').innerHTML = "Disponible en "+x;
+      }
+      function funcion_fechainicial()
+      {
+        var x = document.getElementById("fecha_inicio").value;
+        document.getElementById('preview_fechainicio').innerHTML = "Válido desde "+x;
+      }
+      function funcion_fechafinal()
+      {
+        var x = document.getElementById("fecha_final").value;
+        document.getElementById('preview_fechafin').innerHTML = "Hasta "+x;
+      }   
+      function funcion_desc()
+      {
+        var x = document.getElementById("select_desc").value;
+        document.getElementById('preview_promo').innerHTML = x+"%";
+      }
+      function funcion_producto2()
+      {
+        var x = document.getElementById("producto2");
+        var y = x.options[x.selectedIndex].text;
+        document.getElementById("preview_prod").innerHTML = "En nuestros productos";
+        document.getElementById('preview_productos2').innerHTML = " + "+y;
+        document.getElementById('preview_productos2').style.color = "green";
+        document.getElementById('preview_productos2').style.fontSize = "larger";
+      }    
+    </script>
+
+    <!-- Script para realizar combo box dinamicos con ajax -->
     <script type="text/javascript">
      //producto 1
       $(document).ready(function(){
@@ -324,23 +355,23 @@
                       url:'ajaxData.php',
                       data:'cat_id='+catID,
                       success:function(html){
-                          $('#lineas').html(html);
+                          $('#tipo').html(html);
                           $('#producto').html('<option value="">Selecciona...</option>'); 
                       }
                   }); 
               }else{
-                  $('#lineas').html('<option value="">Selecciona...</option>');
+                  $('#tipo').html('<option value="">Selecciona...</option>');
                   $('#producto').html('<option value="">Selecciona...</option>'); 
               }
           });
           
-          $('#lineas').on('change',function(){
-              var lineaID = $(this).val();
-              if(lineaID){
+          $('#tipo').on('change',function(){
+              var tipoID = $(this).val();
+              if(tipoID){
                   $.ajax({
                       type:'POST',
                       url:'ajaxData.php',
-                      data:'linea_id='+lineaID,
+                      data:'tipo_id='+tipoID,
                       success:function(html){
                           $('#producto').html(html);
                       }
@@ -361,23 +392,23 @@
                       url:'ajaxData.php',
                       data:'cat_id2='+catID2,
                       success:function(html){
-                          $('#lineas2').html(html);
+                          $('#tipo2').html(html);
                           $('#producto2').html('<option value="">Selecciona...</option>'); 
                       }
                   }); 
               }else{
-                  $('#lineas2').html('<option value="">Selecciona...</option>');
+                  $('#tipo2').html('<option value="">Selecciona...</option>');
                   $('#producto2').html('<option value="">Selecciona...</option>'); 
               }
           });
           
-          $('#lineas2').on('change',function(){
-              var lineaID2 = $(this).val();
-              if(lineaID2){
+          $('#tipo2').on('change',function(){
+              var tipoID2 = $(this).val();
+              if(tipoID2){
                   $.ajax({
                       type:'POST',
                       url:'ajaxData.php',
-                      data:'linea_id2='+lineaID2,
+                      data:'tipo_id2='+tipoID2,
                       success:function(html){
                           $('#producto2').html(html);
                       }
@@ -389,16 +420,20 @@
       });
     </script>
 
+    <!-- Script para manipular formulario de acuerdo a tipos de ofertas -->
     <script type="text/javascript">
+    
       function myFunction() {
-        var x = document.getElementById("tipo").value;
+        var x = document.getElementById("tipo_promo").value;
         if (x=="Descuento") {
            document.getElementById("label_desc").style.display = "block";
            document.getElementById("select_desc").style.display = "block";
            document.getElementById("producto2").style.display = "none";
            document.getElementById("div_prod").style.display = "none";
            document.getElementById("div_cat").style.display = "none";
+           document.getElementById("preview_promo").innerHTML = "%";
            document.getElementById("div_linea").style.display = "none";
+           document.getElementById("preview_slogan").innerHTML = "de descuento";
 
         };
         if (x=="2x1") {
@@ -408,6 +443,8 @@
            document.getElementById("div_prod").style.display = "none";
            document.getElementById("div_cat").style.display = "none";
            document.getElementById("div_linea").style.display = "none";
+           document.getElementById("preview_promo").innerHTML = "2x1";
+           document.getElementById("preview_slogan").innerHTML = "Super Promo!";
         };
         if (x=="Combo") {
            document.getElementById("label_desc").style.display = "none";
@@ -416,6 +453,8 @@
            document.getElementById("div_prod").style.display = "block";
            document.getElementById("div_cat").style.display = "block";
            document.getElementById("div_linea").style.display = "block";
+           document.getElementById("preview_slogan").innerHTML ="Super Promo!";
+           document.getElementById("preview_promo").innerHTML = "Combo";
            
         };
       }
@@ -474,3 +513,7 @@
     <script src="js/front.js"></script>
   </body>
 </html>
+
+<?php
+   mysqli_close($link);
+?>
