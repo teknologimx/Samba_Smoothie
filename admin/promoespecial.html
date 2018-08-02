@@ -166,14 +166,7 @@
         <div class="col-md-8"><br>
          <div class="card">
           <div class="card-body">
-          <center><h4>Nuestras Recomendaciones</h4></center>
-           <div class="col-md-10 offset-md-2">
-             <img id="img-recomendadas" style="width:70px; heigth:70px;"src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQdxSY3swLDGNus2cyl2-AqbdI2Dac_Mn___5gI_n0k0zPsT3bV2w" class="round" alt="Producto 1">
-             <img id="img-recomendadas"style="width:70px; heigth:70px;"src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQdxSY3swLDGNus2cyl2-AqbdI2Dac_Mn___5gI_n0k0zPsT3bV2w" class="round" alt="Producto 2">
-             <img id="img-recomendadas" style="width:70px; heigth:70px;"src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQdxSY3swLDGNus2cyl2-AqbdI2Dac_Mn___5gI_n0k0zPsT3bV2w" class="round" alt="Producto 3">
-             <img id="img-recomendadas" style="width:70px; heigth:70px;"src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQdxSY3swLDGNus2cyl2-AqbdI2Dac_Mn___5gI_n0k0zPsT3bV2w" class="round" alt="Producto 4">
-             <img id="img-recomendadas" style="width:70px; heigth:70px;"src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQdxSY3swLDGNus2cyl2-AqbdI2Dac_Mn___5gI_n0k0zPsT3bV2w" class="round" alt="Producto 5"> <br><br>
-           </div>
+           <br>
           <center><h4>Detalles de la promoción</h4></center>
           <form>
            <div class="form group">
@@ -192,7 +185,7 @@
              </select>
             </div>
             <div class="col-sm-3">
-             <label>Tipo de promoción:</label>
+             <label>Tipo:</label>
              <select id="tipo" onchange="myFunction()" name="account" class="form-control">
                <option>2x1</option>
                <option>Descuento</option>
@@ -281,15 +274,8 @@
               </select>
              </div>
              <label id="label_desc" style="display:none;" class="col-sm-2">Descuento:</label>
-             <div class="col-sm-4">
-              <select id="select_desc" style="display:none;" name="account" class="form-control">
-               <option>5%</option>
-               <option>10%</option>
-               <option>15%</option>
-               <option>20%</option>
-               <option>25%</option>
-               <option>30%</option>
-              </select>
+              <div class="col-sm-4">
+              <input style="display:none;" id="select_desc" name="descuento" class="form-control" type="number" name="cantidad" min="1" max="30">
              </div>
             </div> <!-- form-group-row -->
             <div class="form-group row">

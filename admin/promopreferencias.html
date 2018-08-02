@@ -94,55 +94,7 @@
               <div class="navbar-header"><a id="toggle-btn" href="#" class="menu-btn"><i class="icon-bars"> </i></a><a href="#" class="navbar-brand">
                   <div class="brand-text d-none d-md-inline-block"><span><img id="logo" src="img/samba_white.png" width="150px"></span></div></a></div>
               <ul class="nav-menu list-unstyled d-flex flex-md-row align-items-md-center">
-                <!-- Notificaciones
-                <li class="nav-item dropdown"> <a id="notifications" rel="nofollow" data-target="#" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link"><i class="fa fa-bell"></i><span class="badge badge-warning">12</span></a>
-                  <ul aria-labelledby="notifications" class="dropdown-menu">
-                    <li><a rel="nofollow" href="#" class="dropdown-item"> 
-                        <div class="notification d-flex justify-content-between">
-                          <div class="notification-content"><i class="fa fa-envelope"></i>You have 6 new messages </div>
-                          <div class="notification-time"><small>4 minutes ago</small></div>
-                        </div></a></li>
-                    <li><a rel="nofollow" href="#" class="dropdown-item"> 
-                        <div class="notification d-flex justify-content-between">
-                          <div class="notification-content"><i class="fa fa-twitter"></i>You have 2 followers</div>
-                          <div class="notification-time"><small>4 minutes ago</small></div>
-                        </div></a></li>
-                    <li><a rel="nofollow" href="#" class="dropdown-item"> 
-                        <div class="notification d-flex justify-content-between">
-                          <div class="notification-content"><i class="fa fa-upload"></i>Server Rebooted</div>
-                          <div class="notification-time"><small>4 minutes ago</small></div>
-                        </div></a></li>
-                    <li><a rel="nofollow" href="#" class="dropdown-item"> 
-                        <div class="notification d-flex justify-content-between">
-                          <div class="notification-content"><i class="fa fa-twitter"></i>You have 2 followers</div>
-                          <div class="notification-time"><small>10 minutes ago</small></div>
-                        </div></a></li>
-                    <li><a rel="nofollow" href="#" class="dropdown-item all-notifications text-center"> <strong> <i class="fa fa-bell"></i>view all notifications                                            </strong></a></li>
-                  </ul>
-                </li>-->
-                <!-- Mensajes 
-                <li class="nav-item dropdown"> <a id="messages" rel="nofollow" data-target="#" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link"><i class="fa fa-envelope"></i><span class="badge badge-info">10</span></a>
-                  <ul aria-labelledby="notifications" class="dropdown-menu">
-                    <li><a rel="nofollow" href="#" class="dropdown-item d-flex"> 
-                        <div class="msg-profile"> <img src="img/avatar-1.jpg" alt="..." class="img-fluid rounded-circle"></div>
-                        <div class="msg-body">
-                          <h3 class="h5">Jason Doe</h3><span>sent you a direct message</span><small>3 days ago at 7:58 pm - 10.06.2014</small>
-                        </div></a></li>
-                    <li><a rel="nofollow" href="#" class="dropdown-item d-flex"> 
-                        <div class="msg-profile"> <img src="img/avatar-2.jpg" alt="..." class="img-fluid rounded-circle"></div>
-                        <div class="msg-body">
-                          <h3 class="h5">Frank Williams</h3><span>sent you a direct message</span><small>3 days ago at 7:58 pm - 10.06.2014</small>
-                        </div></a></li>
-                    <li><a rel="nofollow" href="#" class="dropdown-item d-flex"> 
-                        <div class="msg-profile"> <img src="img/avatar-3.jpg" alt="..." class="img-fluid rounded-circle"></div>
-                        <div class="msg-body">
-                          <h3 class="h5">Ashley Wood</h3><span>sent you a direct message</span><small>3 days ago at 7:58 pm - 10.06.2014</small>
-                        </div></a></li>
-                    <li><a rel="nofollow" href="#" class="dropdown-item all-notifications text-center"> <strong> <i class="fa fa-envelope"></i>Read all messages    </strong></a></li>
-                  </ul>
-                </li>-->
-                <!-- Languages   -->
-
+              
                 <!-- Log out-->
                 <li class="nav-item"><a href="login.html" class="nav-link logout"> <span class="d-none d-sm-inline-block" style="font-size: 1.5em;">Salir</span><i class="fa fa-power-off" style="font-size: 1.5em;"></i></a></li>
               </ul>
@@ -172,7 +124,29 @@
           <form>
            <div class="form group">
            <div class="form-group row">
-            <div class="col-sm-3">
+            <div class="col-sm-4">
+             <label>Tipo:</label>
+             <select id="tipo" onchange="myFunction1()" name="account" class="form-control">
+               <option>2x1</option>
+               <option>Descuento</option>
+             </select>
+            </div>
+           <div class="col-sm-4">
+             <label>Inicio:</label>
+             <input type="date" placeholder="Fecha Inicial" class="form-control">
+           </div>
+           <div class="col-sm-4">
+             <label>Fin:</label>
+             <input type="date" placeholder="Fecha Final" class="form-control">
+           </div>
+           </div><!--form group row-->
+           <div class="form-group row">
+              <div class="col-sm-12">
+                <center><label><b>Producto</b></label></center>
+              </div>
+           </div> 
+           <div class="form-group row">
+            <div class="col-sm-6">
              <label>Grupo:</label>
              <select name="account" class="form-control">
                <option>Grupo 1</option>
@@ -180,45 +154,7 @@
                <option>Grupo 3</option>
              </select>
             </div>
-            <div class="col-sm-3">
-             <label>Tipo de promoción:</label>
-             <select id="tipo" onchange="myFunction1()" name="account" class="form-control">
-               <option>2x1</option>
-               <option>Descuento</option>
-             </select>
-            </div>
-           <div class="col-sm-3">
-             <label>Inicio:</label>
-             <input type="date" placeholder="Fecha Inicial" class="form-control">
-           </div>
-           <div class="col-sm-3">
-             <label>Fin:</label>
-             <input type="date" placeholder="Fecha Final" class="form-control">
-           </div>
-           </div><!--form group row-->
-           <div class="form-group row">
-              <div class="col-sm-12">
-                <center><label><b>Producto 1</b></label></center>
-              </div>
-           </div> 
-           <div class="form-group row">
-            <div class="col-sm-4">
-             <label>Categoría:</label>
-             <select name="account" class="form-control">
-               <option>Categoría1</option>
-               <option>Categoría2</option>
-               <option>Categoría3</option>
-             </select>
-            </div>
-            <div class="col-sm-4">
-             <label>Línea:</label>
-             <select name="account" class="form-control">
-               <option>Línea1</option>
-               <option>Línea2</option>
-               <option>Línea3</option>
-             </select>
-            </div>
-            <div class="col-sm-4">
+            <div class="col-sm-6">
              <label>Producto:</label>
              <select name="account" class="form-control">
                <option>Producto1</option>
@@ -239,14 +175,7 @@
              </div>
              <label id="label_desc" class="col-sm-2" style="display:none;">Descuento:</label>
              <div class="col-sm-4">
-              <select id="select_desc" name="account" class="form-control" style="display:none;">
-               <option>5%</option>
-               <option>10%</option>
-               <option>15%</option>
-               <option>20%</option>
-               <option>25%</option>
-               <option>30%</option>
-              </select>
+              <input style="display:none;" id="select_desc" name="descuento" class="form-control" type="number" name="cantidad" min="1" max="30">
              </div>
             </div> <!-- form-group-row -->
             <div class="form-group row">
