@@ -155,7 +155,7 @@
         <div class="container-fluid">
           <div class="row">
             <!-- Count item widget-->
-            <div class="col-xl-2 col-md-4 col-6">
+            <div class="col-xl-3 col-md-4 col-6">
               <div class="wrapper count-title d-flex">
                 <div class="icon"><i class="icon-user"></i></div>
                 <div class="name"><strong class="text-uppercase">New Clients</strong><span>Last 7 days</span>
@@ -173,14 +173,7 @@
               </div>
             </div>
             <!-- Count item widget-->
-            <div class="col-xl-2 col-md-4 col-6">
-              <div class="wrapper count-title d-flex">
-                <div class="icon"><i class="icon-check"></i></div>
-                <div class="name"><strong class="text-uppercase">New Quotes</strong><span>Last 2 months</span>
-                  <div class="count-number">342</div>
-                </div>
-              </div>
-            </div>
+
             <!-- Count item widget-->
             <div class="col-xl-2 col-md-4 col-6">
               <div class="wrapper count-title d-flex">
@@ -191,7 +184,7 @@
               </div>
             </div>
             <!-- Count item widget-->
-            <div class="col-xl-2 col-md-4 col-6">
+            <div class="col-xl-3 col-md-4 col-6">
               <div class="wrapper count-title d-flex">
                 <div class="icon"><i class="icon-list"></i></div>
                 <div class="name"><strong class="text-uppercase">Open Cases</strong><span>Last 3 months</span>
