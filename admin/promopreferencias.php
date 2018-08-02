@@ -1,3 +1,11 @@
+<?php session_start();
+   include("conexion.php"); 
+   $link=Conectarse(); 
+   $suc = mysqli_query($link, "SELECT nombre FROM establecimientos");
+   $grupos = mysqli_query($link, "SELECT nombre FROM categorias");
+   $productos = mysqli_query($link, "SELECT nombre FROM platillos");
+?>
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -27,6 +35,7 @@
     <link rel="stylesheet" href="css/cupon.css">
     <!-- Favicon-->
     <link rel="shortcut icon" href="img/samba.ico">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <!-- Tweaks for older IEs--><!--[if lt IE 9]>
         <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
         <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
@@ -65,9 +74,9 @@
               <ul id="submenuBI" class="collapse list-unstyled ">
                 <li><a href="#tercermenu1" aria-expanded="false" data-toggle="collapse"> <i class="fa fa-certificate"></i>Promociones</a>
                       <ul id="tercermenu1" class="collapse list-unstyled ">
-                        <li><a href="promoventas.html"> <i class="fa fa-shopping-cart"></i>Crear promoción basado en ventas</a></li>
-                        <li><a href="promopreferencias.html"> <i class="fa fa-shopping-basket"></i>Crear promoción basada en preferencias</a></li>
-                        <li><a href="promoespecial.html"> <i class="fa fa-star"></i>Crear promoción especial</a></li>
+                        <li><a href="promoventas.php"> <i class="fa fa-shopping-cart"></i>Crear promoción basado en ventas</a></li>
+                        <li><a href="promopreferencias.php"> <i class="fa fa-shopping-basket"></i>Crear promoción basada en preferencias</a></li>
+                        <li><a href="promoespecial.php"> <i class="fa fa-star"></i>Crear promoción especial</a></li>
                         <li><a href="gestionpromo.html"> <i class="fa fa-list-ol"></i>Gestionar promociones</a></li>
                       </ul>
                 </li>
@@ -121,23 +130,24 @@
           <div class="card-body">
            <div class="col-md-12">
           <br><center><h4>Detalles de la promoción</h4></center><br>
-          <form>
+          <form id="MiFormulario" enctype='multipart/form-data' action="validarPromoPreferencias.php" method="post">
            <div class="form group">
            <div class="form-group row">
             <div class="col-sm-4">
              <label>Tipo:</label>
-             <select id="tipo" onchange="myFunction1()" name="account" class="form-control">
+             <select id="tipo_promo" onchange="myFunction1()" name="tipo_promo" class="form-control" required>
+               <option value="">Selecciona una</option>
                <option>2x1</option>
                <option>Descuento</option>
              </select>
             </div>
            <div class="col-sm-4">
              <label>Inicio:</label>
-             <input type="date" placeholder="Fecha Inicial" class="form-control">
+             <input id="fecha_inicio" name="fecha_inicio" type="date" placeholder="Fecha Inicial" class="form-control" oninput="funcion_fechainicial()" required>
            </div>
            <div class="col-sm-4">
              <label>Fin:</label>
-             <input type="date" placeholder="Fecha Final" class="form-control">
+             <input id="fecha_final" name="fecha_final" type="date" placeholder="Fecha Final" class="form-control" oninput="funcion_fechafinal()" required>
            </div>
            </div><!--form group row-->
            <div class="form-group row">
@@ -148,36 +158,63 @@
            <div class="form-group row">
             <div class="col-sm-6">
              <label>Grupo:</label>
-             <select name="account" class="form-control">
-               <option>Grupo 1</option>
-               <option>Grupo 2</option>
-               <option>Grupo 3</option>
-             </select>
+             <select name="grupo" id="grupo" class="form-control" required>
+               <option value="">Selecciona un</option>
+               <?php
+                while($rowg = mysqli_fetch_row($grupos))
+                {
+                  echo "<option value='$rowg[0]'>$rowg[0]</option> ";
+                }
+               ?>
+              </select>
             </div>
             <div class="col-sm-6">
              <label>Producto:</label>
-             <select name="account" class="form-control">
-               <option>Producto1</option>
-               <option>Producto2</option>
-               <option>Producto3</option>
-             </select>
+             <select onchange="funcion_producto()" name="producto" id="producto" class="form-control" required>
+               <option value="">Selecciona</option>
+               <?php
+                while($rowp = mysqli_fetch_row($productos))
+                {
+                  echo "<option value='$rowp[0]'>$rowp[0]</option> ";
+                }
+               ?>
+              </select>
             </div>
             </div>
            <div class="form-group row">
             <label class="col-sm-2">Sucursal:</label>
              <div class="col-sm-4">
-              <select name="account" class="form-control">
-               <option>Todas</option>
-               <option>Sucursal 1</option>
-               <option>Sucursal 2</option>
-               <option>Sucursal 3</option>
+              <select onchange="funcion_sucursal()" name="sucursales" id="sucursales" class="form-control" required>
+               <option value="">Selecciona una</option>
+               <option value="todas">Todas</option>
+               <?php
+                while($rows = mysqli_fetch_row($suc))
+                {
+                  echo "<option value='$rows[0]'>$rows[0]</option> ";
+                }
+               ?>
               </select>
              </div>
              <label id="label_desc" class="col-sm-2" style="display:none;">Descuento:</label>
              <div class="col-sm-4">
-              <input style="display:none;" id="select_desc" name="descuento" class="form-control" type="number" name="cantidad" min="1" max="30">
+              <input oninput="funcion_desc()" style="display:none;" id="select_desc" name="descuento" class="form-control" type="number" min="1" max="30" >
              </div>
             </div> <!-- form-group-row -->
+            <!-- upload image -->
+            <div class="form-group row">
+              <div class="col-sm-12">
+                <label><b>Imagen de Promoción</b></label>
+                  <div class="input-group">
+                      <span class="input-group-btn">
+                          <span class="btn btn-default btn-file">
+                              Upload… <input type="file" id="imgInp">
+                          </span>
+                      </span>
+                      <input name="img_promo" type="text" class="form-control" readonly required>
+                  </div>
+                  <!-- <img id='img-upload'/> -->
+              </div>
+            </div>
             <div class="form-group row">
               <div class="col-sm-12">
                <center><button type="submit" class="btn btn-secondary">Cancelar</button>
@@ -190,19 +227,27 @@
          </div>
          </div> <!-- cierra card-body -->
         </div> 
-        <div class="col-md-4"><br><br> 
+         <!-- creacion del cupon para la promocion -->
+         <div class="col-md-4"><br><br> 
                 <div class="dl coupon">     
-                    <div class="discount alizarin">30%
-                        <div class="type" style="font-size:30px;">de descuento<img class="logo" src="img/sambalogo.png"></div>
+                    <div class="discount alizarin"  style="font-size:40px;">
+                        <span id="preview_promo"></span>
+                        <div class="type" style="font-size:30px;">
+                          <span id="preview_slogan"></span>
+                          <img class="logo" src="img/sambalogo.png"></div>
                     </div>
                     <div>
-                      <img class="foto" src="img/fondocupon.jpg">
+                      <img class="foto" id="img-upload" >
                     </div>
                     <div class="descr">
-                        <strong>En nuestro productos XXXX</strong>  
+                        <span id="preview_prod"><strong></strong></span>
+                        <span id="preview_productos"><strong></strong></span>
+                        <span id="preview_productos2"><strong></strong></span>
                     </div>
                     <div class="ends">
-                        <small>* Valido en las sucursales XXX. Vigencia de XX/XX/XX a XX/XX/XX.</small>
+                        <center><p id="preview_sucursal"></p></center>
+                        <center><p id="preview_fechainicio"></p></center>
+                        <center><p id="preview_fechafin"></p></center>
                     </div>
                     <div class="getcode">
                         <a data-toggle="collapse" href="#code-1" class="open-code">Obtener código</a>
@@ -228,18 +273,110 @@
       </footer>
     </div>
 
-    <script>
+      <!-- Script para creación del cupón de forma dinamica -->
+    <script type="text/javascript">
+      function funcion_producto()
+      {
+        var x = document.getElementById("producto");
+        var y = x.options[x.selectedIndex].text;
+        document.getElementById("preview_prod").innerHTML = "En nuestro producto";
+        document.getElementById('preview_productos').innerHTML = y;
+        document.getElementById('preview_productos').style.color = "green";
+        document.getElementById('preview_productos').style.fontSize = "larger";
+      }
+      function funcion_sucursal()
+      {
+        var x = document.getElementById("sucursales").value;
+        if(x == "todas"){ 
+          x= "todas las sucursales (Samba cuernavaca, Flor de canela, Cocina Bambu)";
+        };
+        document.getElementById('preview_sucursal').innerHTML = "Disponible en "+x;
+      }
+      function funcion_fechainicial()
+      {
+        var x = document.getElementById("fecha_inicio").value;
+        document.getElementById('preview_fechainicio').innerHTML = "Válido desde "+x;
+      }
+      function funcion_fechafinal()
+      {
+        var x = document.getElementById("fecha_final").value;
+        document.getElementById('preview_fechafin').innerHTML = "Hasta "+x;
+      }   
+      function funcion_desc()
+      {
+        var x = document.getElementById("select_desc").value;
+        document.getElementById('preview_promo').innerHTML = x+"%";
+      }
+      // function funcion_producto2()
+      // {
+      //   var x = document.getElementById("producto2");
+      //   var y = x.options[x.selectedIndex].text;
+      //   document.getElementById("preview_prod").innerHTML = "En nuestros productos";
+      //   document.getElementById('preview_productos2').innerHTML = " + "+y;
+      //   document.getElementById('preview_productos2').style.color = "green";
+      //   document.getElementById('preview_productos2').style.fontSize = "larger";
+      // }    
+    </script>
+
+
+     <!-- Script para manipular formulario de acuerdo a tipos de ofertas -->
+    <script type="text/javascript">
+    
       function myFunction1() {
-        var x = document.getElementById("tipo").value;
+        var x = document.getElementById("tipo_promo").value;
         if (x=="Descuento") {
            document.getElementById("label_desc").style.display = "block";
            document.getElementById("select_desc").style.display = "block";
+           document.getElementById("preview_promo").innerHTML = "%";
+           document.getElementById("preview_slogan").innerHTML = "de descuento";
+
         };
         if (x=="2x1") {
            document.getElementById("label_desc").style.display = "none";
            document.getElementById("select_desc").style.display = "none";
+           document.getElementById("preview_promo").innerHTML = "2x1";
+           document.getElementById("preview_slogan").innerHTML = "Super Promo!";
         };
       }
+    </script>
+
+    <!-- script para upload image de promoción -->
+    <script>
+         $(document).ready( function() {
+          $(document).on('change', '.btn-file :file', function() {
+        var input = $(this),
+          label = input.val().replace(/\\/g, '/').replace(/.*\//, '');
+        input.trigger('fileselect', [label]);
+        });
+
+        $('.btn-file :file').on('fileselect', function(event, label) {
+            
+            var input = $(this).parents('.input-group').find(':text'),
+                log = label;
+            
+            if( input.length ) {
+                input.val(log);
+            } else {
+                if( log ) alert(log);
+            }
+          
+        });
+        function readURL(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+                
+                reader.onload = function (e) {
+                    $('#img-upload').attr('src', e.target.result);
+                }
+                
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+
+        $("#imgInp").change(function(){
+            readURL(this);
+        });   
+      });
     </script>
 
     <!-- JavaScript files-->

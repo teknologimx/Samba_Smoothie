@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 02-08-2018 a las 17:58:33
+-- Tiempo de generación: 02-08-2018 a las 20:32:02
 -- Versión del servidor: 5.6.17
 -- Versión de PHP: 5.5.12
 
@@ -672,7 +672,7 @@ CREATE TABLE IF NOT EXISTS `promocion` (
   `sucursal` varchar(100) NOT NULL,
   `img_promo` varchar(100) NOT NULL,
   PRIMARY KEY (`id_promocion`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=9 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=11 ;
 
 --
 -- Volcado de datos para la tabla `promocion`
@@ -684,7 +684,60 @@ INSERT INTO `promocion` (`id_promocion`, `fecha_inicio`, `fecha_fin`, `sucursal`
 (5, '2018-08-03', '2018-08-21', 'Cocina Bambu', 'Juicy Fruity.png'),
 (6, '2018-08-09', '2018-08-31', 'todas', 'IMG_20150612_105305.jpg'),
 (7, '2018-08-14', '2018-08-30', 'Samba cuernavaca', '1616682_1043254449032172_1723558304_n.jpg'),
-(8, '2018-08-15', '2018-08-30', 'Flor de Canela', 'fondocupon.jpg');
+(8, '2018-08-15', '2018-08-30', 'Flor de Canela', 'fondocupon.jpg'),
+(9, '2018-08-09', '2018-08-30', 'Samba cuernavaca', 'fondocupon.jpg'),
+(10, '2018-08-08', '2018-08-20', 'Samba cuernavaca', 'fondocupon.jpg');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `promocion_especial`
+--
+
+CREATE TABLE IF NOT EXISTS `promocion_especial` (
+  `id_promo` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `id_promocion` int(10) unsigned NOT NULL,
+  `tematica` varchar(100) NOT NULL,
+  `categoria_p1` varchar(20) NOT NULL,
+  `tipo_p1` varchar(50) NOT NULL,
+  `producto_p1` varchar(100) NOT NULL,
+  `categoria_p2` varchar(20) NOT NULL,
+  `tipo_p2` varchar(50) NOT NULL,
+  `producto_p2` varchar(100) NOT NULL,
+  `descuento` int(11) NOT NULL,
+  PRIMARY KEY (`id_promo`),
+  KEY `id_promocion` (`id_promocion`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+
+--
+-- Volcado de datos para la tabla `promocion_especial`
+--
+
+INSERT INTO `promocion_especial` (`id_promo`, `id_promocion`, `tematica`, `categoria_p1`, `tipo_p1`, `producto_p1`, `categoria_p2`, `tipo_p2`, `producto_p2`, `descuento`) VALUES
+(1, 10, 'DÃ­a del niÃ±o', 'Comidas', 'Postres', 'Mousse de mango', '0', '0', '0', 0);
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `promocion_preferencias`
+--
+
+CREATE TABLE IF NOT EXISTS `promocion_preferencias` (
+  `id_promo` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `id_promocion` int(10) unsigned NOT NULL,
+  `grupo` varchar(50) NOT NULL,
+  `producto` varchar(100) NOT NULL,
+  `descuento` int(11) NOT NULL,
+  PRIMARY KEY (`id_promo`),
+  KEY `id_promocion` (`id_promocion`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+
+--
+-- Volcado de datos para la tabla `promocion_preferencias`
+--
+
+INSERT INTO `promocion_preferencias` (`id_promo`, `id_promocion`, `grupo`, `producto`, `descuento`) VALUES
+(1, 9, 'Diabetes', 'Ensalada Macavi', 0);
 
 -- --------------------------------------------------------
 
@@ -996,6 +1049,18 @@ INSERT INTO `userlg` (`id`, `account_expired`, `account_locked`, `acepta_termino
 --
 -- Restricciones para tablas volcadas
 --
+
+--
+-- Filtros para la tabla `promocion_especial`
+--
+ALTER TABLE `promocion_especial`
+  ADD CONSTRAINT `promocion_especial_ibfk_1` FOREIGN KEY (`id_promocion`) REFERENCES `promocion` (`id_promocion`);
+
+--
+-- Filtros para la tabla `promocion_preferencias`
+--
+ALTER TABLE `promocion_preferencias`
+  ADD CONSTRAINT `promocion_preferencias_ibfk_1` FOREIGN KEY (`id_promocion`) REFERENCES `promocion` (`id_promocion`);
 
 --
 -- Filtros para la tabla `promocion_ventas`

@@ -3,7 +3,6 @@
    $link=Conectarse(); 
    $sucursales = mysqli_query($link, "SELECT nombre FROM establecimientos");
 ?>
-
 <!DOCTYPE html>
 <html>
   <head>
@@ -29,7 +28,7 @@
     <link rel="stylesheet" href="css/style.default.css" id="theme-stylesheet">
     <!-- Custom stylesheet - for your changes-->
     <link rel="stylesheet" href="css/custom.css">
-        <!-- Custom stylesheet - for your changes-->
+    <!-- Custom stylesheet - for your changes-->
     <link rel="stylesheet" href="css/cupon.css">
     <!-- Favicon-->
     <link rel="shortcut icon" href="img/samba.ico">
@@ -113,30 +112,36 @@
         <div class="container-fluid">
           <ul class="breadcrumb">
             <li class="breadcrumb-item"><a href="index.html">Inicio</a></li>
-            <li class="breadcrumb-item active">Crear promoción basada en ventas       </li>
+            <li class="breadcrumb-item active">Crear promoción especial       </li>
           </ul>
         </div>
       </div>
-
-      <!--Contenido_____________________ -->
+      
+       <!--Contenido_____________________ -->
       <div class="container-fluid">
        <div class="row content">
         <div class="col-md-8"><br>
          <div class="card">
           <div class="card-body">
-          <center><h4>Nuestras Recomendaciones</h4></center>
-           <center><div class="col-md-12">
-             <img id="img-recomendadas" style="width:70px; heigth:70px;"src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQdxSY3swLDGNus2cyl2-AqbdI2Dac_Mn___5gI_n0k0zPsT3bV2w" class="round" alt="Producto 1">
-             <img id="img-recomendadas"style="width:70px; heigth:70px;"src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQdxSY3swLDGNus2cyl2-AqbdI2Dac_Mn___5gI_n0k0zPsT3bV2w" class="round" alt="Producto 2">
-             <img id="img-recomendadas" style="width:70px; heigth:70px;"src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQdxSY3swLDGNus2cyl2-AqbdI2Dac_Mn___5gI_n0k0zPsT3bV2w" class="round" alt="Producto 3">
-             <img id="img-recomendadas" style="width:70px; heigth:70px;"src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQdxSY3swLDGNus2cyl2-AqbdI2Dac_Mn___5gI_n0k0zPsT3bV2w" class="round" alt="Producto 4">
-             <img id="img-recomendadas" style="width:70px; heigth:70px;"src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQdxSY3swLDGNus2cyl2-AqbdI2Dac_Mn___5gI_n0k0zPsT3bV2w" class="round" alt="Producto 5"> <br><br>
-           </div></center>
+           <br>
           <center><h4>Detalles de la promoción</h4></center>
-          <form id="MiFormulario" enctype='multipart/form-data' action="validarPromoVentas.php" method="post">
+         <form id="MiFormulario" enctype='multipart/form-data' action="validarPromoEspecial.php" method="post">
            <div class="form group">
            <div class="form-group row">
-            <div class="col-sm-4">
+            <div class="col-sm-3">
+             <label>Temática:</label>
+             <select name="tematica" id="tematica" class="form-control" required>
+               <option value="14 de Febrero">14 de Febrero</option>
+               <option value="Día del niño">Día del niño</option>
+               <option value="Día de la madre">Día de la madre</option>
+               <option value="Día del padre">Día del padre</option>
+               <option value="Día del abuelo">Día del abuelo</option>
+               <option value="Fiestas Patrias">Fiestas Patrias</option>
+               <option value="Día de muertos">Día de muertos</option>
+               <option value="Navidad">Navidad</option>
+             </select>
+            </div>
+            <div class="col-sm-3">
              <label>Promoción:</label>
              <select id="tipo_promo" onchange="myFunction()" name="tipo_promo" class="form-control" required>
                <option value="">Selecciona una</option>
@@ -145,11 +150,11 @@
                <option value="Combo">Combo</option>
              </select>
             </div>
-           <div class="col-sm-4">
+           <div class="col-sm-3">
              <label>Inicio:</label>
              <input id="fecha_inicio" name="fecha_inicio" type="date" placeholder="Fecha Inicial" class="form-control" oninput="funcion_fechainicial()" required>
            </div>
-           <div class="col-sm-4">
+           <div class="col-sm-3">
              <label>Fin:</label>
              <input id="fecha_final" name="fecha_final" type="date" placeholder="Fecha Final" class="form-control" oninput="funcion_fechafinal()" required>
            </div>
@@ -281,9 +286,8 @@
                 </div>
         </div>
        </div>
-      </div> <!-- finaliza contenido -->  
+      </div> <!-- finaliza contenido --> 
 
-      <!-- footer inicia____________________________________________ -->
       <footer class="main-footer">
         <div class="container-fluid">
           <div class="row">
@@ -291,14 +295,13 @@
               <p>Teknologi &copy; 2018</p>
             </div>
             <div class="col-sm-6 text-right">
-              <p>Design by <a href="#" class="external">Teknologi</a></p>
+              <p>Design by <a href="https://bootstrapious.com" class="external">Teknologi</a></p>
 
             </div>
           </div>
         </div>
       </footer>
     </div>
-
 
     <!-- Script para creación del cupón de forma dinamica -->
     <script type="text/javascript">
@@ -502,7 +505,6 @@
 
 
     <!-- JavaScript files-->
-
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/popper.js/umd/popper.min.js"> </script>
     <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
@@ -515,7 +517,3 @@
     <script src="js/front.js"></script>
   </body>
 </html>
-
-<?php
-   mysqli_close($link);
-?>
