@@ -1,0 +1,81 @@
+
+.alizarin{
+    background:#33b35a;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+.dl{
+    background:#f0f0f0;
+    padding:0px 0;
+    border-radius:20px;
+    position:relative;
+}
+
+.dl .foto{
+    width: 100%; 
+    height:auto;
+}
+
+.dl .logo{
+    width: 25%; 
+    height:auto;
+    float:right;
+    position: absolute;
+    top: 0;
+    margin-top: 6px;
+    right: 0;
+    margin-right: 6px;
+    z-index: 99;
+}
+
+.dl .discount{
+    min-height:50px;
+    position:relative;
+    font-size:50px;
+    line-height:50px;
+    text-align:center;
+    font-weight:700;
+    padding:20px 15px 0;
+    color:#f1c40f;
+}
+
+.dl .discount:after{/*???????????*/
+    content:" ";
+    border-right:20px solid transparent;
+    border-left:20px solid transparent;
+    position:absolute;
+    bottom:-20px;
+    left:20%
+}
+
+.dl .discount.alizarin:after{
+    border-top:20px solid #33b35a;
+}
+
+.dl .descr{
+    color:#000;
+    margin-top:1px;
+    padding:20px 15px;
+    text-align:center;
+}
+
+.dl .ends{
+    padding:0 15px;
+    color:#DC6711;
+    margin-bottom:7px;
+    text-align:justify;
+    line-height:16px;
+}
+
+.dl .getcode{
+    min-height:30px;
+    text-align:center;
+    text-transform:uppercase;
+    font-weight:700;
+    font-size:18px;
+    padding:5px 5px;
+    background: #DBDBDB;
+    
+}
+
+.dl .coupon a.open-code{color:#FFF;}

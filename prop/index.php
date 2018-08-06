@@ -23,11 +23,13 @@
     <link rel="stylesheet" href="css/style.default.css" id="theme-stylesheet">
     <!-- Custom stylesheet - for your changes-->
     <link rel="stylesheet" href="css/custom.css">
+          <!-- Custom stylesheet - for your changes-->
+    <link rel="stylesheet" href="css/mystyles.css">
     <!-- Favicon-->
     <link rel="shortcut icon" href="img/samba.ico">
     <!-- Tweaks for older IEs--><!--[if lt IE 9]>
-    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
+        <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
   </head>
   <body>
     <!-- Side Navbar -->
@@ -37,7 +39,7 @@
         <div class="sidenav-header d-flex align-items-center justify-content-center">
           <!-- Info usuario-->
           <div class="sidenav-header-inner text-center"><img src="img/user.png" alt="person" class="img-fluid rounded-circle">
-            <h2 class="h5">Administrador</h2><span>Bienvenido</span>
+            <h2 class="h5">Propietario</h2><span>Bienvenido</span>
           </div>
           <!-- Small Brand ,cuando minimizas el menu-->
           <div class="sidenav-header-logo"><a href="#" class="brand-small text-center"><img src="img/SAMBA%20FREH.png"></a></div>
@@ -46,7 +48,7 @@
         <div class="main-menu">
           <h5 class="sidenav-heading">Menú</h5>
           <ul id="side-main-menu" class="side-menu list-unstyled">                  
-            <li><a href="index.html"> <i class="fa fa-home"></i>Inicio                             </a></li>
+            <li><a href="index.php"> <i class="fa fa-home"></i>Inicio                             </a></li>
             <li><a href="#"> <i class="fa fa-truck"></i>Embarques                             </a></li>
             <li><a href="#"> <i class="fa fa-users"></i>Empleados                             </a></li>
             <li><a href="#exampledropdownDropdown" aria-expanded="false" data-toggle="collapse"> <i class="fa fa-cubes"></i>Catálogos </a>
@@ -63,16 +65,13 @@
               <ul id="submenuBI" class="collapse list-unstyled ">
                 <li><a href="#tercermenu1" aria-expanded="false" data-toggle="collapse"> <i class="fa fa-certificate"></i>Promociones</a>
                       <ul id="tercermenu1" class="collapse list-unstyled ">
-                        <li><a href="promoventas.html"> <i class="fa fa-shopping-cart"></i>Crear promoción basado en ventas</a></li>
-                        <li><a href="promopreferencias.html"> <i class="fa fa-shopping-basket"></i>Crear promoción basada en preferencias</a></li>
-                        <li><a href="promoespecial.html"> <i class="fa fa-star"></i>Crear promoción especial</a></li>
-                        <li><a href="gestionpromo.html"> <i class="fa fa-list-ol"></i>Gestionar promociones</a></li>
+                        <li><a href="gestionpromo.php"> <i class="fa fa-shopping-cart"></i>Ver promociones</a></li>
                       </ul>
                 </li>
                 <li><a href="#tercermenu2" aria-expanded="false" data-toggle="collapse"> <i class="fa fa-briefcase"></i>Inteligencia de negocios</a>
                       <ul id="tercermenu2" class="collapse list-unstyled ">
                         <li><a href="dashboard.php"> <i class="fa fa-tachometer"></i>Reporte general</a></li>
-                        <li><a href="reporteespecifico.html"> <i class="fa fa-shopping-cart"></i>Reportes específicos</a></li>
+                        <li><a href="reporteespecifico.php"> <i class="fa fa-shopping-cart"></i>Reportes específicos</a></li>
                       </ul>
                 </li>
               </ul>
@@ -146,106 +145,79 @@
           </div>
         </nav>
       </header>
-      <!-- Breadcrumb-->
-      <div class="breadcrumb-holder">
+      <!-- seccion indicadores -->
+      <section class="dashboard-counts section-padding">
         <div class="container-fluid">
-          <ul class="breadcrumb">
-            <li class="breadcrumb-item"><a href="index.html">Inicio</a></li>
-            <li class="breadcrumb-item active">Reportes específicos       </li>
-          </ul>
-        </div>
-      </div>
-      <section class="forms">
-        <div class="container-fluid">
-          <!-- Page Header-->
-          <header> 
-          </header>
           <div class="row">
-            <div class="col-lg-12">
+            <!-- Count item widget-->
+          </div>
+        </div>
+      </section>
+      <!-- Header Section-->
+      <section class="dashboard-header section-padding">
+        <div class="container-fluid">
+          <div class="row d-flex align-items-md-stretch">
+            <!-- To Do List-->
+
+          </div>
+        </div>
+      </section>
+      <!-- Statistics Section-->
+      <section class="statistics">
+        <div class="container-fluid">
+          <div class="row d-flex">
+                
+            <div class="col-lg-6">
               <div class="card">
-                <div class="card-header d-flex align-items-center">
-                  <h4>Ventas totales</h4>
+                <div class="card-header">
+                  <h4>Basic Table</h4>
                 </div>
                 <div class="card-body">
-                        <div class="row">
-                            <div class="col-lg-12">
- 
-                                  <canvas id="barChartExample"></canvas>
-
-                            </div>
-                        </div>
+                  <div class="table-responsive">
+                    <table class="table">
+                      <thead>
+                        <tr>
+                          <th>#</th>
+                          <th>First Name</th>
+                          <th>Last Name</th>
+                          <th>Username</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <th scope="row">1</th>
+                          <td>Mark</td>
+                          <td>Otto</td>
+                          <td>@mdo</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">2</th>
+                          <td>Jacob</td>
+                          <td>Thornton</td>
+                          <td>@fat</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">3</th>
+                          <td>Larry</td>
+                          <td>the Bird</td>
+                          <td>@twitter</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
                 </div>
               </div>
             </div>
-            <div class="col-lg-12">
-              <div class="card">
-                <div class="card-body">
-                        <div class="row">
-                          <div class="col-md-12 form-inline">
-                              <div class="col-md-6">
-                                &nbsp;
-                              </div>
-                              <div class="col-md-6">
-                                  <form action="php/reportes/creapdf.php" method="post" target="ventana">
-                                    <button type="submit" value="imprime" name="imprimepdf" class="btn btn-primary"><i class="fa fa-print"></i> Imprimir </button>&nbsp;&nbsp;
-                                    <button type="submit" value="imprime2" name="imprimepdf2" class="btn btn-primary"><i class="fa fa-download"></i> Guardar como .xml </button>&nbsp;&nbsp;
-                                    <button type="submit" value="imprime3" name="imprimepdf3" class="btn btn-primary"><i class="fa fa-clone"></i> Imprimir </button>
-                                  </form>
-                                  <div src="php/reportes/creapdf.php" name="ventana"></div>
-                              </div>
+              
+          </div>
+        </div>
+      </section>
+      <!-- Updates Section -->
+      <section class="mt-30px mb-30px">
+        <div class="container-fluid">
+          <div class="row">
 
-                          <div class="col-md-3">
-                            <h6>Rango de fechas</h6>
-                            <select name="account" class="form-control">
-                              <option >option 1</option>
-                              <option>option 2</option>
-                              <option>option 3</option>
-                              <option>option 4</option>
-                            </select>
-                          </div>
-                          <div class="col-md-12">
-                                &nbsp;
-                          </div>
-                          <div class="col-md-12">
-                              <div class="table-responsive">
-                                <table class="table table-striped table-hover">
-                                  <thead>
-                                    <tr>
-                                      <th>#</th>
-                                      <th>First Name</th>
-                                      <th>Last Name</th>
-                                      <th>Username</th>
-                                    </tr>
-                                  </thead>
-                                  <tbody>
-                                    <tr>
-                                      <th scope="row">1</th>
-                                      <td>Mark</td>
-                                      <td>Otto</td>
-                                      <td>@mdo</td>
-                                    </tr>
-                                    <tr>
-                                      <th scope="row">2</th>
-                                      <td>Jacob</td>
-                                      <td>Thornton</td>
-                                      <td>@fat</td>
-                                    </tr>
-                                    <tr>
-                                      <th scope="row">3</th>
-                                      <td>Larry</td>
-                                      <td>the Bird</td>
-                                      <td>@twitter</td>
-                                    </tr>
-                                  </tbody>
-                                </table>
-                              </div>
-                          </div>
-                        </div>
-                    </div>
-                </div>
-              </div>
-              </div>
-            </div>
+          </div>
         </div>
       </section>
       <footer class="main-footer">
@@ -255,14 +227,13 @@
               <p>Teknologi &copy; 2018</p>
             </div>
             <div class="col-sm-6 text-right">
-              <p>Design by <a href="https://bootstrapious.com" class="external">Teknologi</a></p>
+              <p>Design by <a href="#" class="external">Teknologi</a></p>
 
             </div>
           </div>
         </div>
       </footer>
     </div>
-      
     <!-- JavaScript files-->
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/popper.js/umd/popper.min.js"> </script>
@@ -270,9 +241,9 @@
     <script src="js/grasp_mobile_progress_circle-1.0.0.min.js"></script>
     <script src="vendor/jquery.cookie/jquery.cookie.js"> </script>
     <script src="vendor/chart.js/Chart.min.js"></script>
-    <script src="js/charts-custom.js"></script>
     <script src="vendor/jquery-validation/jquery.validate.min.js"></script>
     <script src="vendor/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js"></script>
+    <script src="js/charts-home.js"></script>
     <!-- Main File-->
     <script src="js/front.js"></script>
   </body>
