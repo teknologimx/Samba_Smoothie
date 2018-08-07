@@ -154,69 +154,10 @@
       <section class="dashboard-counts section-padding">
         <div class="container-fluid">
           <div class="row">
-            <!-- Count item widget-->
-            <div class="col-xl-2 col-md-4 col-  6">
-              <div class="wrapper count-title d-flex">
-                <div class="icon"><i class="fa fa-users"></i></div>
-                <div class="name"><strong class="text-uppercase">Clientes Totales</strong>
-                  <div class="count-number">25</div>
-                </div>
-              </div>
-            </div>
-            <!-- Count item widget-->
-            <div class="col-xl-2 col-md-8 col-6">
-              <div class="wrapper count-title d-flex">
-                <div class="icon"><i class="icon-padnote"></i></div>
-                <div class="name"><strong class="text-uppercase">Ordenes Realizadas</strong>
-                  <div class="count-number">400</div>
-                </div>
-              </div>
-            </div>
-            <!-- Count item widget-->
-            <div class="col-xl-2 col-md-4 col-6">
-              <div class="wrapper count-title d-flex">
-                <div class="icon"><i class="icon-check"></i></div>
-                <div class="name"><strong class="text-uppercase">Calificación Producto</strong>
-                  <div class="count-number">342</div>
-                </div>
-              </div>
-            </div>
-            <!-- Count item widget-->
-            <div class="col-xl-2 col-md-4 col-6">
-              <div class="wrapper count-title d-flex">
-                <div class="icon"><i class="icon-check"></i></div>
-                <div class="name"><strong class="text-uppercase">Calificación Servicio</strong>
-                  <div class="count-number">342</div>
-                </div>
-              </div>
-            </div>
-            <!-- Count item widget-->
-            <div class="col-xl-2 col-md-4 col-6">
-              <div class="wrapper count-title d-flex">
-                <div class="icon"><i class="icon-list-1"></i></div>
-                <div class="name"><strong class="text-uppercase">Ordenes Entregadas</strong>
-                  <div class="count-number">123</div>
-                </div>
-              </div>
-            </div>
-            <!-- Count item widget-->
-            <div class="col-xl-2 col-md-4 col-6">
-              <div class="wrapper count-title d-flex">
-                <div class="icon"><i class="icon-list"></i></div>
-                <div class="name"><strong class="text-uppercase">Ordenes Canceladas</strong>
-                  <div class="count-number">92</div>
-                </div>
-              </div>
-            </div>
-            <!-- Count item widget-->
-            <!--<div class="col-xl-2 col-md-4 col-6">
-              <div class="wrapper count-title d-flex">
-                <div class="icon"><i class="icon-list-1"></i></div>
-                <div class="name"><strong class="text-uppercase">New Cases</strong><span>Last 7 days</span>
-                  <div class="count-number">70</div>
-                </div>
-              </div>
-            </div>-->
+            <?php
+              include("php/dashboard/countsSection.php");
+              include("php/dashboard/ordenesCanceladas.php");
+            ?>
           </div>
         </div>
       </section>
@@ -253,32 +194,52 @@
                                 <tr>
                                   <th scope="row">1</th>
                                   <td class="display h4">Hoy</td>
-                                  <td class="display h4">65</td>
-                                  <td class="display h4">35</td>
+                                  <!--<td class="display h4">65</td>
+                                  <td class="display h4">35</td>-->
+                                  <?php
+                                    //include("php/dashboard/gananciaHoy.php");
+                                    include("php/dashboard/Hoy.php");
+                                  ?>
                                 </tr>
                                 <tr>
                                   <th scope="row">2</th>
                                   <td>Ayer</td>
-                                  <td>50</td>
-                                  <td>15</td>
+                                  <?php
+                                    include("php/dashboard/Ayer.php");
+                                    //include("php/dashboard/ordenesAyer.php");
+                                  ?>
+                                  <!--<td>50</td>
+                                  <td>15</td>-->
                                 </tr>
                                 <tr>
                                   <th scope="row">3</th>
                                   <td>Hace 7 días</td>
-                                  <td>80</td>
-                                  <td>30</td>
+                                  <!--<td>80</td>
+                                  <td>30</td>-->
+                                  <?php
+                                    include("php/dashboard/Hace7Dias.php");
+                                    //include("php/dashboard/ordenes7Dias.php");
+                                  ?>
                                 </tr>
                                 <tr>
                                   <th scope="row">4</th>
                                   <td>Hace 30 días</td>
-                                  <td>120</td>
-                                  <td>50</td>
+                                  <!--<td>120</td>
+                                  <td>50</td>-->
+                                  <?php
+                                    include("php/dashboard/Hace30Dias.php");
+                                    //include("php/dashboard/ordenes30Dias.php");
+                                  ?>
                                 </tr>
                                 <tr>
                                   <th scope="row">5</th>
                                   <td>Hace 90 días</td>
-                                  <td>81</td>
-                                  <td>40</td>
+                                  <!--<td>81</td>
+                                  <td>40</td>-->
+                                  <?php
+                                    include("php/dashboard/Hace90Dias.php");
+                                    //include("php/dashboard/ordenes90Dias.php");
+                                  ?>
                                 </tr>
                               </tbody>
                             </table>
@@ -289,7 +250,7 @@
         </div>
       </section>
       <!--seccion gastos ganancias-->
-      <section class="statics">
+      <!--<section class="statics">
         <div class="container-fluid">
               <div class="row d-flex">
                 <div class="col-lg-12">
@@ -299,13 +260,13 @@
                         </div>
                         <div class="card-body form-inline align-items-center">
                             
-                            <!-- Pie Chart-->
+                            Pie Chart
                               <div class=" col-lg-4 ">
                                 <div>
                                   <canvas id="pieChart" width="300" height="200"> </canvas>
                                 </div>
                               </div>
-                            <!--datos gastos ventas-->
+                            datos gastos ventas
                                <div class="col-lg-3">
                                   <div class=" user-activity ">
                                       <div class="strong">VS</div>
@@ -316,10 +277,10 @@
                                     </div>
                                   </div>
                                 </div> 
-                            <!--espacio-->
+                            espacio
                             <div class="col-lg-1">
                             </div>
-                            <!--recomendaciones-->
+                            recomendaciones
                                <div class="col-lg-4">
                                   <div class="to-do">
                                     <h2 class="display h4 strongh2Text">Recomendaciones</h2>
@@ -349,13 +310,13 @@
                                    </div>
                                 </div>      
                                 
-                            <!--fin de gastos vs ganancias-->
+                            fin de gastos vs ganancias
                         </div>
                     </div>
                 </div>
               </div>
             </div>
-        </section>
+        </section>-->
       <!-- Statistics Section-->
       <section class="statistics">
         <div class="container-fluid">
