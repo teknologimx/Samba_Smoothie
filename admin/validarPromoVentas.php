@@ -52,8 +52,8 @@
 	{
 
     //guardar a base de datos
-    $query = "INSERT INTO promocion (id_promocion, fecha_inicio, fecha_fin, sucursal, img_promo)
-                  VALUES ('', '$fecha_inicio', '$fecha_final', '$sucursales', '$img_promo')";
+    $query = "INSERT INTO promocion (id_promocion, fecha_inicio, fecha_fin, sucursal, tipo_promo, img_promo)
+                  VALUES ('', '$fecha_inicio', '$fecha_final', '$sucursales', '$oferta', '$img_promo')";
                   
     mysqli_query($link, $query);
     $id_p = mysqli_insert_id($link);
