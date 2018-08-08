@@ -388,58 +388,10 @@
                         </div>
 
                         <div id="Productos" class="tabcontent">
-                            <div class="card-body">
-                              <div class="table-responsive">
-                                <table class="table table-striped table-sm">
-                                  <thead>
-                                    <tr>
-                                      <th>#</th>
-                                      <th>Producto</th>
-                                      <th>Unidades vendidas</th>
-                                      <th>Ventas generadas</th>
-                                    </tr>
-                                  </thead>
-                                  <tbody>
-                                    <tr>
-                                      <th scope="row">1</th>
-                                      <td>Mark</td>
-                                      <td>Otto</td>
-                                      <td>@mdo</td>
-                                    </tr>
-                                    <tr>
-                                      <th scope="row">2</th>
-                                      <td>Jacob</td>
-                                      <td>Thornton</td>
-                                      <td>@fat</td>
-                                    </tr>
-                                    <tr>
-                                      <th scope="row">3</th>
-                                      <td>Larry</td>
-                                      <td>the Bird</td>
-                                      <td>@twitter      </td>
-                                    </tr>
-                                    <tr>
-                                      <th scope="row">4</th>
-                                      <td>Mark</td>
-                                      <td>Otto</td>
-                                      <td>@mdo</td>
-                                    </tr>
-                                    <tr>
-                                      <th scope="row">5</th>
-                                      <td>Jacob</td>
-                                      <td>Thornton</td>
-                                      <td>@fat</td>
-                                    </tr>
-                                    <tr>
-                                      <th scope="row">6</th>
-                                      <td>Larry</td>
-                                      <td>the Bird</td>
-                                      <td>@twitter       </td>
-                                    </tr>
-                                  </tbody>
-                                </table>
-                              </div>
-                            </div>
+                          <!--Script que muestra la tabla de Top Productos-->
+                          <?php
+                            include("php/dashboard/TopProductos.php");
+                          ?>
                         </div>
 
                       <!--item-->

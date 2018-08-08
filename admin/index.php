@@ -165,6 +165,11 @@
           </div>
         </div>
       </section>
+      <div>
+        <?php
+          include("php/dashboard/TopProductos.php");
+        ?>
+      </div>
       
       <!-- Statistics Section-->
       <section class="statistics">

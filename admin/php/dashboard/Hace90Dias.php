@@ -12,26 +12,27 @@
     $hoy= getdate();
     $fInicio= new DateTime($hoy[year]."-".$hoy[mon]."-".$hoy[mday]." 00:00:00");
     //echo "<br>Fecha Hoy: ", $fInicio->format("Y-m-d H:i"), PHP_EOL;
-    $fInicio->modify("-91 day");
+    $fInicio->modify("-101 day");
     $fFin= new DateTime($hoy[year]."-".$hoy[mon]."-".$hoy[mday]." 00:00:00");
     $fFin->modify("-90 day");
     /*echo "<br>Fecha inicio: ", $fInicio->format("Y-m-d H:i"), PHP_EOL;
     echo "<br>Fecha fin: ", $fFin->format("Y-m-d H:i"), PHP_EOL;*/
-    
 
     //Realizar la consulta
-    $query= 'SELECT * FROM transacciones WHERE monto!=0';
-    //$query= 'SELECT * FROM transacciones WHERE fecha_operacion>=$fInicio OR fecha_operacion<=$fFin';
-    $query= 'SELECT transacciones.monto, ordenesdetalles.cantidad FROM transacciones INNER JOIN ordenesdetalles ON transacciones.id=ordenesdetalles.id';
+    //$query= "SELECT * FROM ordenesdetalles WHERE cantidad!=0 AND monto_pagado!=0";
+    $query= "SELECT * FROM ordenesdetalles WHERE fecha_pago BETWEEN '2018-04-30 00:00' AND '2018-04-31 00:00'";
     $result= mysql_query($query) or die('Consulta fallida ' . mysql_error());
     $ganancias= 0;
     $ordenes= 0;
+    
     while($row=mysql_fetch_array($result)){
-        $fechaBD= new DateTime($row[fecha_operacion]);
-        if($fechaBD>=$fInicio && $fechaBD>=$fFin){
-            $ganancias+= $row[monto];
+        $fechaBD= new DateTime($row[fecha_pago]);
+        //if($fechaBD>=$fInicio && $fechaBD<=$fFin){
+            $ganancias+= $row[monto_pago];
             $ordenes+= $row[cantidad];
-        }
+            echo "<br>Fecha BD: ", $fInicio->format("Y-m-d H:i"), PHP_EOL;
+            echo "<br>Ganancia: $ganancias<br>Ordenes: $ordenes";
+        //}
     }
     echo "<td class='display h4'>$ganancias</td>";
     echo "<td class='display h4'>$ordenes</td>";
