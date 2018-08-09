@@ -8,17 +8,17 @@
     
     // Realizar consulta MySQL
     $query= "SELECT
-                platillos.nombre,
-                platillosestablecimientos.precio,
-                ordenesdetalles.cantidad,
-                SUM(platillosestablecimientos.precio) as precTotal,
-                SUM(ordenesdetalles.cantidad) as cantTotal
+                platillos.nombre as nombre,
+                ordenesdetalles.cantidad as cantidad,
+                platillosestablecimientos.precio as precio,
+                SUM(cantidad) as cantTotal,
+                SUM(precio) as precTotal
             FROM
                 platillos INNER JOIN platillosestablecimientos ON
                 platillos.id=platillosestablecimientos.platillo_id INNER JOIN ordenesdetalles ON
                 platillosestablecimientos.id=ordenesdetalles.platillo_id
-            GROUP BY (platillos.nombre), (platillosestablecimientos.precio), (ordenesdetalles.cantidad)
-            ORDER BY ordenesdetalles.cantidad DESC";
+            GROUP BY (nombre), (cantidad), (precio)
+            ORDER BY precTotal DESC";
 
 
     $result= mysql_query($query) or die('Consulta fallida' . mysql_error());
@@ -32,7 +32,7 @@
                 <th>N°</th>
                 <th>Nombre</th>
                 <th>Cantidad</th>
-                <th>Precio Total</th>
+                <th>Precio</th>
             </tr>
           </thead>
         <tbody>";
@@ -41,7 +41,7 @@
                 <th scope='row'>$i</th>
                 <td>$row[nombre]</td>
                 <td>$row[cantTotal]</td>
-                <td>$row[precTotal]</td>
+                <td>$ $row[precTotal]</td>
               </tr>";
         $i++;
     }
