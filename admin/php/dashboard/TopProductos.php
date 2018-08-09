@@ -7,7 +7,6 @@
     mysql_select_db('samba') or die('No se pudo seleccionar la base de datos');
     
     // Realizar consulta MySQL
-    //$query= "SELECT SUM(cantidad) as cantTotal, platillo_id FROM ordenesdetalles WHERE platillo_id!='' GROUP BY(platillo_id)";
     $query= "SELECT
                 platillos.nombre,
                 platillosestablecimientos.precio,
