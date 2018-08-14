@@ -213,18 +213,27 @@
             </div>
            </div> <!-- form-group-row -->
            <div class="form-group row">
-            <label class="col-sm-2 form-control-label">Sucursal:</label>
-             <div class="col-sm-4">
-              <select onchange="funcion_sucursal()" name="sucursales" id="sucursales" class="form-control" required>
+             <div class="col-sm-12">
+              <!-- <select onchange="funcion_sucursal()" name="sucursales" id="sucursales" class="form-control" required>
                <option value="">Selecciona una</option>
                <option value="todas">Todas</option>
                <?php
-                while($row_suc = mysqli_fetch_row($sucursales))
-                {
-                  echo "<option value='$row_suc[0]'>$row_suc[0]</option> ";
-                }
+                // while($row_suc = mysqli_fetch_row($sucursales))
+                // {
+                //   echo "<option value='$row_suc[0]'>$row_suc[0]</option> ";
+                // }
                ?>
-              </select>
+              </select> -->
+              <label class="form-control-label">Sucursal:</label>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+              <label class="checkbox-inline">
+                <input type="checkbox" value="Samba Cuernavaca" onclick="funcion_sucursal()" name="sucursales" id="sucursales">Samba Cuernavaca
+              </label>&nbsp&nbsp&nbsp
+              <label class="checkbox-inline">
+                <input type="checkbox" value="Flor de Canela" onclick="funcion_sucursal2()" name="sucursales2" id="sucursales2">Flor de Canela
+              </label>&nbsp&nbsp&nbsp
+              <label class="checkbox-inline">
+                <input type="checkbox" value="Cocina Bambu" onclick="funcion_sucursal3()" name="sucursales3" id="sucursales3">Cocina Bambu
+              </label>
              </div>
              <label id="label_desc" class="col-sm-2" style="display:none;">Descuento:</label>
              <div class="col-sm-4">
@@ -273,7 +282,7 @@
                         <span id="preview_productos2"><strong></strong></span>
                     </div>
                     <div class="ends">
-                        <center><p id="preview_sucursal"></p></center>
+                        <center><span id="preview_suc"> </span><span id="preview_suc1"> </span><span id="preview_suc2"> </span><span id="preview_suc3"> </span></center>
                         <center><p id="preview_fechainicio"></p></center>
                         <center><p id="preview_fechafin"></p></center>
                     </div>
@@ -314,11 +323,39 @@
       }
       function funcion_sucursal()
       {
-        var x = document.getElementById("sucursales").value;
-        if(x == "todas"){ 
-          x= "todas las sucursales (Samba cuernavaca, Flor de canela, Cocina Bambu)";
-        };
-        document.getElementById('preview_sucursal').innerHTML = "Disponible en "+x;
+          var checkBox1 = document.getElementById("sucursales");
+          if (checkBox1.checked == true){
+            var x = document.getElementById("sucursales").value;
+            document.getElementById('preview_suc').innerHTML = "Disponible en:&nbsp";
+            document.getElementById('preview_suc1').innerHTML = x+"&nbsp";
+          } else {
+            document.getElementById('preview_suc1').innerHTML = "";
+          }
+      }
+      function funcion_sucursal2()
+      {
+   
+        var checkBox2 = document.getElementById("sucursales2");
+
+        if (checkBox2.checked == true){
+            var y = document.getElementById("sucursales2").value;
+            document.getElementById('preview_suc').innerHTML = "Disponible en:&nbsp";
+            document.getElementById('preview_suc2').innerHTML = y+"&nbsp";
+          } else {
+            document.getElementById('preview_suc2').innerHTML = "";
+          }
+      }
+      function funcion_sucursal3()
+      {
+        var checkBox3 = document.getElementById("sucursales3");
+
+        if (checkBox3.checked == true){
+            var y = document.getElementById("sucursales3").value;
+            document.getElementById('preview_suc').innerHTML = "Disponible en:&nbsp ";
+            document.getElementById('preview_suc3').innerHTML = y;
+          } else {
+            document.getElementById('preview_suc3').innerHTML = "";
+          }
       }
       function funcion_fechainicial()
       {

@@ -42,7 +42,19 @@
         $descuento = $_POST["descuento"];
     }
 
-    $sucursales = $_POST["sucursales"];
+     $sucursales = "";
+    if (isset($_POST['sucursales'])){
+       $sucursales1 = $_POST['sucursales'];
+       $sucursales = $sucursales."-".$sucursales1; 
+    }
+    if (isset($_POST['sucursales2'])) {
+      $sucursales2 = $_POST['sucursales2'];
+       $sucursales = $sucursales."-".$sucursales2; 
+    }
+    if(isset($_POST['sucursales3'])){
+        $sucursales3 = $_POST['sucursales3'];
+        $sucursales = $sucursales."-".$sucursales3; 
+    }
     $img_promo = $_POST["img_promo"];
 
 	if ($oferta == "" || $fecha_inicio == "" ||  $fecha_final =="" || $cat =="" || $tipo =="" || $producto =="")

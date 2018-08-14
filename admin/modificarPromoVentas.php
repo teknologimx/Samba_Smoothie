@@ -1,7 +1,24 @@
 <?php session_start();
    include("conexion.php"); 
    $link=Conectarse(); 
-   $sucursales = mysqli_query($link, "SELECT nombre FROM establecimientos");
+   $id_promocion=$_GET['id_promocion'];
+   $promocion = mysqli_query($link, "SELECT * FROM promocion WHERE id_promocion = $id_promocion");
+   $promoventas = mysqli_query($link, "SELECT * FROM promocion_ventas WHERE id_promocion = $id_promocion");
+   $row_promo = mysqli_fetch_array($promocion);
+   $row_promoventas = mysqli_fetch_array($promoventas);
+   $fecha_inicio=$row_promo["fecha_inicio"];
+   $fecha_fin=$row_promo["fecha_fin"];
+   $sucursal=$row_promo["sucursal"];
+   $tipo_promo=$row_promo["tipo_promo"];
+   $img_promo=$row_promo["img_promo"];
+   //datos de la tabla promo ventas
+   $categoria_p1=$row_promoventas["categoria_p1"];
+   $tipo_p1=$row_promoventas["tipo_p1"];
+   $producto_p1=$row_promoventas["producto_p1"];
+   $categoria_p2=$row_promoventas["categoria_p2"];
+   $tipo_p2=$row_promoventas["tipo_p2"];
+   $producto_p2=$row_promoventas["producto_p2"];
+   $descuento=$row_promoventas["descuento"];
 ?>
 
 <!DOCTYPE html>
@@ -75,7 +92,7 @@
                         <li><a href="promoventas.php"> <i class="fa fa-shopping-cart"></i>Crear promoción basado en ventas</a></li>
                         <li><a href="promopreferencias.php"> <i class="fa fa-shopping-basket"></i>Crear promoción basada en preferencias</a></li>
                         <li><a href="promoespecial.php"> <i class="fa fa-star"></i>Crear promoción especial</a></li>
-                        <li><a href="gestionpromo.html"> <i class="fa fa-list-ol"></i>Gestionar promociones</a></li>
+                        <li><a href="gestionpromo.php"> <i class="fa fa-list-ol"></i>Gestionar promociones</a></li>
                       </ul>
                 </li>
                 <li><a href="#tercermenu2" aria-expanded="false" data-toggle="collapse"> <i class="fa fa-briefcase"></i>Inteligencia de negocios</a>
@@ -131,25 +148,40 @@
              <img id="img-recomendadas" style="width:70px; heigth:70px;"src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQdxSY3swLDGNus2cyl2-AqbdI2Dac_Mn___5gI_n0k0zPsT3bV2w" class="round" alt="Producto 5"> <br><br>
            </div></center>
           <center><h4>Detalles de la promoción</h4></center>
-          <form id="MiFormulario" enctype='multipart/form-data' action="validarPromoVentas.php" method="post">
+          <form id="MiFormulario" enctype='multipart/form-data' action="validarModificarPromoVentas.php" method="post">
            <div class="form group">
-           <div class="form-group row">
+           <div class="form-group row"> 
             <div class="col-sm-4">
              <label>Promoción:</label>
              <select id="tipo_promo" onchange="myFunction()" name="tipo_promo" class="form-control" required>
                <option value="">Selecciona una</option>
-               <option value="2x1">2x1</option>
-               <option value="Descuento">Descuento</option>
-               <option value="Combo">Combo</option>
+               <?php 
+                  if($tipo_promo == "2x1"){
+                    echo ' <option selected value="2x1">2x1</option>';
+                  }else{
+                    echo '<option value="2x1">2x1</option>';
+                  }
+                  if($tipo_promo == "Descuento"){
+                    echo '<option selected value="Descuento">Descuento</option>';
+                  }else{
+                    echo '<option value="Descuento">Descuento</option>';
+                  }
+                  if($tipo_promo == "Combo"){
+                    echo ' <option selected value="Combo">Combo</option>';
+                  }else{
+                    echo ' <option value="Combo">Combo</option>';
+                  }
+
+               ?>
              </select>
             </div>
            <div class="col-sm-4">
              <label>Inicio:</label>
-             <input id="fecha_inicio" name="fecha_inicio" type="date" placeholder="Fecha Inicial" class="form-control" oninput="funcion_fechainicial()" required>
+             <input id="fecha_inicio" name="fecha_inicio" type="date" placeholder="Fecha Inicial" class="form-control" oninput="funcion_fechainicial()" value="<?php echo date('Y-m-d', strtotime($fecha_inicio)) ?>" required>
            </div>
            <div class="col-sm-4">
              <label>Fin:</label>
-             <input id="fecha_final" name="fecha_final" type="date" placeholder="Fecha Final" class="form-control" oninput="funcion_fechafinal()" required>
+             <input id="fecha_final" name="fecha_final" type="date" placeholder="Fecha Final" class="form-control" oninput="funcion_fechafinal()" value="<?php echo date('Y-m-d', strtotime($fecha_fin)) ?>" required>
            </div>
            </div><!--form group row-->
            <div class="form-group row">
@@ -157,29 +189,62 @@
                 <center><label><b>Producto 1</b></label></center>
               </div>
            </div> 
-           <div class="form-group row">
+           <div class="form-group row"> 
             <div class="col-sm-4">
              <label>Categoría:</label>
              <select name="categoria" class="form-control" id="cat" required>
                <option value="">Selecciona una</option>
-               <option value="Comidas">Comidas</option>
-               <option value="Bebidas">Bebidas</option>
+               <?php 
+                 if ($categoria_p1 == "Comidas") {
+                   echo '<option selected value="Comidas">Comidas</option>';
+                 }else{
+                   echo ' <option value="Comidas">Comidas</option>';
+                 }
+                 if ($categoria_p1 == "Bebidas") {
+                   echo '<option selected value="Bebidas">Bebidas</option>';
+                 }else{
+                   echo '<option value="Bebidas">Bebidas</option>';
+                 }
+               ?>
              </select>
             </div>
             <div class="col-sm-4">
              <label>Tipo:</label>
-             <select name="tipo" id="tipo" class="form-control" required>
-               <option value="">Selecciona una</option>
-             </select>
+             <?php
+                $tipos = mysqli_query($link, "SELECT id, nombre from tipos WHERE super_tipo = '$categoria_p1'");
+                echo '<select name="tipo" id="tipo" class="form-control" required>';
+                echo '<option value="">Selecciona una</option>';
+                while($row = mysqli_fetch_row($tipos)){
+                  if($tipo_p1==$row[1]) 
+                    echo '<option selected value="'.$row[0].'">'.$row[1].'</option>';
+                  else
+                    echo '<option value="'.$row[0].'">'.$row[1].'</option>';
+                }
+                echo '</select>';
+             ?>
             </div>
             <div class="col-sm-4">
              <label>Producto:</label>
-             <select onchange="funcion_producto()" name="producto" id="producto" class="form-control" required>
-               <option value="">Selecciona</option>
-             </select>
+             <?php
+              $id_tipo = mysqli_query($link, "SELECT id FROM tipos WHERE nombre = '$tipo_p1' ");
+              $rowt = mysqli_fetch_row($id_tipo);
+                $producto = mysqli_query($link, "SELECT id, nombre FROM platillos WHERE tipo_id = '$rowt[0]' ");
+                echo '<select onchange="funcion_producto()" name="producto" id="producto" class="form-control" required>';
+                echo '<option value="">Selecciona una</option>';
+                while($row = mysqli_fetch_row($producto)){
+                  if($producto_p1==$row[1]) 
+                    echo '<option selected value="'.$row[0].'">'.$row[1].'</option>';
+                  else
+                    echo '<option value="'.$row[0].'">'.$row[1].'</option>';
+                }
+                echo '</select>';
+             ?>
             </div>
             </div> 
             <!-- producto numero dos inicia -->
+            <?php 
+              if($categoria_p2=='0'){
+            ?>
             <div id="producto_2" style="display:none;" class="form-group row">
               <div class="col-sm-12">
                 <center><label><b>Producto 2</b></label></center>
@@ -207,41 +272,142 @@
              </select>
             </div>
            </div> <!-- form-group-row -->
-           <div class="form-group row">
-            <label class="col-sm-2 form-control-label">Sucursal:</label>
-             <div class="col-sm-4">
-              <select onchange="funcion_sucursal()" name="sucursales" id="sucursales" class="form-control" required>
-               <option value="">Selecciona una</option>
-               <option value="todas">Todas</option>
-               <?php
-                while($row_suc = mysqli_fetch_row($sucursales))
-                {
-                  echo "<option value='$row_suc[0]'>$row_suc[0]</option> ";
+           <?php 
+             }else{
+              echo '<div id="producto_2" class="form-group row">';
+                echo '<div class="col-sm-12">';
+                  echo '<center><label><b>Producto 2</b></label></center>';
+                echo '</div>';
+               echo '</div>';
+              echo '<div class="form-group row">';
+              echo '<div id="div_cat" class="col-sm-4">';
+              echo '<label>Categoría:</label>';
+               echo '<select name="categoria2" class="form-control" id="cat2">';
+               echo '<option value="">Selecciona una</option>';        
+                 if ($categoria_p2 == "Comidas") {
+                   echo '<option selected value="Comidas">Comidas</option>';
+                 }else{
+                   echo ' <option value="Comidas">Comidas</option>';
+                 }
+                 if ($categoria_p2 == "Bebidas") {
+                   echo '<option selected value="Bebidas">Bebidas</option>';
+                 }else{
+                   echo '<option value="Bebidas">Bebidas</option>';
+                 }  
+              echo '</select>';
+              echo '</div>';
+              echo '<div id="div_linea" class="col-sm-4">'; 
+               echo '<label>Tipo:</label>';
+                $tipos2 = mysqli_query($link, "SELECT id, nombre from tipos WHERE super_tipo = '$categoria_p2'");
+                echo '<select name="tipo2" id="tipo2" class="form-control">';
+                echo '<option value="">Selecciona una</option>';
+                while($row = mysqli_fetch_row($tipos2)){
+                  if($tipo_p2==$row[1]) 
+                    echo '<option selected value="'.$row[0].'">'.$row[1].'</option>';
+                  else
+                    echo '<option value="'.$row[0].'">'.$row[1].'</option>';
                 }
-               ?>
-              </select>
+                echo '</select>';
+               // <select name="tipo2" id="tipo2" class="form-control">
+               //   <option value="">Selecciona una</option>
+               // </select>
+              echo '</div>';
+              echo '<div id="div_prod" class="col-sm-4">';
+              echo '<label>Producto:</label>';
+         
+              $id_tipo2 = mysqli_query($link, "SELECT id FROM tipos WHERE nombre = '$tipo_p2' ");
+              $rowt = mysqli_fetch_row($id_tipo2);
+                $producto2 = mysqli_query($link, "SELECT id, nombre FROM platillos WHERE tipo_id = '$rowt[0]' ");
+                echo '<select onchange="funcion_producto2()" name="producto2" id="producto2" class="form-control">';
+                echo '<option value="">Selecciona una</option>';
+                while($row = mysqli_fetch_row($producto2)){
+                  if($producto_p2==$row[1]) 
+                    echo '<option selected value="'.$row[0].'">'.$row[1].'</option>';
+                  else
+                    echo '<option value="'.$row[0].'">'.$row[1].'</option>';
+                }
+                echo '</select>';
+             echo '</div>';
+             echo '</div>'; //cierra el row
+             }
+           ?>
+           <div class="form-group row">
+             <div class="col-sm-12">
+              <?php
+                $sucs = explode("-", $sucursal);
+                 $max = sizeof($sucs);
+                 $suc1=0; $suc2=0; $suc3=0;
+                 if($max==3){
+                   $suc1= $sucs[0]; $suc2= $sucs[1]; $suc3= $sucs[2];
+                 }elseif ($max==2){
+                   $suc1= $sucs[0]; $suc2= $sucs[1];
+                 }elseif ($max==1) {
+                   $suc1= $sucs[0];
+                 }     
+              ?>
+              <label class="form-control-label">Sucursal:</label>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+              <label class="checkbox-inline">
+                <?php 
+                   if($suc1!='0')
+                    echo '<input type="checkbox" value="Samba Cuernavaca" onclick="funcion_sucursal()" name="sucursales" id="sucursales" checked>Samba Cuernavaca';                    
+                  else
+                    echo '<input type="checkbox" value="Samba Cuernavaca" onclick="funcion_sucursal()" name="sucursales" id="sucursales">Samba Cuernavaca';
+                ?>
+              <label class="checkbox-inline">
+                <?php 
+                   if($suc2!='0')
+                    echo '<input type="checkbox" value="Flor de Canela" onclick="funcion_sucursal2()" name="sucursales2" id="sucursales2" checked>Flor de Canela';                    
+                  else
+                    echo '<input type="checkbox" value="Flor de Canela" onclick="funcion_sucursal2()" name="sucursales2" id="sucursales2">Flor de Canela';
+                ?>
+              </label>&nbsp&nbsp&nbsp
+              <label class="checkbox-inline">
+                <?php 
+                   if($suc3!='0')
+                    echo '<input type="checkbox" value="Cocina Bambu" onclick="funcion_sucursal3()" name="sucursales3" id="sucursales3" checked>Cocina Bambu';                    
+                  else
+                    echo '<input type="checkbox" value="Cocina Bambu" onclick="funcion_sucursal3()" name="sucursales3" id="sucursales3">Cocina Bambu';
+                ?>
+              </label>
              </div>
-             <label id="label_desc" class="col-sm-2" style="display:none;">Descuento:</label>
-             <div class="col-sm-4">
-              <input oninput="funcion_desc()" style="display:none;" id="select_desc" name="descuento" class="form-control" type="number" min="1" max="30" >
-             </div>
+             </div> <!-- form-group-row -->
+             <div class="form-group row">
+             <?php 
+               if($descuento=='0'){
+                 echo '<label id="label_desc" class="col-sm-2" style="display:none;">Descuento:</label>';
+                 echo '<div class="col-sm-4">';
+                  echo '<input oninput="funcion_desc()" style="display:none;" id="select_desc" name="descuento" class="form-control" type="number" min="1" max="30" >';
+                 echo '</div>';
+               }else{
+                   echo '<label id="label_desc" class="col-sm-2">Descuento:</label>';
+                   echo '<div class="col-sm-4">';?>
+                   <input oninput="funcion_desc()" id="select_desc" name="descuento" class="form-control" type="number" min="1" max="30" value="<?php echo $descuento;?>">
+                   <?php echo '</div>';
+               }
+             ?>
             </div> <!-- form-group-row -->
+
             <div class="form-group row">
               <div class="col-sm-12">
                 <label><b>Imagen de Promoción</b></label>
-                  <div class="input-group">
+                  <!-- <div class="input-group">
                       <span class="input-group-btn">
                           <span class="btn btn-default btn-file">
-                              Upload… <input type="file" id="imgInp">
+                              Upload… <input type="file" id="fileToUpload" name"fileToUpload">
                           </span>
-                      </span>
-                      <input name="img_promo" type="text" class="form-control" readonly required>
-                  </div>
+                      </span> -->
+                      <br>
+                      Upload:
+                     <input type="file" name="fileToUpload" id="fileToUpload">
+<!--                       <input name="img_promo" type="text" class="form-control" readonly required>
+ -->                  <!-- </div> -->
                   <!-- <img id='img-upload'/> -->
               </div>
             </div>
+
             <div class="form-group row">
               <div class="col-sm-12">
+               <input type="hidden" id="Id" name="Id" value="<?php echo $id_promocion; ?>">
                <center><button type="submit" class="btn btn-secondary">Cancelar</button>
                <button type="submit" class="btn btn-primary">Guardar Promoción</button></center>
               </div>
@@ -251,26 +417,48 @@
          </div> <!-- cierra card -->
          </div> <!-- cierra card-body -->
         </div> 
-        <div class="col-md-4"><br><br> 
-                <div class="dl coupon">     
+        <div class="col-md-4"><br> <br>  
+                <div class="dl coupon">  
                     <div class="discount alizarin"  style="font-size:40px;">
-                        <span id="preview_promo"></span>
+                        <span id="preview_promo">
+                          <?php 
+                             if($tipo_promo=="Descuento") echo $descuento."%"; 
+                             else echo $tipo_promo; 
+                          ?>
+                        </span>
                         <div class="type" style="font-size:30px;">
-                          <span id="preview_slogan"></span>
+                          <span id="preview_slogan">
+                            <?php 
+                              if($tipo_promo == 'Descuento') echo "de Descuento"; 
+                              else echo "Super Promo!";
+                            ?>
+                          </span>
                           <img class="logo" src="img/sambalogo.png"></div>
                     </div>
                     <div>
-                      <img class="foto" id="img-upload" >
+                      <img class="foto" id="img-upload" src="uploads/<?php echo $img_promo;?>">
                     </div>
                     <div class="descr">
-                        <span id="preview_prod"><strong></strong></span>
-                        <span id="preview_productos"><strong></strong></span>
-                        <span id="preview_productos2"><strong></strong></span>
+                        <span id="preview_prod">
+                          <?php 
+                            if($producto_p2 != '0') echo "En nuestros productos";
+                            else echo "En nuestro producto";
+                          ?>
+                        </span>
+                        <span style="color:green; fontsize:large;" id="preview_productos">
+                          <?php echo $producto_p1;?>
+                        </span>
+                        <span style="color:green; fontsize:large;" id="preview_productos2">
+                           <?php echo $producto_p2;?>
+                        </span>
                     </div>
                     <div class="ends">
-                        <center><p id="preview_sucursal"></p></center>
-                        <center><p id="preview_fechainicio"></p></center>
-                        <center><p id="preview_fechafin"></p></center>
+                        <center><span id="preview_suc"><?php echo "Disponible en: "?></span>
+                          <span id="preview_suc1"> <?php if($suc1!='0') echo $suc1;?> </span>
+                          <span id="preview_suc2"> <?php if($suc2!='0') echo $suc2;?> </span>
+                          <span id="preview_suc3"> <?php if($suc3!='0') echo $suc3;?> </span></center><br>
+                        <center><p id="preview_fechainicio"><?php echo "Válido desde ".date('Y-m-d', strtotime($fecha_inicio)); ?></p></center>
+                        <center><p id="preview_fechafin"><?php echo "Hasta ".date('Y-m-d', strtotime($fecha_fin)); ?></p></center>
                     </div>
                     <div class="getcode">
                         <a data-toggle="collapse" href="#code-1" class="open-code">Obtener código</a>
@@ -311,11 +499,39 @@
       }
       function funcion_sucursal()
       {
-        var x = document.getElementById("sucursales").value;
-        if(x == "todas"){ 
-          x= "todas las sucursales (Samba cuernavaca, Flor de canela, Cocina Bambu)";
-        };
-        document.getElementById('preview_sucursal').innerHTML = "Disponible en "+x;
+          var checkBox1 = document.getElementById("sucursales");
+          if (checkBox1.checked == true){
+            var x = document.getElementById("sucursales").value;
+            document.getElementById('preview_suc').innerHTML = "Disponible en:&nbsp";
+            document.getElementById('preview_suc1').innerHTML = x+"&nbsp";
+          } else {
+            document.getElementById('preview_suc1').innerHTML = "";
+          }
+      }
+      function funcion_sucursal2()
+      {
+   
+        var checkBox2 = document.getElementById("sucursales2");
+
+        if (checkBox2.checked == true){
+            var y = document.getElementById("sucursales2").value;
+            document.getElementById('preview_suc').innerHTML = "Disponible en:&nbsp";
+            document.getElementById('preview_suc2').innerHTML = y+"&nbsp";
+          } else {
+            document.getElementById('preview_suc2').innerHTML = "";
+          }
+      }
+      function funcion_sucursal3()
+      {
+        var checkBox3 = document.getElementById("sucursales3");
+
+        if (checkBox3.checked == true){
+            var y = document.getElementById("sucursales3").value;
+            document.getElementById('preview_suc').innerHTML = "Disponible en:&nbsp ";
+            document.getElementById('preview_suc3').innerHTML = y;
+          } else {
+            document.getElementById('preview_suc3').innerHTML = "";
+          }
       }
       function funcion_fechainicial()
       {
@@ -517,3 +733,8 @@
 <?php
    mysqli_close($link);
 ?>
+
+
+
+
+
