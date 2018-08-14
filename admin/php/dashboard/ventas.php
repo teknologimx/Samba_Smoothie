@@ -37,7 +37,7 @@ $result = mysql_query($query) or die('Consulta fallida: ' . mysql_error());
                         echo "   <tr>
                                   <th scope='row'>$i</th>
                                   <td> $row[sucursal] </td>
-                                  <td> $row[nombre] </td>
+                                  <td> $row[nombre]) </td>
                                   <td> $row[ciudad] </td>
                                   <td> $row[codigo] </td>
                                   <td> $row[domicilio] </td>
@@ -50,7 +50,7 @@ $result = mysql_query($query) or die('Consulta fallida: ' . mysql_error());
                       echo "</tbody>
                         </table>
                     </div>
-                  </div>"
+                  </div>";
 
-
+mysql_close($link);
 ?>

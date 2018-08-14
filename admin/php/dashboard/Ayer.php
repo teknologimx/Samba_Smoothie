@@ -33,4 +33,5 @@
         echo "<td class='display h4'>$row[gan]</td>";
         echo "<td class='display h4'>$row[ord]</td>";
     }
+    mysql_close($link);
 ?>
