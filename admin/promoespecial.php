@@ -54,7 +54,7 @@
         <div class="main-menu">
           <h5 class="sidenav-heading">Menú</h5>
           <ul id="side-main-menu" class="side-menu list-unstyled">                  
-            <li><a href="index.html"> <i class="fa fa-home"></i>Inicio                             </a></li>
+            <li><a href="index.php"> <i class="fa fa-home"></i>Inicio                             </a></li>
             <li><a href="#"> <i class="fa fa-truck"></i>Embarques                             </a></li>
             <li><a href="#"> <i class="fa fa-users"></i>Empleados                             </a></li>
             <li><a href="#exampledropdownDropdown" aria-expanded="false" data-toggle="collapse"> <i class="fa fa-cubes"></i>Catálogos </a>
@@ -79,8 +79,8 @@
                 </li>
                 <li><a href="#tercermenu2" aria-expanded="false" data-toggle="collapse"> <i class="fa fa-briefcase"></i>Inteligencia de negocios</a>
                       <ul id="tercermenu2" class="collapse list-unstyled ">
-                        <li><a href="dashboard.php"> <i class="fa fa-tachometer"></i>Reporte general</a></li>
-                        <li><a href="reporteespecifico.html"> <i class="fa fa-shopping-cart"></i>Reportes específicos</a></li>
+                        <li><a href="reportegeneral.php"> <i class="fa fa-tachometer"></i>Reporte general</a></li>
+                        <li><a href="reporteespecifico.php"> <i class="fa fa-shopping-cart"></i>Reportes específicos</a></li>
                       </ul>
                 </li>
               </ul>
@@ -109,7 +109,7 @@
       <div class="breadcrumb-holder">
         <div class="container-fluid">
           <ul class="breadcrumb">
-            <li class="breadcrumb-item"><a href="index.html">Inicio</a></li>
+            <li class="breadcrumb-item"><a href="index.php">Inicio</a></li>
             <li class="breadcrumb-item active">Crear promoción especial       </li>
           </ul>
         </div>
@@ -241,16 +241,19 @@
              </div>
             </div> <!-- form-group-row -->
             <div class="form-group row">
-              <div class="col-sm-12">
+               <div class="col-sm-12">
                 <label><b>Imagen de Promoción</b></label>
-                  <div class="input-group">
+                  <!-- <div class="input-group">
                       <span class="input-group-btn">
                           <span class="btn btn-default btn-file">
-                              Upload… <input type="file" id="imgInp">
+                              Upload… <input type="file" id="fileToUpload" name"fileToUpload">
                           </span>
-                      </span>
-                      <input name="img_promo" type="text" class="form-control" readonly required>
-                  </div>
+                      </span> -->
+                      <br>
+                      Upload:
+                      <input type="file" name="fileToUpload" id="fileToUpload">
+                       <!--<input name="img_promo" type="text" class="form-control" readonly required>
+ -->                  <!-- </div> -->
                   <!-- <img id='img-upload'/> -->
               </div>
             </div>
@@ -532,7 +535,7 @@
             }
         }
 
-        $("#imgInp").change(function(){
+        $("#fileToUpload").change(function(){
             readURL(this);
         });   
       });

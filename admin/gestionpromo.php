@@ -54,7 +54,7 @@
         <div class="main-menu">
           <h5 class="sidenav-heading">Menú</h5>
           <ul id="side-main-menu" class="side-menu list-unstyled">                  
-            <li><a href="index.html"> <i class="fa fa-home"></i>Inicio                             </a></li>
+            <li><a href="index.php"> <i class="fa fa-home"></i>Inicio                             </a></li>
             <li><a href="#"> <i class="fa fa-truck"></i>Embarques                             </a></li>
             <li><a href="#"> <i class="fa fa-users"></i>Empleados                             </a></li>
             <li><a href="#exampledropdownDropdown" aria-expanded="false" data-toggle="collapse"> <i class="fa fa-cubes"></i>Catálogos </a>
@@ -79,8 +79,8 @@
                 </li>
                 <li><a href="#tercermenu2" aria-expanded="false" data-toggle="collapse"> <i class="fa fa-briefcase"></i>Inteligencia de negocios</a>
                       <ul id="tercermenu2" class="collapse list-unstyled ">
-                        <li><a href="dashboard.php"> <i class="fa fa-tachometer"></i>Reporte general</a></li>
-                        <li><a href="reporteespecifico.html"> <i class="fa fa-shopping-cart"></i>Reportes específicos</a></li>
+                        <li><a href="reportegeneral.php"> <i class="fa fa-tachometer"></i>Reporte general</a></li>
+                        <li><a href="reporteespecifico.php"> <i class="fa fa-shopping-cart"></i>Reportes específicos</a></li>
                       </ul>
                 </li>
               </ul>
@@ -111,7 +111,7 @@
       <div class="breadcrumb-holder">
         <div class="container-fluid">
           <ul class="breadcrumb">
-            <li class="breadcrumb-item"><a href="index.html">Inicio</a></li>
+            <li class="breadcrumb-item"><a href="index.php">Inicio</a></li>
             <li class="breadcrumb-item active">Gestionar promociones       </li>
           </ul>
         </div>
@@ -218,6 +218,7 @@
                     <th>Producto</th>
                     <th>Promoción</th>
                     <th></th>
+                    <th></th>
                   </tr>
                 </thead>
                 <tbody>
@@ -234,7 +235,9 @@
                                 echo '<td>'.$row[2].'</td>';
                                 echo '<td>'.$row[0].'</td>';
                                 echo '<td>';
-                                echo '<a href='."/ProyectoLKE/Samba_Smoothie/admin/modificarPromoVentas.php?id_promocion='.$row[3].'/".'><input type="button" id="modificar" value=" Modificar " class="btn btn-primary"></a>';
+                                echo '<a href='."/ProyectoLKE/Samba_Smoothie/admin/modificarPromoPreferencias.php?id_promocion=$row[3]".'><input type="button" id="modificar" value=" Modificar " class="btn btn-primary"></a>';
+                                echo '</td>';
+                                echo '<td>';
                                 echo '<button type="button" data-toggle="modal" data-target="#myModal2" class="btn btn-secondary">'."Eliminar".'</button>';
                           
                                 // <!--Modal-->
@@ -292,6 +295,7 @@
                     <th>Temática</th>
                     <th>Promoción</th>
                     <th></th>
+                    <th></th>
                   </tr>
                 </thead>
                 <tbody>
@@ -309,7 +313,9 @@
                                 echo '<td>'.$row[4].'</td>';
                                 echo '<td>'.$row[5].'</td>';
                                 echo '<td>';
-                                echo '<a href='."/ProyectoLKE/Samba_Smoothie/admin/modificarPromoVentas.php?id_promocion='.$row[0].'/".'><input type="button" id="modificar" value=" Modificar " class="btn btn-primary"></a>';
+                                echo '<a href='."/ProyectoLKE/Samba_Smoothie/admin/modificarPromoEspecial.php?id_promocion=$row[0]".'><input type="button" id="modificar" value=" Modificar " class="btn btn-primary"></a>';
+                                echo '</td>';
+                                echo '<td>';
                                 echo '<button type="button" data-toggle="modal" data-target="#myModal3" class="btn btn-secondary">'."Eliminar".'</button>';
                           
                                 // <!--Modal-->

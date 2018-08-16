@@ -9,12 +9,8 @@ function Conectarse()
    mysqli_set_charset($link,"utf8");
    return $link; 
 
+//    mysql -h myinstance.c9akciq32.rds-us-east-1.amazonaws.com
+// --ssl-ca=[SSL/rds-combined-ca-bundle.pem]rds-combined-ca-bundle.pem --ssl-verify-server-cert
+
 } 
-//Conectar base de datos de postgresql
-// function ConectarsePG() 
-// { 
-// 	$dbconn = pg_connect("host=aaup9i3gfi41kk.ctmunks7fjkr.us-west-2.rds.amazonaws.com port=5432 dbname=ebdb user=sambaDevAws password=sambasDev01")
-// 		or die('No se ha podido conectar: ' . pg_last_error());
-//    return $dbconn; 
-// } 
 ?>

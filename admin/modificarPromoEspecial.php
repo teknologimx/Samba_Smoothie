@@ -3,22 +3,23 @@
    $link=Conectarse(); 
    $id_promocion=$_GET['id_promocion'];
    $promocion = mysqli_query($link, "SELECT * FROM promocion WHERE id_promocion = $id_promocion");
-   $promoventas = mysqli_query($link, "SELECT * FROM promocion_ventas WHERE id_promocion = $id_promocion");
+   $promoespecial = mysqli_query($link, "SELECT * FROM promocion_especial WHERE id_promocion = $id_promocion");
    $row_promo = mysqli_fetch_array($promocion);
-   $row_promoventas = mysqli_fetch_array($promoventas);
+   $row_promoespecial = mysqli_fetch_array($promoespecial);
    $fecha_inicio=$row_promo["fecha_inicio"];
    $fecha_fin=$row_promo["fecha_fin"];
    $sucursal=$row_promo["sucursal"];
    $tipo_promo=$row_promo["tipo_promo"];
    $img_promo=$row_promo["img_promo"];
-   //datos de la tabla promo ventas
-   $categoria_p1=$row_promoventas["categoria_p1"];
-   $tipo_p1=$row_promoventas["tipo_p1"];
-   $producto_p1=$row_promoventas["producto_p1"];
-   $categoria_p2=$row_promoventas["categoria_p2"];
-   $tipo_p2=$row_promoventas["tipo_p2"];
-   $producto_p2=$row_promoventas["producto_p2"];
-   $descuento=$row_promoventas["descuento"];
+   //datos de la tabla promo especial
+   $tematica=$row_promoespecial["tematica"];
+   $categoria_p1=$row_promoespecial["categoria_p1"];
+   $tipo_p1=$row_promoespecial["tipo_p1"];
+   $producto_p1=$row_promoespecial["producto_p1"];
+   $categoria_p2=$row_promoespecial["categoria_p2"];
+   $tipo_p2=$row_promoespecial["tipo_p2"];
+   $producto_p2=$row_promoespecial["producto_p2"];
+   $descuento=$row_promoespecial["descuento"];
 ?>
 
 <!DOCTYPE html>
@@ -128,7 +129,7 @@
         <div class="container-fluid">
           <ul class="breadcrumb">
             <li class="breadcrumb-item"><a href="index.php">Inicio</a></li>
-            <li class="breadcrumb-item active">Modificar promoción basada en ventas       </li>
+            <li class="breadcrumb-item active">Modificar promoción Especial      </li>
           </ul>
         </div>
       </div>
@@ -148,10 +149,67 @@
              <img id="img-recomendadas" style="width:70px; heigth:70px;"src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQdxSY3swLDGNus2cyl2-AqbdI2Dac_Mn___5gI_n0k0zPsT3bV2w" class="round" alt="Producto 5"> <br><br>
            </div></center>
           <center><h4>Detalles de la promoción</h4></center>
-          <form id="MiFormulario" enctype='multipart/form-data' action="validarModificarPromoVentas.php" method="post">
+          <form id="MiFormulario" enctype='multipart/form-data' action="validarModificarPromoEspecial.php" method="post">
            <div class="form group">
            <div class="form-group row"> 
-            <div class="col-sm-4">
+            <div class="col-sm-3">
+             <label>Temática:</label>
+             <select name="tematica" id="tematica" class="form-control" required>
+               <option value="14 de Febrero">14 de Febrero</option>
+               <option value="Día del niño">Día del niño</option>
+               <option value="Día de la madre">Día de la madre</option>
+               <option value="Día del padre">Día del padre</option>
+               <option value="Día del abuelo">Día del abuelo</option>
+               <option value="Fiestas Patrias">Fiestas Patrias</option>
+               <option value="Día de muertos">Día de muertos</option>
+               <option value="Navidad">Navidad</option>
+
+               <?php 
+                  if($tematica == "14 de Febrero"){
+                    echo '<option selected value="14 de Febrero">14 de Febrero</option>';
+                  }else{
+                    echo '<option value="14 de Febrero">14 de Febrero</option>';
+                  }
+                  if($tematica == "Día del niño"){
+                    echo '<option selected value="Día del niño">Día del niño</option>';
+                  }else{
+                    echo '<option value="Día del niño">Día del niño</option>';
+                  }
+                  if($tematica == "Día de la madre"){
+                    echo '<option selected value="Día de la madre">Día de la madre</option>';
+                  }else{
+                    echo '<option value="Día de la madre">Día de la madre</option>';
+                  }
+                  if($tematica == "Día del padre"){
+                    echo '<option selected value="Día del padre">Día del padre</option>';
+                  }else{
+                    echo '<option value="Día del padre">Día del padre</option>';
+                  }
+                  if($tematica == "Día del abuelo"){
+                    echo '<option selected value="Día del abuelo">Día del abuelo</option>';
+                  }else{
+                    echo '<option value="Día del abuelo">Día del abuelo</option>';
+                  }
+                  if($tematica == "Fiestas Patrias"){
+                    echo '<option selected value="Fiestas Patrias">Fiestas Patrias</option>';
+                  }else{
+                    echo '<option value="Fiestas Patrias">Fiestas Patrias</option>';
+                  }
+                  if($tematica == "Día de muertos"){
+                    echo '<option selected value="Día de muertos">Día de muertos</option>';
+                  }else{
+                    echo '<option value="Día de muertos">Día de muertos</option>';
+                  }
+                  if($tematica == "Navidad"){
+                    echo '<option selected value="Navidad">Navidad</option>';
+                  }else{
+                    echo '<option value="Navidad">Navidad</option>';
+                  }
+               ?>
+
+             </select>
+            </div>
+            <div class="col-sm-3">
              <label>Promoción:</label>
              <select id="tipo_promo" onchange="myFunction()" name="tipo_promo" class="form-control" required>
                <option value="">Selecciona una</option>
@@ -175,11 +233,11 @@
                ?>
              </select>
             </div>
-           <div class="col-sm-4">
+           <div class="col-sm-3">
              <label>Inicio:</label>
              <input id="fecha_inicio" name="fecha_inicio" type="date" placeholder="Fecha Inicial" class="form-control" oninput="funcion_fechainicial()" value="<?php echo date('Y-m-d', strtotime($fecha_inicio)) ?>" required>
            </div>
-           <div class="col-sm-4">
+           <div class="col-sm-3">
              <label>Fin:</label>
              <input id="fecha_final" name="fecha_final" type="date" placeholder="Fecha Final" class="form-control" oninput="funcion_fechafinal()" value="<?php echo date('Y-m-d', strtotime($fecha_fin)) ?>" required>
            </div>
