@@ -23,4 +23,5 @@
               </div>
             </div>
           </div>";
+    mysql_close($link);
 ?>

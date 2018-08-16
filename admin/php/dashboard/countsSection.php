@@ -81,14 +81,5 @@
             </div>
         </div>
     </div>";
-    /*<div clss='col-xl-2 col-md-8 col-6'>
-        <div class='col-xl-2 col-md-8 col-6'>
-            <div class='wrapper count-title d-flex'>
-                <div class='icon'><i class='icon-list'></i></div>
-                    <div class='name'><strong class='text-uppercase'>Ordenes Canceladas</strong>
-                    <div class='count-number'>$ordCan</div>
-                </div>
-            </div>
-        </div>
-    </div>";*/
+    mysql_close($link);
 ?>

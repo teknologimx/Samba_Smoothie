@@ -28,4 +28,5 @@
             </li>";
         $i++;
     }
+    mysql_close($link);
 ?>

@@ -166,11 +166,9 @@
         </div>
       </section>
       <!-- Seccion de pruebas-->
-      <!--<div>
-        <?php
-          include("php/dashboard/TopProductos.php");
-        ?>
-      </div>-->
+      <div>
+        <input type="button" value=" Probar " onclick=BD()>
+      </div>
       
       <!-- Statistics Section-->
       <section class="statistics">

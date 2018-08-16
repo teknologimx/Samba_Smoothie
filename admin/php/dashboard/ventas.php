@@ -50,7 +50,7 @@ $result = mysql_query($query) or die('Consulta fallida: ' . mysql_error());
                       echo "</tbody>
                         </table>
                     </div>
-                  </div>"
+                  </div>";
 
-
+mysql_close($link);
 ?>
