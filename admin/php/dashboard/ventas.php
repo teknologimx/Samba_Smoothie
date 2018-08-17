@@ -1,7 +1,14 @@
 <?php
 error_reporting(0);
+if (!($link=mysqli_connect("localhost","root","", "samba"))) 
+   { 
+      echo "Error conectando a la base de datos."; 
+      exit(); 
+   } 
+   mysqli_set_charset($link,"utf8");
+$result= mysqli_query($link, 'SELECT establecimientos.nombre AS "sucursal", userlg.nombre, establecimientos.ciudad, establecimientos.codigo, establecimientos.domicilio, establecimientos.telefono, establecimientos.total_vendido FROM establecimientos INNER JOIN userlg ON establecimientos.administrador_id=userlg.id ORDER BY establecimientos.total_vendido DESC');
 // Conectando, seleccionando la base de datos
-$link = mysql_connect('localhost', 'root', '')
+/*$link = mysql_connect('localhost', 'root', '')
     or die('No se pudo conectar: ' . mysql_error());
 //echo 'Connected successfully';
 mysqli_set_charset($link,"utf8");
@@ -9,7 +16,7 @@ mysql_select_db('samba') or die('No se pudo seleccionar la base de datos');
 
 // Realizar una consulta MySQL
 $query = 'SELECT establecimientos.nombre AS "sucursal", userlg.nombre, establecimientos.ciudad, establecimientos.codigo, establecimientos.domicilio, establecimientos.telefono, establecimientos.total_vendido FROM establecimientos INNER JOIN userlg ON establecimientos.administrador_id=userlg.id ORDER BY establecimientos.total_vendido DESC';
-$result = mysql_query($query) or die('Consulta fallida: ' . mysql_error());
+$result = mysql_query($query) or die('Consulta fallida: ' . mysql_error());*/
 // Imprimir los resultados en HTML
 /* Desplegamos cada uno de los registros dentro de una tabla */  
 	echo "<div class='card-body'>
@@ -32,7 +39,7 @@ $result = mysql_query($query) or die('Consulta fallida: ' . mysql_error());
                           <tbody>";
                       /*Y ahora todos los registros */
                         $i =1;
-                      while($row=mysql_fetch_array($result)){
+                      while($row=mysqli_fetch_array($result)){
 
                         echo "   <tr>
                                   <th scope='row'>$i</th>
@@ -52,5 +59,5 @@ $result = mysql_query($query) or die('Consulta fallida: ' . mysql_error());
                     </div>
                   </div>";
 
-mysql_close($link);
+mysqli_close($link);
 ?>

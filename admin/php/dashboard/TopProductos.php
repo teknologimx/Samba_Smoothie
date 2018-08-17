@@ -1,8 +1,8 @@
 <?php
     //error_reporting(0);
     // Conectando, seleccionando la base de datos
-    include("conexion.php"); 
-    $link=Conectarse(); 
+    include("conexion.php");
+    $link=Conectarse();
     $result = mysqli_query($link,  "SELECT
                 platillos.nombre as nombre,
                 ordenesdetalles.cantidad as cantidad,
