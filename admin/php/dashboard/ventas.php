@@ -4,7 +4,7 @@
 
 // Realizar una consulta MySQL
 $result = mysqli_query($link, 'SELECT establecimientos.nombre AS "sucursal", userlg.nombre, establecimientos.ciudad, establecimientos.codigo, establecimientos.domicilio, establecimientos.telefono, establecimientos.total_vendido FROM establecimientos INNER JOIN userlg ON establecimientos.administrador_id=userlg.id ORDER BY establecimientos.total_vendido DESC');
-
+//$result = mysql_query($query) or die('Consulta fallida: ' . mysql_error());
 // Imprimir los resultados en HTML
 /* Desplegamos cada uno de los registros dentro de una tabla */  
 	echo "<div class='card-body'>
