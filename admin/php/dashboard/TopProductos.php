@@ -1,8 +1,13 @@
 <?php
     //error_reporting(0);
     // Conectando, seleccionando la base de datos
-    include("conexion.php");
-    $link=Conectarse();
+    //include("conexion.php");
+    //$link=Conectarse();
+    if (!($link=mysqli_connect("localhost","root","", "samba"))) 
+   { 
+      echo "Error conectando a la base de datos.";
+   } 
+   mysqli_set_charset($link,"utf8");
     $result = mysqli_query($link,  "SELECT
                 platillos.nombre as nombre,
                 ordenesdetalles.cantidad as cantidad,
@@ -15,14 +20,6 @@
                 platillosestablecimientos.id=ordenesdetalles.platillo_id
             GROUP BY (nombre), (cantidad), (precio)
             ORDER BY precTotal DESC");
- 
-    /*$link = mysql_connect('localhost', 'root', '') or die('No se pudo conectar: ' . mysql_error());
-    //echo 'Connected successfully';
-    mysqli_set_charset($link,"utf8");
-    mysql_select_db('samba') or die('No se pudo seleccionar la base de datos');*/
-    
-    // Realizar consulta MySQL
-   
 
     echo "<div class='card-body'>
             <div class='table-responsive'>
