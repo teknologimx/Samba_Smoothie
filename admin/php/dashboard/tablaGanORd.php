@@ -77,15 +77,17 @@
     $dias= array("Hoy","Ayer","Hace 7 dias","Hace 30 dias","Hace 90 dias");
     
     $i= 0;
+    $j= 1;
     echo "<tbody>";
     while($row=mysqli_fetch_array($result)){
         echo "<tr>
-                <th scope='row'>$i</th>
+                <th scope='row'>$j</th>
                 <td class='display h4'>$dias[$i]</td>";
         echo "<td class='display h4'>$row[gan]</td>";
         echo "<td class='display h4'>$row[ord]</td>";
         echo "</tr>";
         $i++;
+        $j++;
     }
     echo "</tbody>";
     mysqli_close($link);
