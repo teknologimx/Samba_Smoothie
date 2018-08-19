@@ -1,18 +1,10 @@
 <?php
-    //error_reporting(0);
-    /*$link= mysql_connect('localhost','root','') or die("No se puede conectar " . mysql_error());
-    mysqli_set_charset($link,"utf8");
-    mysql_select_db('samba') or die("No se puede seleccionar la basede datos");*/
+    error_reporting(0);
     include("http://localhost/Samba_Smoothie/admin/php/dashboard/conexion.php");
     $link=Conectarse(); 
 
     $result = mysqli_query($link,  'SELECT ordenes.calificacion_comentario as cal, ordenes.date_created as fecha 
-    FROM ordenes WHERE calificacion_comentario!="" ORDER BY date_created ASC LIMIT 5');
-    /*$query= 'SELECT ordenes.calificacion_comentario as cal, ordenes.date_created as fecha 
-    FROM ordenes WHERE calificacion_comentario!="" ORDER BY date_created ASC LIMIT 5';*/
-    //$result= mysql_query($query) or die('Consulta fallida: ' . mysql_error());
-    //$fecha= date("Y-m-d");
-    //echo date("Y-m-d",strtotime($fecha."-1 day"));
+    FROM ordenes WHERE calificacion_comentario!="" ORDER BY date_created DESC LIMIT 5');
     $i= 1;
     while($row=mysqli_fetch_array($result)){
         //echo date("$row[fecha]",strtotime($fecha."-1 month"));
