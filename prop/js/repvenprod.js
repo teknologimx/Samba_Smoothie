@@ -22,6 +22,14 @@ function mostrar(id) {
          $("#Hoy").hide();
 		$("#Ayer").hide();
         $("#1primB"). hide();
-		$("#1primC"). show();
+        $("#1primC"). show();
+        $("#1primD"). hide();
     }
+    if (id == "1primD") {
+        $("#Hoy").hide();
+       $("#Ayer").hide();
+       $("#1primB"). hide();
+       $("#1primC"). hide();
+       $("#1primD"). show();
+   }
 }

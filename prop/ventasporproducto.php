@@ -142,12 +142,13 @@
                                     <option value="Ayer">Ayer</option>
                                     <option value="1primB">Hace 7 días</option>
                                     <option value="1primC">Hace 30 días</option>
+                                    <option value="1primD">Hace 90 días</option>
                                  </select>
                           </div>
                               
                           <div class="col-lg-12">
  
-                                <div id= 'Hoy' class="card" style="display: show;">
+                                <div id= 'Hoy' class="card" style="display: show">
                                     <div class="card-header">
                                             <canvas id="chartHoy" height="100px"></canvas>
                                     </div>
@@ -187,7 +188,7 @@
                                     </div>
                                 </div>
 
-                                <div id= 'Ayer' class="card" style="display: none;">
+                                <div id= 'Ayer' class="card" style="display: none">
                                     <div class="card-header">
                                             <canvas id="chartAyer" height="100px"></canvas>
                                     </div>
@@ -226,14 +227,129 @@
                                           </div>
                                         </div>
                                   </div>
+                                  
 
-                                <div id= '1primB' class="card" style="display: none;">
-                                 sdfsdfsdf 2
+                                <div id= '1primB' class="card" style="display: none">
+                                    <div class="card-header">
+                                            <canvas id="chart7Dias" height="100px"></canvas>
+                                    </div>
+                                    <div class="card-body">
+                                      <div class="table-responsive">
+                                        <table class="table table-striped table-hover">
+                                          <thead>
+                                            <tr>
+                                              <th>#</th>
+                                              <th>First Name</th>
+                                              <th>Last Name</th>
+                                              <th>Username</th>
+                                            </tr>
+                                          </thead>
+                                          <tbody>
+                                            <tr>
+                                              <th scope="row">1</th>
+                                              <td>Mark</td>
+                                              <td>Otto</td>
+                                              <td>@mdo</td>
+                                            </tr>
+                                            <tr>
+                                              <th scope="row">2</th>
+                                              <td>Jacob</td>
+                                              <td>Thornton</td>
+                                              <td>@fat</td>
+                                            </tr>
+                                            <tr>
+                                              <th scope="row">3</th>
+                                              <td>Larry</td>
+                                              <td>the Bird</td>
+                                              <td>@twitter</td>
+                                            </tr>
+                                          </tbody>
+                                        </table>
+                                      </div>
+                                    </div>
                                 </div>
 
-                                <div id= '1primC' class="card" style="display: none;">
-
+                                <div id= '1primC' class="card" style="display: none">
+                                    <div class="card-header">
+                                            <canvas id="chart30Dias" height="100px"></canvas>
+                                    </div>
+                                    <div class="card-body">
+                                      <div class="table-responsive">
+                                        <table class="table table-striped table-hover">
+                                          <thead>
+                                            <tr>
+                                              <th>#</th>
+                                              <th>First Name</th>
+                                              <th>Last Name</th>
+                                              <th>Username</th>
+                                            </tr>
+                                          </thead>
+                                          <tbody>
+                                            <tr>
+                                              <th scope="row">1</th>
+                                              <td>Mark</td>
+                                              <td>Otto</td>
+                                              <td>@mdo</td>
+                                            </tr>
+                                            <tr>
+                                              <th scope="row">2</th>
+                                              <td>Jacob</td>
+                                              <td>Thornton</td>
+                                              <td>@fat</td>
+                                            </tr>
+                                            <tr>
+                                              <th scope="row">3</th>
+                                              <td>Larry</td>
+                                              <td>the Bird</td>
+                                              <td>@twitter</td>
+                                            </tr>
+                                          </tbody>
+                                        </table>
+                                      </div>
+                                    </div>
                                 </div>
+
+                                <div id= '1primD' class="card" style="display: none">
+                                    <div class="card-header">
+                                            <canvas id="chart90Dias" height="100px"></canvas>
+                                    </div>
+                                    <div class="card-body">
+                                      <div class="table-responsive">
+                                        <table class="table table-striped table-hover">
+                                          <thead>
+                                            <tr>
+                                              <th>#</th>
+                                              <th>First Name</th>
+                                              <th>Last Name</th>
+                                              <th>Username</th>
+                                            </tr>
+                                          </thead>
+                                          <tbody>
+                                            <tr>
+                                              <th scope="row">1</th>
+                                              <td>Mark</td>
+                                              <td>Otto</td>
+                                              <td>@mdo</td>
+                                            </tr>
+                                            <tr>
+                                              <th scope="row">2</th>
+                                              <td>Jacob</td>
+                                              <td>Thornton</td>
+                                              <td>@fat</td>
+                                            </tr>
+                                            <tr>
+                                              <th scope="row">3</th>
+                                              <td>Larry</td>
+                                              <td>the Bird</td>
+                                              <td>@twitter</td>
+                                            </tr>
+                                          </tbody>
+                                        </table>
+                                      </div>
+                                    </div>
+                                </div>
+
+
                             </div>
                         </div>
                     </div>
