@@ -101,7 +101,7 @@
           <ul class="breadcrumb">
             <li class="breadcrumb-item"><a href="index.php">Inicio</a></li>
             <li class="breadcrumb-item active"><a href="reporteespecifico.php">Reportes específicos</a></li>
-            <li class="breadcrumb-item active">Ventas por Productos</li>
+            <li class="breadcrumb-item active">Empresas en Riesgo</li>
           </ul>
         </div>
       </div>
@@ -150,7 +150,7 @@
  
                                 <div id= 'Hoy' class="card" style="display: show">
                                     <div class="card-header">
-                                            <canvas id="chartHoy" height="100px"></canvas>
+                                       
                                     </div>
                                     <div class="card-body">
                                       <div class="table-responsive">
@@ -158,9 +158,11 @@
                                           <thead>
                                             <tr>
                                               <th>#</th>
-                                              <th>First Name</th>
-                                              <th>Last Name</th>
-                                              <th>Username</th>
+                                              <th>Empresa</th>
+                                              <th>En riesgo</th>
+                                              <th>Último día de pedido</th>
+                                              <th>Total de pedidos realizados</th>
+                                              <th>Total de compras realizas</th>
                                             </tr>
                                           </thead>
                                           <tbody>
@@ -168,6 +170,7 @@
                                               <th scope="row">1</th>
                                               <td>Mark</td>
                                               <td>Otto</td>
+                                              <td>@mdo</td>
                                               <td>@mdo</td>
                                             </tr>
                                             <tr>

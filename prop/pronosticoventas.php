@@ -101,7 +101,7 @@
           <ul class="breadcrumb">
             <li class="breadcrumb-item"><a href="index.php">Inicio</a></li>
             <li class="breadcrumb-item active"><a href="reporteespecifico.php">Reportes específicos</a></li>
-            <li class="breadcrumb-item active">Ventas por Productos</li>
+            <li class="breadcrumb-item active">Pronóstico de Ventas</li>
           </ul>
         </div>
       </div>

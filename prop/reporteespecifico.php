@@ -63,12 +63,12 @@
               <ul id="submenuBI" class="collapse list-unstyled ">
                 <li><a href="#tercermenu1" aria-expanded="false" data-toggle="collapse"> <i class="fa fa-certificate"></i>Promociones</a>
                       <ul id="tercermenu1" class="collapse list-unstyled ">
-                        <li><a href="gestionpromo.php"> <i class="fa fa-shopping-cart"></i>Ver promociones</a></li>
+                        <li><a href="verpromo.php"> <i class="fa fa-shopping-cart"></i>Ver promociones</a></li>
                       </ul>
                 </li>
                 <li><a href="#tercermenu2" aria-expanded="false" data-toggle="collapse"> <i class="fa fa-briefcase"></i>Inteligencia de negocios</a>
                       <ul id="tercermenu2" class="collapse list-unstyled ">
-                        <li><a href="dashboard.php"> <i class="fa fa-tachometer"></i>Reporte general</a></li>
+                        <li><a href="reportegeneral.php"> <i class="fa fa-tachometer"></i>Reporte general</a></li>
                         <li><a href="reporteespecifico.php"> <i class="fa fa-shopping-cart"></i>Reportes específicos</a></li>
                       </ul>
                 </li>
@@ -119,28 +119,28 @@
                 </div>
                 <div class="col-lg-4">
                   <!-- Income-->
-                  <div class="card income text-center"><a href="ventasporproducto.html" style="font-size:12px;text-align: right;">Ver informe</a>
+                  <div class="card income text-center"><a href="ventasporestablecimiento.php" style="font-size:12px;text-align: right;">Ver informe</a>
                     <div class="icon"><i class="fa fa-shopping-basket"></i></div>
                     <div class="number">Ventas</div><strong class="text-primary">por establecimiento</strong>
                     <p>Valor estamado a partir de las ventas generadas</p>
                   </div>
                 </div>
 
-                <div class="col-lg-12"> <header><h1 class="h1 display">Clientes</h1></header></div>
+                <div class="col-lg-12"> <header><h1 class="h1 display">Empresas</h1></header></div>
                 <div class="col-lg-2"></div>
                 <div class="col-lg-4">
                   <!-- Income-->
-                  <div class="card income text-center"><a href="ventasporproducto.html" style="font-size:12px;text-align: right;">Ver informe</a>
+                  <div class="card income text-center"><a href="empresasleales.php" style="font-size:12px;text-align: right;">Ver informe</a>
                     <div class="icon"><i class="fa fa-user-plus"></i></div>
-                    <div class="number">Clientes</div><strong class="text-primary">leales</strong>
+                    <div class="number">Empresas</div><strong class="text-primary">leales</strong>
                     <p>Valor estamado a partir de las ventas generadas</p>
                   </div>
                 </div>
                 <div class="col-lg-4">
                   <!-- Income-->
-                  <div class="card income text-center"><a href="ventasporproducto.html" style="font-size:12px;text-align: right;">Ver informe</a>
+                  <div class="card income text-center"><a href="empresasenriesgo.php" style="font-size:12px;text-align: right;">Ver informe</a>
                     <div class="icon"><i class="fa fa-user-times"></i></div>
-                    <div class="number">Clientes</div><strong class="text-primary">en riesgo</strong>
+                    <div class="number">Empresas</div><strong class="text-primary">en riesgo</strong>
                     <p>Valor estamado a partir de las ventas generadas</p>
                   </div>
                 </div>
@@ -148,7 +148,7 @@
                 <div class="col-lg-2"></div>
                 <div class="col-lg-4">
                   <!-- Income-->
-                  <div class="card income text-center"><a href="ventasporproducto.html" style="font-size:12px;text-align: right;">Ver informe</a>
+                  <div class="card income text-center"><a href="resumenfinanciero.php" style="font-size:12px;text-align: right;">Ver informe</a>
                     <div class="icon"><i class="fa fa-book fa-fw"></i></div>
                     <div class="number">Resumen</div><strong class="text-primary">Financiero</strong>
                     <p>Valor estamado a partir de las ventas generadas</p>
@@ -156,7 +156,7 @@
                 </div>
                 <div class="col-lg-4">
                   <!-- Income-->
-                  <div class="card income text-center"><a href="ventasporproducto.html" style="font-size:12px;text-align: right;">Ver informe</a>
+                  <div class="card income text-center"><a href="pronosticoventas.php" style="font-size:12px;text-align: right;">Ver informe</a>
                     <div class="icon"><i class="fa fa-money"></i></div>
                     <div class="number">Pronóstico</div><strong class="text-primary">de ventas</strong>
                     <p>Valor estamado a partir de las ventas generadas</p>
@@ -172,10 +172,10 @@
         <div class="container-fluid">
           <div class="row">
             <div class="col-sm-6">
-              <p>Teknologi &copy; 2018</p>
+              <p>LKE &copy; 2018</p>
             </div>
             <div class="col-sm-6 text-right">
-              <p>Design by <a href="https://bootstrapious.com" class="external">Teknologi</a></p>
+              <p>Design by <a href="">Jorge Rojas</a></p>
 
             </div>
           </div>
