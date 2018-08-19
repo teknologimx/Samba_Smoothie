@@ -1,7 +1,11 @@
 <?php
     error_reporting(0);
-    include("conexion.php");
-    $link= Conectarse();
+    //include("conexion.php");
+    //$link= Conectarse();
+    $link= new mysqli('localhost','root','','samba');
+    if(!$link){
+        die("Conexion fallida: " . $mysqli->error);
+    }
 
     /*Determinar las fechas */
     //Fecha de hoy
