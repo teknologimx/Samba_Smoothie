@@ -1,3 +1,7 @@
+<?php session_start();
+   include("conexion.php"); 
+   $link=Conectarse(); 
+?>
 <!DOCTYPE html>
 <html>
   <head>
@@ -25,8 +29,6 @@
     <link rel="stylesheet" href="css/custom.css">
     <!-- Favicon-->
     <link rel="shortcut icon" href="img/samba.ico">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="vendor/chart.js/Chart.min.js"></script>
     <!-- Tweaks for older IEs--><!--[if lt IE 9]>
     <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
@@ -39,7 +41,7 @@
         <div class="sidenav-header d-flex align-items-center justify-content-center">
           <!-- Info usuario-->
           <div class="sidenav-header-inner text-center"><img src="img/user.png" alt="person" class="img-fluid rounded-circle">
-            <h2 class="h5">Administrador</h2><span>Bienvenido</span>
+            <h2 class="h5">Propietario</h2><span>Bienvenido</span>
           </div>
           <!-- Small Brand ,cuando minimizas el menu-->
           <div class="sidenav-header-logo"><a href="#" class="brand-small text-center"><img src="img/SAMBA%20FREH.png"></a></div>
@@ -65,15 +67,12 @@
               <ul id="submenuBI" class="collapse list-unstyled ">
                 <li><a href="#tercermenu1" aria-expanded="false" data-toggle="collapse"> <i class="fa fa-certificate"></i>Promociones</a>
                       <ul id="tercermenu1" class="collapse list-unstyled ">
-                        <li><a href="promoventas.php"> <i class="fa fa-shopping-cart"></i>Crear promoción basado en ventas</a></li>
-                        <li><a href="promopreferencias.php"> <i class="fa fa-shopping-basket"></i>Crear promoción basada en preferencias</a></li>
-                        <li><a href="promoespecial.php"> <i class="fa fa-star"></i>Crear promoción especial</a></li>
-                        <li><a href="gestionpromo.php"> <i class="fa fa-list-ol"></i>Gestionar promociones</a></li>
+                        <li><a href="gestionpromo.php"> <i class="fa fa-shopping-cart"></i>Ver promociones</a></li>
                       </ul>
                 </li>
                 <li><a href="#tercermenu2" aria-expanded="false" data-toggle="collapse"> <i class="fa fa-briefcase"></i>Inteligencia de negocios</a>
                       <ul id="tercermenu2" class="collapse list-unstyled ">
-                        <li><a href="reportegeneral.php"> <i class="fa fa-tachometer"></i>Reporte general</a></li>
+                        <li><a href="dashboard.php"> <i class="fa fa-tachometer"></i>Reporte general</a></li>
                         <li><a href="reporteespecifico.php"> <i class="fa fa-shopping-cart"></i>Reportes específicos</a></li>
                       </ul>
                 </li>
@@ -92,6 +91,7 @@
               <div class="navbar-header"><a id="toggle-btn" href="#" class="menu-btn"><i class="icon-bars"> </i></a><a href="#" class="navbar-brand">
                   <div class="brand-text d-none d-md-inline-block"><span><img id="logo" src="img/samba_white.png" width="150px"></span></div></a></div>
               <ul class="nav-menu list-unstyled d-flex flex-md-row align-items-md-center">
+
                 <!-- Log out-->
                 <li class="nav-item"><a href="login.html" class="nav-link logout"> <span class="d-none d-sm-inline-block" style="font-size: 1.5em;">Salir</span><i class="fa fa-power-off" style="font-size: 1.5em;"></i></a></li>
               </ul>
@@ -104,11 +104,12 @@
         <div class="container-fluid">
           <ul class="breadcrumb">
             <li class="breadcrumb-item"><a href="index.php">Inicio</a></li>
-            <li class="breadcrumb-item active">Reportes específicos       </li>
+            <li class="breadcrumb-item active"><a href="reporteespecifico.php">Reportes específicos</a></li>
+            <li class="breadcrumb-item active">Clientes en Riesgo</li>
           </ul>
         </div>
       </div>
-      <section class="forms">
+      <section id="dvContainer" class="forms">
         <div class="container-fluid">
           <!-- Page Header-->
           <header> 
@@ -116,96 +117,87 @@
           <div class="row">
             <div class="col-lg-12">
               <div class="card">
-                <div class="card-header d-flex align-items-center">
-                  <h4>Ventas totales</h4>
-                </div>
-                <div class="card-body">
-                        <div class="row">
-                            <div class="col-lg-12">
- 
-                                  <!-- <canvas id="barChartExample"></canvas> -->
-                                  <canvas id="myChart"></canvas>
-                                  
-
-                            </div>
-                        </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-12">
-              <div class="card">
                 <div class="card-body">
                         <div class="row">
                           <div class="col-md-12 form-inline">
-                              <div class="col-md-6">
-                                &nbsp;
+                              <div class="col-md-4">
+                                    <h4>Clientes en riesgo</h4>
                               </div>
-                              <div class="col-md-6">
-                                  <form action="php/reportes/creapdf.php" method="post" target="_blank" name="form" id="form">
-                                    <!-- <span id="url" name="urli">hola</span> -->
-                                    <input type="hidden" id="url" name="url" >
-                                    <button type="submit" value="guardarpdf" name="guardarpdf" class="btn btn-primary"><i class="fa fa-print"></i> Guardar PDF </button>&nbsp;&nbsp;
-                                    <!-- <button type="submit" value="imprime2" name="imprimepdf2" class="btn btn-primary"><i class="fa fa-download"></i> Guardar como .xml </button>&nbsp;&nbsp;
-                                    <button type="submit" value="imprime3" name="imprimepdf3" class="btn btn-primary"><i class="fa fa-clone"></i> Imprimir </button> -->
+                              <div class="col-md-2">
+                                    
+                              </div>
+                              <div class="col-md-1">
+                                    
+                              </div>
+                              <div class="col-md-5 form-inline">
+                                  <form action="php/reportes/creapdfclientes.php" method="post" target="_blank">
+                                    <input type="hidden" id="tipo" name="tipo" value="1">
+                                    <button type="submit" value="imprime" name="imprimepdf" class="btn btn-primary"><i class="fa fa-file-pdf-o"></i> Guardar </button>&nbsp;&nbsp;</form>
+                                  <form method="post">
+                                    <button  type="submit" value="imprime2"  class="btn btn-primary" onclick="window.print();"><i class="fa fa-print"></i> Imprimir </button>&nbsp;&nbsp;
+                                    <button type="submit" value="imprime3" name="imprimepdf3" class="btn btn-primary"><i class="fa fa-download"></i> Imprimir </button>
                                   </form>
-                                 <!--  <div src="php/reportes/creapdf.php" name="ventana"></div> -->
-                              </div>
-
+                                  <div src="php/reportes/creapdf.php" name="ventana"></div>
                               </div>
 
                           <div class="col-md-3">
-                            <h6>Rango de fechas</h6>
-                            <select name="account" class="form-control">
-                              <option >option 1</option>
-                              <option>option 2</option>
-                              <option>option 3</option>
-                              <option>option 4</option>
-                            </select>
+                            <!-- h6>Rango de fechas</h6>
+                                <select id="status" class="form-control" name="status" onChange="mostrar(this.value);">
+                                    <option selected value="Hoy">Hoy</option>
+                                    <option value="Ayer">Ayer</option>
+                                    <option value="1primB">Hace 7 días</option>
+                                    <option value="1primC">Hace 30 días</option>
+                                 </select> -->
+                                 <br>
                           </div>
-                          <div class="col-md-12">
-                                &nbsp;
-                          </div>
-                          <div class="col-md-12">
-                              <div class="table-responsive">
-                                <table class="table table-striped table-hover">
-                                  <thead>
-                                    <tr>
-                                      <th>#</th>
-                                      <th>First Name</th>
-                                      <th>Last Name</th>
-                                      <th>Username</th>
-                                    </tr>
-                                  </thead>
-                                  <tbody>
-                                    <tr>
-                                      <th scope="row">1</th>
-                                      <td>Mark</td>
-                                      <td>Otto</td>
-                                      <td>@mdo</td>
-                                    </tr>
-                                    <tr>
-                                      <th scope="row">2</th>
-                                      <td>Jacob</td>
-                                      <td>Thornton</td>
-                                      <td>@fat</td>
-                                    </tr>
-                                    <tr>
-                                      <th scope="row">3</th>
-                                      <td>Larry</td>
-                                      <td>the Bird</td>
-                                      <td>@twitter</td>
-                                    </tr>
-                                  </tbody>
-                                </table>
-                              </div>
-                          </div>
+
+                          <div class="col-lg-12">
+                                <div class="card">
+                                    <div class="card-body">
+                                      <div class="table-responsive">
+                                        <table class="table table-striped table-hover">
+                                          <thead>
+                                            <tr>
+                                              <th>Nombre</th>
+                                              <th>Email</th>
+                                              <th>Último día de pedido</th>
+                                              <th>Pedidos totales</th>
+                                              <th>Monto total</th>
+                                            </tr>
+                                          </thead>
+                                          <tbody>
+                                             <?php
+                                              $query1 = mysqli_query($link, "SELECT  id, nombre, contacto_email FROM empresas");
+                                              while($row1 = mysqli_fetch_array($query1)){ 
+                                                $id=$row1["id"];
+                                                $query = mysqli_query($link, "SELECT  COUNT(*) as TOTAL, IF(last_updated IS NULL or last_updated = '', 'null', last_updated) as last_updated FROM embarques WHERE  empresa_id = '".$id."'");
+                                                  $row = mysqli_fetch_array($query); 
+                                                  if($row["TOTAL"]<3){
+                                                    $query2 = mysqli_query($link, "SELECT COUNT(*) as TOTALP, IFNULL(SUM(monto_pagado),0) AS MONTO FROM ordenes WHERE empresa_id='".$id."'");
+                                                        $row2 = mysqli_fetch_array($query2);
+                                                        echo '<tr>';
+                                                        echo '<th scope="row">'.$row1["nombre"].'</th>';  
+                                                        echo '<td>'.$row1["contacto_email"].'</td>';
+                                                        echo '<td>'.$row["last_updated"].'</td>';
+                                                        echo '<td>'.$row2["TOTALP"].'</td>';
+                                                        echo '<td>'.'$ '.$row2["MONTO"].'</td>';  
+                                                        echo '</tr>';   
+                                                  }
+                                              }
+                                           ?>
+                                          </tbody>
+                                        </table>
+                                      </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
               </div>
               </div>
             </div>
-<!--         </div> -->
+        </div>
       </section>
       <footer class="main-footer">
         <div class="container-fluid">
@@ -221,61 +213,6 @@
         </div>
       </footer>
     </div>
-
-    <script>
-     var ctx = document.getElementById("myChart");
-     var data = {
-        labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
-        datasets: [{
-            label: '# of Votes',
-           data: [12, 19, 3, 5, 2, 3],
-            borderWidth: 1,
-            backgroundColor: 'rgba(255, 99, 132, 0.2)',
-            borderColor: 'rgba(255, 99, 132,1)',
-        }]
-    };
-    
-var options = {
-              scales: {
-                      xAxes: [{
-                        ticks: {
-                          fontSize: 10,
-                          maxRotation: 0 // angle in degrees
-                        }
-                      }],
-                      yAxes: [{
-                        ticks: {
-                          fontSize: 10,
-                          maxRotation: 0 // angle in degrees
-                        }
-                      }]
-              },
-              elements: {
-                  line: {
-                      tension: 0, // disables bezier curves
-                  }
-              }
-          };
-var chart1 = new Chart(ctx, {
-    type: 'line',
-    data: data,
-    options: options
-});
-
-      var dataURL = ctx.toDataURL('image/png');
-      
-    </script>
-
-    <script>
-
-   // on the submit event, generate a image from the canvas and save the data in the textarea
-   document.getElementById('form').addEventListener("submit",function(){
-      var image = ctx.toDataURL(); // data:image/png....
-      document.getElementById('url').value = image;
-   },false);
-
-</script>
-
       
     <!-- JavaScript files-->
     <script src="vendor/jquery/jquery.min.js"></script>
@@ -283,7 +220,8 @@ var chart1 = new Chart(ctx, {
     <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
     <script src="js/grasp_mobile_progress_circle-1.0.0.min.js"></script>
     <script src="vendor/jquery.cookie/jquery.cookie.js"> </script>
-    <script src="vendor/chart.js/Chart.min.js"></script>
+    <script src="vendor/jquery-validation/jquery.validate.min.js"></script>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
     <script src="vendor/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js"></script>
     <!-- Main File-->
     <script src="js/front.js"></script>

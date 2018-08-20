@@ -152,6 +152,7 @@ $(document).ready(function () {
         }
     });
 
+   
 
 
     var polarChartExample = new Chart(POLARCHARTEXMPLE, {

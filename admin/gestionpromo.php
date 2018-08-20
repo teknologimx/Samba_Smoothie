@@ -252,7 +252,7 @@
                                           echo '<p>&nbsp;'."Presione Eliminar para confirmar".'</p>';
                                       echo '</div>';
                                       echo '<div class="modal-footer">';
-                                          echo '<button type="button" class="btn btn-primary">'."Eliminar".'</button>';
+                                          echo ' <a href='."/ProyectoLKE/Samba_Smoothie/admin/eliminarPromoPreferencias.php?id_promocion=$row[3]".'><input type="button" id="eliminar" value=" Eliminar " class="btn btn-primary"></a>';
                                           echo '<button type="button" data-dismiss="modal" class="btn btn-secondary">'."Cancelar".'</button>';
                                       echo '</div>';
                                    echo '</div>';
@@ -330,7 +330,7 @@
                                           echo '<p>&nbsp;'."Presione Eliminar para confirmar".'</p>';
                                       echo '</div>';
                                       echo '<div class="modal-footer">';
-                                          echo '<button type="button" class="btn btn-primary">'."Eliminar".'</button>';
+                                          echo ' <a href='."/ProyectoLKE/Samba_Smoothie/admin/eliminarPromoEspecial.php?id_promocion=$row[0]".'><input type="button" id="eliminar" value=" Eliminar " class="btn btn-primary"></a>';
                                           echo '<button type="button" data-dismiss="modal" class="btn btn-secondary">'."Cancelar".'</button>';
                                       echo '</div>';
                                    echo '</div>';

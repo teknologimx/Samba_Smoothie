@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 07-08-2018 a las 23:43:11
+-- Tiempo de generación: 20-08-2018 a las 12:58:38
 -- Versión del servidor: 5.6.17
 -- Versión de PHP: 5.5.12
 
@@ -17,7 +17,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8 */;
 
 --
--- Base de datos: `sambadb`
+-- Base de datos: `samba`
 --
 
 -- --------------------------------------------------------
@@ -1552,13 +1552,22 @@ INSERT INTO `platillos_ingredientes` (`platillo_ingredientes_id`, `ingrediente_i
 
 CREATE TABLE IF NOT EXISTS `promocion` (
   `id_promocion` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `fecha_inicio` varchar(25) NOT NULL,
-  `fecha_fin` varchar(25) NOT NULL,
-  `sucursal` varchar(100) NOT NULL,
-  `tipo_promo` varchar(25) NOT NULL,
-  `img_promo` varchar(100) NOT NULL,
+  `fecha_inicio` varchar(25) CHARACTER SET latin1 NOT NULL,
+  `fecha_fin` varchar(25) CHARACTER SET latin1 NOT NULL,
+  `sucursal` varchar(100) CHARACTER SET latin1 NOT NULL,
+  `tipo_promo` varchar(25) CHARACTER SET latin1 NOT NULL,
+  `img_promo` varchar(100) CHARACTER SET latin1 NOT NULL,
   PRIMARY KEY (`id_promocion`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=26 ;
+
+--
+-- Volcado de datos para la tabla `promocion`
+--
+
+INSERT INTO `promocion` (`id_promocion`, `fecha_inicio`, `fecha_fin`, `sucursal`, `tipo_promo`, `img_promo`) VALUES
+(21, '2018-08-23', '2018-08-30', 'Samba Cuernavaca-Flor de Canela', 'Descuento', '12936598_1766498100246822_7588855135330587013_n.jpg'),
+(24, '2018-08-23', '2018-08-30', 'Samba Cuernavaca-Flor de Canela', '2x1', '148977_499943366717039_1222577152_n.jpg'),
+(25, '2018-08-23', '2018-08-31', 'Samba Cuernavaca-Flor de Canela', 'Descuento', '1919038_873640466081820_8644747595160765318_n.jpg');
 
 -- --------------------------------------------------------
 
@@ -1569,17 +1578,24 @@ CREATE TABLE IF NOT EXISTS `promocion` (
 CREATE TABLE IF NOT EXISTS `promocion_especial` (
   `id_promo` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `id_promocion` int(10) unsigned NOT NULL,
-  `tematica` varchar(100) NOT NULL,
-  `categoria_p1` varchar(20) NOT NULL,
-  `tipo_p1` varchar(50) NOT NULL,
-  `producto_p1` varchar(100) NOT NULL,
-  `categoria_p2` varchar(20) NOT NULL,
-  `tipo_p2` varchar(50) NOT NULL,
-  `producto_p2` varchar(100) NOT NULL,
+  `tematica` varchar(100) CHARACTER SET latin1 NOT NULL,
+  `categoria_p1` varchar(20) CHARACTER SET latin1 NOT NULL,
+  `tipo_p1` varchar(50) CHARACTER SET latin1 NOT NULL,
+  `producto_p1` varchar(100) CHARACTER SET latin1 NOT NULL,
+  `categoria_p2` varchar(20) CHARACTER SET latin1 NOT NULL,
+  `tipo_p2` varchar(50) CHARACTER SET latin1 NOT NULL,
+  `producto_p2` varchar(100) CHARACTER SET latin1 NOT NULL,
   `descuento` int(11) NOT NULL,
   PRIMARY KEY (`id_promo`),
   KEY `id_promocion` (`id_promocion`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=20 ;
+
+--
+-- Volcado de datos para la tabla `promocion_especial`
+--
+
+INSERT INTO `promocion_especial` (`id_promo`, `id_promocion`, `tematica`, `categoria_p1`, `tipo_p1`, `producto_p1`, `categoria_p2`, `tipo_p2`, `producto_p2`, `descuento`) VALUES
+(19, 24, 'Día del niño', 'Bebidas', 'Jugos', 'Exotic', '0', '0', '0', 0);
 
 -- --------------------------------------------------------
 
@@ -1590,12 +1606,19 @@ CREATE TABLE IF NOT EXISTS `promocion_especial` (
 CREATE TABLE IF NOT EXISTS `promocion_preferencias` (
   `id_promo` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `id_promocion` int(10) unsigned NOT NULL,
-  `grupo` varchar(50) NOT NULL,
-  `producto` varchar(100) NOT NULL,
+  `grupo` varchar(50) CHARACTER SET latin1 NOT NULL,
+  `producto` varchar(100) CHARACTER SET latin1 NOT NULL,
   `descuento` int(11) NOT NULL,
   PRIMARY KEY (`id_promo`),
   KEY `id_promocion` (`id_promocion`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=5 ;
+
+--
+-- Volcado de datos para la tabla `promocion_preferencias`
+--
+
+INSERT INTO `promocion_preferencias` (`id_promo`, `id_promocion`, `grupo`, `producto`, `descuento`) VALUES
+(4, 25, 'Vegano', 'Ensalada Macavi', 20);
 
 -- --------------------------------------------------------
 
@@ -1606,16 +1629,23 @@ CREATE TABLE IF NOT EXISTS `promocion_preferencias` (
 CREATE TABLE IF NOT EXISTS `promocion_ventas` (
   `id_promo` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `id_promocion` int(10) unsigned NOT NULL,
-  `categoria_p1` varchar(20) NOT NULL,
-  `tipo_p1` varchar(50) NOT NULL,
-  `producto_p1` varchar(100) NOT NULL,
-  `categoria_p2` varchar(20) NOT NULL,
-  `tipo_p2` varchar(50) NOT NULL,
-  `producto_p2` varchar(100) NOT NULL,
+  `categoria_p1` varchar(20) CHARACTER SET latin1 NOT NULL,
+  `tipo_p1` varchar(50) CHARACTER SET latin1 NOT NULL,
+  `producto_p1` varchar(100) CHARACTER SET latin1 NOT NULL,
+  `categoria_p2` varchar(20) CHARACTER SET latin1 NOT NULL,
+  `tipo_p2` varchar(50) CHARACTER SET latin1 NOT NULL,
+  `producto_p2` varchar(100) CHARACTER SET latin1 NOT NULL,
   `descuento` int(11) NOT NULL,
   PRIMARY KEY (`id_promo`),
   KEY `id_promocion` (`id_promocion`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=5 ;
+
+--
+-- Volcado de datos para la tabla `promocion_ventas`
+--
+
+INSERT INTO `promocion_ventas` (`id_promo`, `id_promocion`, `categoria_p1`, `tipo_p1`, `producto_p1`, `categoria_p2`, `tipo_p2`, `producto_p2`, `descuento`) VALUES
+(4, 21, 'Bebidas', 'Jugos', 'Mojito', '0', '0', '0', 30);
 
 -- --------------------------------------------------------
 
@@ -2020,6 +2050,16 @@ INSERT INTO `userlg_rolelg` (`userlg_id`, `rolelg_id`) VALUES
 (88, 7),
 (89, 7),
 (90, 7);
+
+--
+-- Restricciones para tablas volcadas
+--
+
+--
+-- Filtros para la tabla `promocion_especial`
+--
+ALTER TABLE `promocion_especial`
+  ADD CONSTRAINT `promocion_especial_ibfk_1` FOREIGN KEY (`id_promocion`) REFERENCES `promocion` (`id_promocion`);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
