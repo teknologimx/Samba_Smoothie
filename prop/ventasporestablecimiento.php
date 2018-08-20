@@ -150,82 +150,20 @@
  
                                 <div id= 'Hoy' class="card" style="display: show">
                                     <div class="card-header">
-                                            <canvas id="chartHoy" height="100px"></canvas>
+                                            <canvas id="barChartVentasHoy" height="100px"></canvas>
                                     </div>
-                                    <div class="card-body">
-                                      <div class="table-responsive">
-                                        <table class="table table-striped table-hover">
-                                          <thead>
-                                            <tr>
-                                              <th>#</th>
-                                              <th>First Name</th>
-                                              <th>Last Name</th>
-                                              <th>Username</th>
-                                            </tr>
-                                          </thead>
-                                          <tbody>
-                                            <tr>
-                                              <th scope="row">1</th>
-                                              <td>Mark</td>
-                                              <td>Otto</td>
-                                              <td>@mdo</td>
-                                            </tr>
-                                            <tr>
-                                              <th scope="row">2</th>
-                                              <td>Jacob</td>
-                                              <td>Thornton</td>
-                                              <td>@fat</td>
-                                            </tr>
-                                            <tr>
-                                              <th scope="row">3</th>
-                                              <td>Larry</td>
-                                              <td>the Bird</td>
-                                              <td>@twitter</td>
-                                            </tr>
-                                          </tbody>
-                                        </table>
-                                      </div>
-                                    </div>
+                                    <?php
+                                      include("php/repvenestab/tablaHoy.php");
+                                    ?>
                                 </div>
 
                                 <div id= 'Ayer' class="card" style="display: none">
                                     <div class="card-header">
-                                            <canvas id="chartAyer" height="100px"></canvas>
+                                            <canvas id="barChartVentasAyer" height="100px"></canvas>
                                     </div>
-                                    <div class="card-body">
-                                        <div class="table-responsive">
-                                            <table class="table table-striped table-hover">
-                                              <thead>
-                                                <tr>
-                                                  <th>#</th>
-                                                  <th>First Name</th>
-                                                  <th>Last Name</th>
-                                                  <th>Username</th>
-                                                </tr>
-                                              </thead>
-                                              <tbody>
-                                                <tr>
-                                                  <th scope="row">1</th>
-                                                  <td>Mark</td>
-                                                  <td>Otto</td>
-                                                  <td>@mdo</td>
-                                                </tr>
-                                                <tr>
-                                                  <th scope="row">2</th>
-                                                  <td>Jacob</td>
-                                                  <td>Thornton</td>
-                                                  <td>@fat</td>
-                                                </tr>
-                                                <tr>
-                                                  <th scope="row">3</th>
-                                                  <td>Larry</td>
-                                                  <td>the Bird</td>
-                                                  <td>@twitter</td>
-                                                </tr>
-                                              </tbody>
-                                            </table>
-                                          </div>
-                                        </div>
+                                    <?php
+                                      include("php/repvenestab/tablaHoy.php");
+                                    ?>
                                   </div>
                                   
 
@@ -383,6 +321,7 @@
     <script src="vendor/chart.js/Chart.min.js"></script>
     <script src="js/charts-custom.js"></script>
     <script src="js/repvenprod.js"></script>
+    <script src="js/GraficasEstablecimientos.js"></script>
     <script src="js/chart_repvenprod.js"></script>
     <script src="vendor/jquery-validation/jquery.validate.min.js"></script>
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>

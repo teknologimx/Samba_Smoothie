@@ -3,7 +3,7 @@ $(document).ready(function(){
     'use strict';
     var brandPrimary = 'rgba(51, 179, 90, 1)';
     $.ajax({
-        url:"http://localhost/Samba_Smoothie/prop/php/repvenprod/repHoy.php",
+        url:"http://localhost/Samba_Smoothie/prop/php/repvenestab/repHoy.php",
         //method: "POST",
         type: "GET",
         success: function(data){
@@ -75,7 +75,7 @@ $(document).ready(function(){
     'use strict';
     var brandPrimary = 'rgba(51, 179, 90, 1)';
     $.ajax({
-        url:"http://localhost/Samba_Smoothie/prop/php/repvenprod/repAyer.php",
+        url:"http://localhost/Samba_Smoothie/prop/php/repvenestab/repAyer.php",
         //method: "POST",
         type: "GET",
         success: function(data){
@@ -147,7 +147,7 @@ $(document).ready(function(){
     'use strict';
     var brandPrimary = 'rgba(51, 179, 90, 1)';
     $.ajax({
-        url:"http://localhost/Samba_Smoothie/prop/php/repvenprod/rep7Dias.php",
+        url:"http://localhost/Samba_Smoothie/prop/php/repvenestab/rep7Dias.php",
         //method: "POST",
         type: "GET",
         success: function(data){
@@ -219,7 +219,7 @@ $(document).ready(function(){
     'use strict';
     var brandPrimary = 'rgba(51, 179, 90, 1)';
     $.ajax({
-        url:"http://localhost/Samba_Smoothie/prop/php/repvenprod/rep30Dias.php",
+        url:"http://localhost/Samba_Smoothie/prop/php/repvenestab/rep30Dias.php",
         //method: "POST",
         type: "GET",
         success: function(data){
@@ -291,7 +291,7 @@ $(document).ready(function(){
     'use strict';
     var brandPrimary = 'rgba(51, 179, 90, 1)';
     $.ajax({
-        url:"http://localhost/Samba_Smoothie/prop/php/repvenprod/rep90Dias.php",
+        url:"http://localhost/Samba_Smoothie/prop/php/repvenestab/rep90Dias.php",
         //method: "POST",
         type: "GET",
         success: function(data){
