@@ -8,9 +8,10 @@
     }
 
     /*Determinar las horas */
-    //Fecha de hoy
+    //Fecha de ayer
     $hoy= getdate();
     $f9= new DateTime($hoy[year]."-".$hoy[mon]."-".$hoy[mday]." 09:00:00");
+    $f9->modify("-24 hour");
     $varf9= $f9->format("Y-m-d H:m:i");
     $f10= new DateTime($hoy[year]."-".$hoy[mon]."-".$hoy[mday]." 10:00:00");
     $varf10= $f10->format("Y-m-d H:m:i");

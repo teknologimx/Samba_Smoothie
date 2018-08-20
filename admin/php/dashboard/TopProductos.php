@@ -1,8 +1,5 @@
 <?php
-    //error_reporting(0);
-    // Conectando, seleccionando la base de datos
-    //include("conexion.php");
-    //$link=Conectarse();
+    error_reporting(0);
     if (!($link=mysqli_connect("localhost","root","", "samba"))) 
    { 
       echo "Error conectando a la base de datos.";
@@ -10,15 +7,13 @@
    mysqli_set_charset($link,"utf8");
     $result = mysqli_query($link,  "SELECT
                 platillos.nombre as nombre,
-                ordenesdetalles.cantidad as cantidad,
-                platillosestablecimientos.precio as precio,
-                SUM(cantidad) as cantTotal,
-                SUM(precio) as precTotal
+                SUM(ordenesdetalles.cantidad) as cantTotal,
+                SUM(platillosestablecimientos.precio) as precTotal
             FROM
                 platillos INNER JOIN platillosestablecimientos ON
                 platillos.id=platillosestablecimientos.platillo_id INNER JOIN ordenesdetalles ON
                 platillosestablecimientos.id=ordenesdetalles.platillo_id
-            GROUP BY (nombre), (cantidad), (precio)
+            GROUP BY nombre
             ORDER BY precTotal DESC");
 
     echo "<div class='card-body'>
