@@ -7,40 +7,24 @@
         die("Conexion fallida: " . $mysqli->error);
     }
 
-    /*Determinar las horas */
-    //Fecha de hace 90 dias
     $hoy= getdate();
-    $fecha= new DateTime($hoy[year]."-".$hoy[mon]."-".$hoy[mday]." 00:00:00");
-    //Primer mes
-    $fecha->modify("-6 month");
-    $var1= $fecha->format("Y-m-d H:m:i");
-    //Segundo mes
-    $fecha->modify("+1 month");
-    $var2= $fecha->format("Y-m-d H:m:i");
-    //Tercer mes
-    $fecha->modify("+1 month");
-    $var3= $fecha->format("Y-m-d H:m:i");
-    //Cuarto mes (limite)
-    $fecha->modify("+1 month");
-    $var4= $fecha->format("Y-m-d H:m:i");
-    
+    $inicio= new DateTime($hoy[year]."-".$hoy[mon]."-".$hoy[mday]." 00:00:00");
+    $fin= new DateTime($hoy[year]."-".$hoy[mon]."-".$hoy[mday]." 00:00:00");
+    $inicio->modify("-120 day");
+    $fin->modify("-60 day");
+    $var1= $inicio->format("Y-m-d H:m:i");
+    $var2= $fin->format("Y-m-d H:m:i");
 
     //Realizar la consulta
-    $query= sprintf("SELECT SUM(ordenesdetalles.monto_pagado) as ganancias,
-                            SUM(ordenesdetalles.cantidad) as ordenes
-                    FROM ordenesdetalles
-                    WHERE fecha_pago>='$var1' AND fecha_pago<'$var2'
-                    UNION ALL
-                    SELECT SUM(ordenesdetalles.monto_pagado) as ganancias,
-                            SUM(ordenesdetalles.cantidad) as ordenes
-                    FROM ordenesdetalles
-                    WHERE fecha_pago>='$var2' AND fecha_pago<'$var3'
-                    UNION ALL
-                    SELECT SUM(ordenesdetalles.monto_pagado) as ganancias,
-                            SUM(ordenesdetalles.cantidad) as ordenes
-                    FROM ordenesdetalles
-                    WHERE fecha_pago>='$var3' AND fecha_pago<'$var4'
-                    ORDER BY ganancias, ordenes");
+    $query= sprintf("SELECT
+                        establecimientos.nombre as est,
+                        SUM(ordenesdetalles.cantidad) as cantTotal,
+                        SUM(platillosestablecimientos.precio) as precTotal
+                FROM platillosestablecimientos, ordenesdetalles INNER JOIN establecimientos
+                ON ordenesdetalles.establecimiento_id=establecimientos.id
+                Where ordenesdetalles.fecha_pago>='$var1' AND ordenesdetalles.fecha_pago<='$var2'
+                GROUP BY est
+                ORDER BY est DESC");
     $result= $mysqli->query($query);
     $data= array();
     foreach($result as $row){

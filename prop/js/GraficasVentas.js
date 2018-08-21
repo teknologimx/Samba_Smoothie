@@ -21,7 +21,7 @@ $(document).ready(function(){
                     labels: ["09:00 hrs.", "10:00 hrs.", "11:00 hrs.", "12:00 hrs.", "13:00 hrs.","14:00 hrs.","15:00 hrs.","16:00 hrs."],
                     datasets:[
                         {
-                            label: "Ganancia",
+                            label: "Monto Generado",
                             backgroundColor:[
                                 'rgba(51, 179, 90, 0.6)',
                                 'rgba(51, 179, 90, 0.6)',
@@ -93,7 +93,7 @@ $(document).ready(function(){
                     labels: ["09:00 hrs.", "10:00 hrs.", "11:00 hrs.", "12:00 hrs.", "13:00 hrs.","14:00 hrs.","15:00 hrs.","16:00 hrs."],
                     datasets:[
                         {
-                            label: "Ganancia",
+                            label: "Monto Generado",
                             backgroundColor:[
                                 'rgba(51, 179, 90, 0.6)',
                                 'rgba(51, 179, 90, 0.6)',
@@ -165,7 +165,7 @@ $(document).ready(function(){
                     labels: ["Lunes", "Martes", "Miercoles", "Jueves", "Viernes","Sábado","Domingo"],
                     datasets:[
                         {
-                            label: "Ganancia",
+                            label: "Monto Generado",
                             backgroundColor:[
                                 'rgba(51, 179, 90, 0.6)',
                                 'rgba(51, 179, 90, 0.6)',
@@ -237,7 +237,7 @@ $(document).ready(function(){
                     labels: ["Semana 1", "Semana 2", "Semana 3", "Semana 4"],
                     datasets:[
                         {
-                            label: "Ganancia",
+                            label: "Monto Generado",
                             backgroundColor:[
                                 'rgba(51, 179, 90, 0.6)',
                                 'rgba(51, 179, 90, 0.6)',
@@ -309,7 +309,7 @@ $(document).ready(function(){
                     labels: ["Primer mes", "Segundo mes", "Tercer mes"],
                     datasets:[
                         {
-                            label: "Ganancia",
+                            label: "Monto Generado",
                             backgroundColor:[
                                 'rgba(51, 179, 90, 0.6)',
                                 'rgba(51, 179, 90, 0.6)',

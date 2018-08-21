@@ -1,3 +1,7 @@
+<?php session_start();
+   include("conexion.php"); 
+   $link=Conectarse(); 
+?>
 <!DOCTYPE html>
 <html>
   <head>
@@ -129,169 +133,64 @@
                 <thead>
                   <tr>
                     <th> No.</th>
-                    <th>Tipo</th>
                     <th>Categoría</th>
+                    <th>Tipo</th>
                     <th>Producto</th>
-                    <th>Tipo de Promoción</th>
+                    <th>Promoción</th>
+                    <th></th>
                     <th></th>
                   </tr>
                 </thead>
                 <tbody>
-                  <tr>
-                    <th scope="row">1</th>
-                    <td>Energy</td>
-                    <td>Smoothies</td>
-                    <td>Coffe Nut</td>
-                    <td>2x1</td>
-                    <td>
-                        <input type="button" id="modificar" value=" Modificar " class="btn btn-primary">
-                        <button type="button" data-toggle="modal" data-target="#myModal" class="btn btn-secondary"> Eliminar</button>
-                        
-                        <!--Modal-->
-                        <div id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" class="modal fade text-center">
-                            <div role="document" class="modal-dialog">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h5 id="exampleModalLabel" class="modal-title">Confirmar!</h5>
-                                        <button type="button" data-dismiss="modal" aria-label="Close" class="close"><span aria-hidden="true">×</span></button>
-                                    </div>
-                                    <div class="modal-body">
-                                        <p>&nbsp; Presione "Eliminar" para confirmar</p>
-                                    </div>
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-primary">Eliminar</button>
-                                        <button type="button" data-dismiss="modal" class="btn btn-secondary">Cancelar</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!--Fin modal-->
-                    </td>
-                  </tr>
-                  <tr>
-                    <th scope="row">2</th>
-                    <td>Ensaladas</td>
-                    <td>Ensaladas</td>
-                    <td>Griega</td>
-                    <td>Descuento</td>
-                    <td>
-                        <input type="button" id="modificar" value=" Modificar " class="btn btn-primary">
-                        <button type="button" data-toggle="modal" data-target="#myModal" class="btn btn-secondary"> Eliminar</button>
-                        
-                        <!--Modal-->
-                        <div id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" class="modal fade text-center">
-                            <div role="document" class="modal-dialog">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h5 id="exampleModalLabel" class="modal-title">Confirmar!</h5>
-                                        <button type="button" data-dismiss="modal" aria-label="Close" class="close"><span aria-hidden="true">×</span></button>
-                                    </div>
-                                    <div class="modal-body">
-                                        <p>&nbsp; Presione "Eliminar" para confirmar</p>
-                                    </div>
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-primary">Eliminar</button>
-                                        <button type="button" data-dismiss="modal" class="btn btn-secondary">Cancelar</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!--Fin modal-->
-                    </td>
-                  </tr>
-                  <tr>
-                      <th scope="row">3</th>
-                      <td>Postres</td>
-                      <td>Sin azucar</td>
-                      <td>Muffin de elote</td>
-                      <td>Combo</td>
-                      <td>
-                          <input type="button" id="modificar" value=" Modificar " class="btn btn-primary">
-                        <button type="button" data-toggle="modal" data-target="#myModal" class="btn btn-secondary"> Eliminar</button>
-                        
-                        <!--Modal-->
-                        <div id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" class="modal fade text-center">
-                            <div role="document" class="modal-dialog">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h5 id="exampleModalLabel" class="modal-title">Confirmar!</h5>
-                                        <button type="button" data-dismiss="modal" aria-label="Close" class="close"><span aria-hidden="true">×</span></button>
-                                    </div>
-                                    <div class="modal-body">
-                                        <p>&nbsp; Presione "Eliminar" para confirmar</p>
-                                    </div>
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-primary">Eliminar</button>
-                                        <button type="button" data-dismiss="modal" class="btn btn-secondary">Cancelar</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!--Fin modal-->
-                      </td>
-                  </tr>
-                  <tr>
-                      <th scope="row">4</th>
-                      <td>Emparedados</td>
-                      <td>Emparedados</td>
-                      <td>Atún</td>
-                      <td>2x1</td>
-                      <td>
-                          <input type="button" id="modificar" value=" Modificar " class="btn btn-primary">
-                        <button type="button" data-toggle="modal" data-target="#myModal" class="btn btn-secondary"> Eliminar</button>
-                        
-                        <!--Modal-->
-                        <div id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" class="modal fade text-center">
-                            <div role="document" class="modal-dialog">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h5 id="exampleModalLabel" class="modal-title">Confirmar!</h5>
-                                        <button type="button" data-dismiss="modal" aria-label="Close" class="close"><span aria-hidden="true">×</span></button>
-                                    </div>
-                                    <div class="modal-body">
-                                        <p>&nbsp; Presione "Eliminar" para confirmar</p>
-                                    </div>
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-primary">Eliminar</button>
-                                        <button type="button" data-dismiss="modal" class="btn btn-secondary">Cancelar</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!--Fin modal-->
-                      </td>
-                  </tr>
-                  <tr>
-                      <th scope="row">5</th>
-                      <td>Comida Completa</td>
-                      <td>Samba Fresh</td>
-                      <td>Pollo, vegetales y pasta</td>
-                      <td>Descuento</td>
-                      <td>
-                          <input type="button" id="modificar" value=" Modificar " class="btn btn-primary">
-                        <button type="button" data-toggle="modal" data-target="#myModal" class="btn btn-secondary"> Eliminar</button>
-                        
-                        <!--Modal-->
-                        <div id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" class="modal fade text-center">
-                            <div role="document" class="modal-dialog">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h5 id="exampleModalLabel" class="modal-title">Confirmar!</h5>
-                                        <button type="button" data-dismiss="modal" aria-label="Close" class="close"><span aria-hidden="true">×</span></button>
-                                    </div>
-                                    <div class="modal-body">
-                                        <p>&nbsp; Presione "Eliminar" para confirmar</p>
-                                    </div>
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-primary">Eliminar</button>
-                                        <button type="button" data-dismiss="modal" class="btn btn-secondary">Cancelar</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!--Fin modal-->
-                      </td>
-                  </tr>
+                  <?php
+                      $num = 1;
+                      $rows = mysqli_query($link, "SELECT promocion.tipo_promo, promocion_ventas.categoria_p1, promocion_ventas.tipo_p1, promocion_ventas.producto_p1, promocion.id_promocion FROM promocion INNER JOIN promocion_ventas ON promocion.id_promocion = promocion_ventas.id_promocion");
+                       $rowcount=mysqli_num_rows($rows);
+                       if($rowcount >= 0){
+                            
+                            while($row = mysqli_fetch_row($rows)){ 
+                                echo '<tr>';
+                                echo '<th scope="row">'.$num.'</th>';  
+                                echo '<td>'.$row[1].'</td>';
+                                echo '<td>'.$row[2].'</td>';
+                                echo '<td>'.$row[3].'</td>';
+                                echo '<td>'.$row[0].'</td>';
+                                echo '<td>';
+                                //echo ' <a href='."/ProyectoLKE/Samba_Smoothie/admin/modificarPromoVentas.php?id_promocion=$row[4]".'><input type="button" id="modificar" value=" Modificar " class="btn btn-primary"></a>';
+                                echo '</td>';  
+                                echo '<td>';
+
+                                //echo '<button type="button" data-toggle="modal" data-target="#myModal" class="btn btn-secondary">'."Eliminar".'</button>';
+                          
+                                // <!--Modal-->
+                               /*echo '<div id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" class="modal fade text-center">';
+                               echo '<div role="document" class="modal-dialog">';
+                                  echo '<div class="modal-content">';
+                                      echo '<div class="modal-header">';
+                                          echo '<h5 id="exampleModalLabel" class="modal-title">'."Confirmar!".'</h5>';
+                                          echo '<button type="button" data-dismiss="modal" aria-label="Close" class="close"><span aria-hidden="true">'."×".'</span></button>';
+                                      echo '</div>';
+                                      echo '<div class="modal-body">';
+                                          echo '<p>&nbsp;'."Presione Eliminar para confirmar".'</p>';
+                                      echo '</div>';
+                                      echo '<div class="modal-footer">';
+                                          echo ' <a href='."/ProyectoLKE/Samba_Smoothie/admin/eliminarPromoVentas.php?id_promocion=$row[4]".'><input type="button" id="eliminar" value=" Eliminar " class="btn btn-primary"></a>';
+                                          //echo '<button type="button" class="btn btn-primary">'."Eliminar".'</button>';
+                                          echo '<button type="button" data-dismiss="modal" class="btn btn-secondary">'."Cancelar".'</button>';
+                                      echo '</div>';
+                                   echo '</div>';
+                               echo '</div>';
+                           echo '</div>';*/
+                          // <!--Fin modal-->
+                       echo '</td>';
+                             $num = $num +1;
+                            echo "</tr>";
+                            }
+                            
+                        }else{
+                            echo '<td>'."No hay ofertas".'</td>';
+                        }
+                   ?>
                 </tbody>
               </table>
             </div>
@@ -313,76 +212,60 @@
                 <thead>
                   <tr>
                     <th> No.</th>
-                    <th>Tipo</th>
-                    <th>Categoría</th>
+                    <th>Grupo</th>
                     <th>Producto</th>
-                    <th>Tipo de Promoción</th>
+                    <th>Promoción</th>
+                    <th></th>
                     <th></th>
                   </tr>
                 </thead>
                 <tbody>
-                  <tr>
-                    <th scope="row">1</th>
-                    <td>Energy</td>
-                    <td>Smoothies</td>
-                    <td>Coffe Nut</td>
-                    <td>2x1</td>
-                    <td>
-                        <input type="button" id="modificar" value=" Modificar " class="btn btn-primary">
-                        <button type="button" data-toggle="modal" data-target="#myModal2" class="btn btn-secondary"> Eliminar</button>
-                        
-                        <!--Modal-->
-                        <div id="myModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" class="modal fade text-center">
-                            <div role="document" class="modal-dialog">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h5 id="exampleModalLabel" class="modal-title">Confirmar!</h5>
-                                        <button type="button" data-dismiss="modal" aria-label="Close" class="close"><span aria-hidden="true">×</span></button>
-                                    </div>
-                                    <div class="modal-body">
-                                        <p>&nbsp; Presione "Eliminar" para confirmar</p>
-                                    </div>
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-primary">Eliminar</button>
-                                        <button type="button" data-dismiss="modal" class="btn btn-secondary">Cancelar</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!--Fin modal-->
-                    </td>
-                  </tr>
-                  <tr>
-                    <th scope="row">2</th>
-                    <td>Ensaladas</td>
-                    <td>Ensaladas</td>
-                    <td>Griega</td>
-                    <td>Descuento</td>
-                    <td>
-                        <input type="button" id="modificar" value=" Modificar " class="btn btn-primary">
-                        <button type="button" data-toggle="modal" data-target="#myModal2" class="btn btn-secondary"> Eliminar</button>
-                        
-                        <!--Modal-->
-                        <div id="myModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" class="modal fade text-center">
-                            <div role="document" class="modal-dialog">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h5 id="exampleModalLabel" class="modal-title">Confirmar!</h5>
-                                        <button type="button" data-dismiss="modal" aria-label="Close" class="close"><span aria-hidden="true">×</span></button>
-                                    </div>
-                                    <div class="modal-body">
-                                        <p>&nbsp; Presione "Eliminar" para confirmar</p>
-                                    </div>
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-primary">Eliminar</button>
-                                        <button type="button" data-dismiss="modal" class="btn btn-secondary">Cancelar</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!--Fin modal-->
-                    </td>
-                  </tr>
+                 <?php
+                      $num = 1;
+                      $rows = mysqli_query($link, "SELECT promocion.tipo_promo, promocion_preferencias.grupo, promocion_preferencias.producto, promocion.id_promocion FROM promocion INNER JOIN promocion_preferencias  ON promocion.id_promocion = promocion_preferencias.id_promocion;");
+                       $rowcount=mysqli_num_rows($rows);
+                       if($rowcount >= 0){
+                            
+                            while($row = mysqli_fetch_row($rows)){ 
+                                echo '<tr>';
+                                echo '<th scope="row">'.$num.'</th>';  
+                                echo '<td>'.$row[1].'</td>';
+                                echo '<td>'.$row[2].'</td>';
+                                echo '<td>'.$row[0].'</td>';
+                                echo '<td>';
+                                //echo '<a href='."/ProyectoLKE/Samba_Smoothie/admin/modificarPromoPreferencias.php?id_promocion=$row[3]".'><input type="button" id="modificar" value=" Modificar " class="btn btn-primary"></a>';
+                                echo '</td>';
+                                echo '<td>';
+                                //echo '<button type="button" data-toggle="modal" data-target="#myModal2" class="btn btn-secondary">'."Eliminar".'</button>';
+                          
+                                // <!--Modal-->
+                               /*echo '<div id="myModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" class="modal fade text-center">';
+                               echo '<div role="document" class="modal-dialog">';
+                                  echo '<div class="modal-content">';
+                                      echo '<div class="modal-header">';
+                                          echo '<h5 id="exampleModalLabel" class="modal-title">'."Confirmar!".'</h5>';
+                                          echo '<button type="button" data-dismiss="modal" aria-label="Close" class="close"><span aria-hidden="true">'."×".'</span></button>';
+                                      echo '</div>';
+                                      echo '<div class="modal-body">';
+                                          echo '<p>&nbsp;'."Presione Eliminar para confirmar".'</p>';
+                                      echo '</div>';
+                                      echo '<div class="modal-footer">';
+                                          echo ' <a href='."/ProyectoLKE/Samba_Smoothie/admin/eliminarPromoPreferencias.php?id_promocion=$row[3]".'><input type="button" id="eliminar" value=" Eliminar " class="btn btn-primary"></a>';
+                                          echo '<button type="button" data-dismiss="modal" class="btn btn-secondary">'."Cancelar".'</button>';
+                                      echo '</div>';
+                                   echo '</div>';
+                               echo '</div>';
+                           echo '</div>';*/
+                          // <!--Fin modal-->
+                       echo '</td>';
+                             $num = $num +1;
+                            echo "</tr>";
+                            }
+                            
+                        }else{
+                            echo '<td>'."No hay ofertas".'</td>';
+                        }
+                   ?>
                 </tbody>
               </table>
             </div>
@@ -404,107 +287,63 @@
                 <thead>
                   <tr>
                     <th> No.</th>
-                    <th>Tipo</th>
                     <th>Categoría</th>
+                    <th>Tipo</th>
                     <th>Producto</th>
-                    <th>Tipo de Promoción</th>
+                    <th>Temática</th>
+                    <th>Promoción</th>
+                    <th></th>
                     <th></th>
                   </tr>
                 </thead>
                 <tbody>
-                  <tr>
-                    <th scope="row">1</th>
-                    <td>Energy</td>
-                    <td>Smoothies</td>
-                    <td>Coffe Nut</td>
-                    <td>2x1</td>
-                    <td>
-                        <input type="button" id="modificar" value=" Modificar " class="btn btn-primary">
-                        <button type="button" data-toggle="modal" data-target="#myModal3" class="btn btn-secondary"> Eliminar</button>
-                        
-                        <!--Modal-->
-                        <div id="myModal3" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" class="modal fade text-center">
-                            <div role="document" class="modal-dialog">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h5 id="exampleModalLabel" class="modal-title">Confirmar!</h5>
-                                        <button type="button" data-dismiss="modal" aria-label="Close" class="close"><span aria-hidden="true">×</span></button>
-                                    </div>
-                                    <div class="modal-body">
-                                        <p>&nbsp; Presione "Eliminar" para confirmar</p>
-                                    </div>
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-primary">Eliminar</button>
-                                        <button type="button" data-dismiss="modal" class="btn btn-secondary">Cancelar</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!--Fin modal-->
-                    </td>
-                  </tr>
-                  <tr>
-                    <th scope="row">2</th>
-                    <td>Ensaladas</td>
-                    <td>Ensaladas</td>
-                    <td>Griega</td>
-                    <td>Descuento</td>
-                    <td>
-                        <input type="button" id="modificar" value=" Modificar " class="btn btn-primary">
-                        <button type="button" data-toggle="modal" data-target="#myModal3" class="btn btn-secondary"> Eliminar</button>
-                        
-                        <!--Modal-->
-                        <div id="myModal3" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" class="modal fade text-center">
-                            <div role="document" class="modal-dialog">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h5 id="exampleModalLabel" class="modal-title">Confirmar!</h5>
-                                        <button type="button" data-dismiss="modal" aria-label="Close" class="close"><span aria-hidden="true">×</span></button>
-                                    </div>
-                                    <div class="modal-body">
-                                        <p>&nbsp; Presione "Eliminar" para confirmar</p>
-                                    </div>
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-primary">Eliminar</button>
-                                        <button type="button" data-dismiss="modal" class="btn btn-secondary">Cancelar</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!--Fin modal-->
-                    </td>
-                  </tr>
-                  <tr>
-                      <th scope="row">3</th>
-                      <td>Postres</td>
-                      <td>Sin azucar</td>
-                      <td>Muffin de elote</td>
-                      <td>Combo</td>
-                      <td>
-                          <input type="button" id="modificar" value=" Modificar " class="btn btn-primary">
-                        <button type="button" data-toggle="modal" data-target="#myModal3" class="btn btn-secondary"> Eliminar</button>
-                        
-                        <!--Modal-->
-                        <div id="myModal3" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" class="modal fade text-center">
-                            <div role="document" class="modal-dialog">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h5 id="exampleModalLabel" class="modal-title">Confirmar!</h5>
-                                        <button type="button" data-dismiss="modal" aria-label="Close" class="close"><span aria-hidden="true">×</span></button>
-                                    </div>
-                                    <div class="modal-body">
-                                        <p>&nbsp; Presione "Eliminar" para confirmar</p>
-                                    </div>
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-primary">Eliminar</button>
-                                        <button type="button" data-dismiss="modal" class="btn btn-secondary">Cancelar</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!--Fin modal-->
-                      </td>
-                  </tr>
+                  <?php
+                      $num = 1;
+                      $rows = mysqli_query($link, "SELECT promocion.id_promocion, promocion_especial.categoria_p1, promocion_especial.tipo_p1, promocion_especial.producto_p1, promocion_especial.tematica, promocion.tipo_promo FROM promocion INNER JOIN promocion_especial ON promocion.id_promocion = promocion_especial.id_promocion");
+                       $rowcount=mysqli_num_rows($rows);
+                       if($rowcount >= 0){             
+                            while($row = mysqli_fetch_row($rows)){ 
+                                echo '<tr>';
+                                echo '<th scope="row">'.$num.'</th>';  
+                                echo '<td>'.$row[1].'</td>';
+                                echo '<td>'.$row[2].'</td>';
+                                echo '<td>'.$row[3].'</td>';
+                                echo '<td>'.$row[4].'</td>';
+                                echo '<td>'.$row[5].'</td>';
+                                echo '<td>';
+                                //echo '<a href='."/ProyectoLKE/Samba_Smoothie/admin/modificarPromoEspecial.php?id_promocion=$row[0]".'><input type="button" id="modificar" value=" Modificar " class="btn btn-primary"></a>';
+                                echo '</td>';
+                                echo '<td>';
+                                //echo '<button type="button" data-toggle="modal" data-target="#myModal3" class="btn btn-secondary">'."Eliminar".'</button>';
+                          
+                                // <!--Modal-->
+                               /*echo '<div id="myModal3" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" class="modal fade text-center">';
+                               echo '<div role="document" class="modal-dialog">';
+                                  echo '<div class="modal-content">';
+                                      echo '<div class="modal-header">';
+                                          echo '<h5 id="exampleModalLabel" class="modal-title">'."Confirmar!".'</h5>';
+                                          echo '<button type="button" data-dismiss="modal" aria-label="Close" class="close"><span aria-hidden="true">'."×".'</span></button>';
+                                      echo '</div>';
+                                      echo '<div class="modal-body">';
+                                          echo '<p>&nbsp;'."Presione Eliminar para confirmar".'</p>';
+                                      echo '</div>';
+                                      echo '<div class="modal-footer">';
+                                          echo ' <a href='."/ProyectoLKE/Samba_Smoothie/admin/eliminarPromoEspecial.php?id_promocion=$row[0]".'><input type="button" id="eliminar" value=" Eliminar " class="btn btn-primary"></a>';
+                                          echo '<button type="button" data-dismiss="modal" class="btn btn-secondary">'."Cancelar".'</button>';
+                                      echo '</div>';
+                                   echo '</div>';
+                               echo '</div>';
+                           echo '</div>';*/
+                          // <!--Fin modal-->
+                       echo '</td>';
+                             $num = $num +1;
+                            echo "</tr>";
+                            }
+                            
+                        }else{
+                            echo '<td>'."No hay ofertas".'</td>';
+                        }
+                   ?>
                 </tbody>
               </table>
             </div>

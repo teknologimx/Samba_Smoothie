@@ -135,25 +135,26 @@
                                   <div src="php/reportes/creapdf.php" name="ventana"></div>
                               </div>
 
-                          <div class="col-md-3">
-                            <h6>Rango de fechas</h6>
-                                <select id="status" class="form-control" name="status" onChange="mostrar(this.value);">
-                                    <option selected value="Hoy">Hoy</option>
-                                    <option value="Ayer">Ayer</option>
-                                    <option value="1primB">Hace 7 días</option>
-                                    <option value="1primC">Hace 30 días</option>
-                                    <option value="1primD">Hace 90 días</option>
-                                 </select>
+                          <div class="col-md-10 form-inline">
+                              <h6>Rango de fechas:</h6>
+                              &nbsp;&nbsp;
+                              <select id="status" class="form-control" name="status" onChange="mostrar(this.value)">
+                                  <option selected value="Hoy">Hoy</option>
+                                  <option value="Ayer">Ayer</option>
+                                  <option value="1primB">Hace 7 días</option>
+                                  <option value="1primC">Hace 30 días</option>
+                                  <option value="1primD">Hace 90 días</option>
+                              </select>
                           </div>
                               
                           <div class="col-lg-12">
  
                                 <div id= 'Hoy' class="card" style="display: show">
                                     <div class="card-header">
-                                            <canvas id="barChartVentasHoy" height="100px"></canvas>
+                                        <canvas id="barChartVentasHoy" height="100px"></canvas>
                                     </div>
                                     <?php
-                                      include("php/repvenestab/tablaHoy.php");
+                                     include("php/repvenestab/tablaHoy.php");
                                     ?>
                                 </div>
 
@@ -161,132 +162,38 @@
                                     <div class="card-header">
                                             <canvas id="barChartVentasAyer" height="100px"></canvas>
                                     </div>
+                                    
                                     <?php
-                                      include("php/repvenestab/tablaHoy.php");
+                                      include("php/repvenestab/tablaAyer.php");
                                     ?>
                                   </div>
                                   
-
+                                <!--Hace 7 días-->
                                 <div id= '1primB' class="card" style="display: none">
                                     <div class="card-header">
-                                            <canvas id="chart7Dias" height="100px"></canvas>
+                                            <canvas id="barChartVentas7Dias" height="100px"></canvas>
                                     </div>
-                                    <div class="card-body">
-                                      <div class="table-responsive">
-                                        <table class="table table-striped table-hover">
-                                          <thead>
-                                            <tr>
-                                              <th>#</th>
-                                              <th>First Name</th>
-                                              <th>Last Name</th>
-                                              <th>Username</th>
-                                            </tr>
-                                          </thead>
-                                          <tbody>
-                                            <tr>
-                                              <th scope="row">1</th>
-                                              <td>Mark</td>
-                                              <td>Otto</td>
-                                              <td>@mdo</td>
-                                            </tr>
-                                            <tr>
-                                              <th scope="row">2</th>
-                                              <td>Jacob</td>
-                                              <td>Thornton</td>
-                                              <td>@fat</td>
-                                            </tr>
-                                            <tr>
-                                              <th scope="row">3</th>
-                                              <td>Larry</td>
-                                              <td>the Bird</td>
-                                              <td>@twitter</td>
-                                            </tr>
-                                          </tbody>
-                                        </table>
-                                      </div>
-                                    </div>
+                                    <?php
+                                      include("php/repvenestab/tabla7Dias.php");
+                                    ?>
                                 </div>
-
+                                <!--Hace 30 días-->
                                 <div id= '1primC' class="card" style="display: none">
                                     <div class="card-header">
-                                            <canvas id="chart30Dias" height="100px"></canvas>
+                                            <canvas id="barChartVentas30Dias" height="100px"></canvas>
                                     </div>
-                                    <div class="card-body">
-                                      <div class="table-responsive">
-                                        <table class="table table-striped table-hover">
-                                          <thead>
-                                            <tr>
-                                              <th>#</th>
-                                              <th>First Name</th>
-                                              <th>Last Name</th>
-                                              <th>Username</th>
-                                            </tr>
-                                          </thead>
-                                          <tbody>
-                                            <tr>
-                                              <th scope="row">1</th>
-                                              <td>Mark</td>
-                                              <td>Otto</td>
-                                              <td>@mdo</td>
-                                            </tr>
-                                            <tr>
-                                              <th scope="row">2</th>
-                                              <td>Jacob</td>
-                                              <td>Thornton</td>
-                                              <td>@fat</td>
-                                            </tr>
-                                            <tr>
-                                              <th scope="row">3</th>
-                                              <td>Larry</td>
-                                              <td>the Bird</td>
-                                              <td>@twitter</td>
-                                            </tr>
-                                          </tbody>
-                                        </table>
-                                      </div>
-                                    </div>
+                                    <?php
+                                      include("php/repvenestab/tabla30Dias.php");
+                                    ?>
                                 </div>
-
                                 <div id= '1primD' class="card" style="display: none">
                                     <div class="card-header">
-                                            <canvas id="chart90Dias" height="100px"></canvas>
+                                            <canvas id="barChartVentas90Dias" height="100px"></canvas>
                                     </div>
-                                    <div class="card-body">
-                                      <div class="table-responsive">
-                                        <table class="table table-striped table-hover">
-                                          <thead>
-                                            <tr>
-                                              <th>#</th>
-                                              <th>First Name</th>
-                                              <th>Last Name</th>
-                                              <th>Username</th>
-                                            </tr>
-                                          </thead>
-                                          <tbody>
-                                            <tr>
-                                              <th scope="row">1</th>
-                                              <td>Mark</td>
-                                              <td>Otto</td>
-                                              <td>@mdo</td>
-                                            </tr>
-                                            <tr>
-                                              <th scope="row">2</th>
-                                              <td>Jacob</td>
-                                              <td>Thornton</td>
-                                              <td>@fat</td>
-                                            </tr>
-                                            <tr>
-                                              <th scope="row">3</th>
-                                              <td>Larry</td>
-                                              <td>the Bird</td>
-                                              <td>@twitter</td>
-                                            </tr>
-                                          </tbody>
-                                        </table>
-                                      </div>
-                                    </div>
+                                    <?php
+                                      include("php/repvenestab/tabla90Dias.php");
+                                    ?>
                                 </div>
-
 
                             </div>
                         </div>

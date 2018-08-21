@@ -63,7 +63,7 @@
               <ul id="submenuBI" class="collapse list-unstyled ">
                 <li><a href="#tercermenu1" aria-expanded="false" data-toggle="collapse"> <i class="fa fa-certificate"></i>Promociones</a>
                       <ul id="tercermenu1" class="collapse list-unstyled ">
-                        <li><a href="gestionpromo.php"> <i class="fa fa-shopping-cart"></i>Ver promociones</a></li>
+                        <li><a href="verpromo.php"> <i class="fa fa-shopping-cart"></i>Ver promociones</a></li>
                       </ul>
                 </li>
                 <li><a href="#tercermenu2" aria-expanded="false" data-toggle="collapse"> <i class="fa fa-briefcase"></i>Inteligencia de negocios</a>
@@ -137,7 +137,7 @@
 
                           <div class="col-md-3">
                             <h6>Rango de fechas</h6>
-                                <select id="status" class="form-control" name="status" onChange="mostrar(this.value);">
+                                <select id="status" class="form-control" name="status" onChange="mostrar(this.value)">
                                     <option selected value="Hoy">Hoy</option>
                                     <option value="Ayer">Ayer</option>
                                     <option value="1primB">Hace 7 días</option>

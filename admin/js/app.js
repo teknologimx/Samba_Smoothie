@@ -20,7 +20,7 @@ $(document).ready(function(){
                     labels: ["Hoy", "Ayer", "Hace 7 días", "Hace 30 días", "Hace 90 días"],
                     datasets:[
                         {
-                            label: "Ganancia",
+                            label: "Monto Generado",
                             backgroundColor:[
                                 'rgba(51, 179, 90, 0.6)',
                                 'rgba(51, 179, 90, 0.6)',
