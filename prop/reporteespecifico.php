@@ -130,32 +130,18 @@
                 <div class="col-lg-2"></div>
                 <div class="col-lg-4">
                   <!-- Income-->
-<<<<<<< HEAD
                   <div class="card income text-center"><a href="clientesleales.php" style="font-size:12px;text-align: right;">Ver informe</a>
-                    <div class="icon"><i class="fa fa-user-plus"></i></div>
-                    <div class="number">Clientes</div><strong class="text-primary">leales</strong>
-                    <p>Listado de Clientes con más compras recientes</p>
-=======
-                  <div class="card income text-center"><a href="empresasleales.php" style="font-size:12px;text-align: right;">Ver informe</a>
                     <div class="icon"><i class="fa fa-user-plus"></i></div>
                     <div class="number">Empresas</div><strong class="text-primary">leales</strong>
                     <p>Valor estamado a partir de las ventas generadas</p>
->>>>>>> f694ef21771ba687b4ac3ffa0d79e1fb0a7a2fcc
                   </div>
                 </div>
                 <div class="col-lg-4">
                   <!-- Income-->
-<<<<<<< HEAD
                   <div class="card income text-center"><a href="clientesriesgo.php" style="font-size:12px;text-align: right;">Ver informe</a>
-                    <div class="icon"><i class="fa fa-user-times"></i></div>
-                    <div class="number">Clientes</div><strong class="text-primary">en riesgo</strong>
-                    <p>Listado de Clientes con menos compras recientes</p>
-=======
-                  <div class="card income text-center"><a href="empresasenriesgo.php" style="font-size:12px;text-align: right;">Ver informe</a>
                     <div class="icon"><i class="fa fa-user-times"></i></div>
                     <div class="number">Empresas</div><strong class="text-primary">en riesgo</strong>
                     <p>Valor estamado a partir de las ventas generadas</p>
->>>>>>> f694ef21771ba687b4ac3ffa0d79e1fb0a7a2fcc
                   </div>
                 </div>
                 <div class="col-lg-12"> <header><h1 class="h1 display">Finanzas</h1></header></div>
