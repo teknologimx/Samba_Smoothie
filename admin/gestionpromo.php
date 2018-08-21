@@ -158,7 +158,7 @@
                                 echo '<td>'.$row[3].'</td>';
                                 echo '<td>'.$row[0].'</td>';
                                 echo '<td>';
-                                echo ' <a href='."/ProyectoLKE/Samba_Smoothie/admin/modificarPromoVentas.php?id_promocion=$row[4]".'><input type="button" id="modificar" value=" Modificar " class="btn btn-primary"></a>';
+                                echo ' <a href='."modificarPromoVentas.php?id_promocion=$row[4]".'><input type="button" id="modificar" value=" Modificar " class="btn btn-primary"></a>';
                                 echo '</td>';  
                                 echo '<td>';
 
@@ -235,7 +235,7 @@
                                 echo '<td>'.$row[2].'</td>';
                                 echo '<td>'.$row[0].'</td>';
                                 echo '<td>';
-                                echo '<a href='."/ProyectoLKE/Samba_Smoothie/admin/modificarPromoPreferencias.php?id_promocion=$row[3]".'><input type="button" id="modificar" value=" Modificar " class="btn btn-primary"></a>';
+                                echo '<a href='."modificarPromoPreferencias.php?id_promocion=$row[3]".'><input type="button" id="modificar" value=" Modificar " class="btn btn-primary"></a>';
                                 echo '</td>';
                                 echo '<td>';
                                 echo '<button type="button" data-toggle="modal" data-target="#myModal2" class="btn btn-secondary">'."Eliminar".'</button>';
@@ -313,7 +313,7 @@
                                 echo '<td>'.$row[4].'</td>';
                                 echo '<td>'.$row[5].'</td>';
                                 echo '<td>';
-                                echo '<a href='."/ProyectoLKE/Samba_Smoothie/admin/modificarPromoEspecial.php?id_promocion=$row[0]".'><input type="button" id="modificar" value=" Modificar " class="btn btn-primary"></a>';
+                                echo '<a href='."modificarPromoEspecial.php?id_promocion=$row[0]".'><input type="button" id="modificar" value=" Modificar " class="btn btn-primary"></a>';
                                 echo '</td>';
                                 echo '<td>';
                                 echo '<button type="button" data-toggle="modal" data-target="#myModal3" class="btn btn-secondary">'."Eliminar".'</button>';
