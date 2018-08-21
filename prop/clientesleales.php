@@ -1,4 +1,5 @@
 <?php session_start();
+   error_reporting(0);
    include("conexion.php"); 
    $link=Conectarse(); 
 ?>
@@ -170,7 +171,8 @@
                                              $query1 = mysqli_query($link, "SELECT  id, nombre, contacto_email FROM empresas");
                                               while($row1 = mysqli_fetch_array($query1)){ 
                                                 $id=$row1["id"];
-                                                $query = mysqli_query($link, "SELECT  COUNT(*) as TOTAL, last_updated FROM embarques WHERE  empresa_id = '".$id."'");
+                                                // echo "SELECT  COUNT(*) as TOTAL, last_updated FROM embarques WHERE  empresa_id = '".$id."' ";
+                                                $query = mysqli_query($link, "SELECT  COUNT(*) as TOTAL, last_updated FROM embarques WHERE  empresa_id = '".$id."' ");
                                                   $row = mysqli_fetch_array($query); 
                                                   if($row["TOTAL"]>=3){
                                                     $query2 = mysqli_query($link, "SELECT COUNT(*) as TOTALP, SUM(monto_pagado) AS MONTO FROM ordenes WHERE empresa_id='".$id."'");
