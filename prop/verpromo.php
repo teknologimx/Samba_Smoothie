@@ -41,7 +41,7 @@
         <div class="sidenav-header d-flex align-items-center justify-content-center">
           <!-- Info usuario-->
           <div class="sidenav-header-inner text-center"><img src="img/user.png" alt="person" class="img-fluid rounded-circle">
-            <h2 class="h5">Administrador</h2><span>Bienvenido</span>
+            <h2 class="h5">Propietario</h2><span>Bienvenido</span>
           </div>
           <!-- Small Brand ,cuando minimizas el menu-->
           <div class="sidenav-header-logo"><a href="#" class="brand-small text-center"><img src="img/SAMBA%20FREH.png"></a></div>
@@ -67,12 +67,12 @@
               <ul id="submenuBI" class="collapse list-unstyled ">
                 <li><a href="#tercermenu1" aria-expanded="false" data-toggle="collapse"> <i class="fa fa-certificate"></i>Promociones</a>
                       <ul id="tercermenu1" class="collapse list-unstyled ">
-                        <li><a href="gestionpromo.php"> <i class="fa fa-shopping-cart"></i>Ver promociones</a></li>
+                        <li><a href="verpromo.php"> <i class="fa fa-shopping-cart"></i>Ver promociones</a></li>
                       </ul>
                 </li>
                 <li><a href="#tercermenu2" aria-expanded="false" data-toggle="collapse"> <i class="fa fa-briefcase"></i>Inteligencia de negocios</a>
                       <ul id="tercermenu2" class="collapse list-unstyled ">
-                        <li><a href="dashboard.php"> <i class="fa fa-tachometer"></i>Reporte general</a></li>
+                        <li><a href="reportegeneral.php"> <i class="fa fa-tachometer"></i>Reporte general</a></li>
                         <li><a href="reporteespecifico.php"> <i class="fa fa-shopping-cart"></i>Reportes específicos</a></li>
                       </ul>
                 </li>
@@ -103,7 +103,7 @@
       <div class="breadcrumb-holder">
         <div class="container-fluid">
           <ul class="breadcrumb">
-            <li class="breadcrumb-item"><a href="index.html">Inicio</a></li>
+            <li class="breadcrumb-item"><a href="index.php">Inicio</a></li>
             <li class="breadcrumb-item active">Gestionar promociones       </li>
           </ul>
         </div>
@@ -517,11 +517,11 @@
         <div class="container-fluid">
           <div class="row">
             <div class="col-sm-6">
-              <p>Teknologi &copy; 2018</p>
+              <p>LKE &copy; 2018</p>
             </div>
             <div class="col-sm-6 text-right">
-              <p>Design by <a href="#" class="external">Teknologi</a></p>
-  
+              <p>Design by <a href="">Jorge Rojas</a></p>
+
             </div>
           </div>
         </div>

@@ -101,7 +101,7 @@
           <ul class="breadcrumb">
             <li class="breadcrumb-item"><a href="index.php">Inicio</a></li>
             <li class="breadcrumb-item active"><a href="reporteespecifico.php">Reportes específicos</a></li>
-            <li class="breadcrumb-item active">Ventas por Productos</li>
+            <li class="breadcrumb-item active">Empresas en Riesgo</li>
           </ul>
         </div>
       </div>
@@ -150,49 +150,208 @@
  
                                 <div id= 'Hoy' class="card" style="display: show">
                                     <div class="card-header">
-                                            <canvas id="barChartVentasHoy" height="100px"></canvas>
+                                       
                                     </div>
-                                    <?php
-                                      include("php/repvenprod/tablaHoy.php");
-                                    ?>
+                                    <div class="card-body">
+                                      <div class="table-responsive">
+                                        <table class="table table-striped table-hover">
+                                          <thead>
+                                            <tr>
+                                              <th>#</th>
+                                              <th>Empresa</th>
+                                              <th>En riesgo</th>
+                                              <th>Último día de pedido</th>
+                                              <th>Total de pedidos realizados</th>
+                                              <th>Total de compras realizas</th>
+                                            </tr>
+                                          </thead>
+                                          <tbody>
+                                            <tr>
+                                              <th scope="row">1</th>
+                                              <td>Mark</td>
+                                              <td>Otto</td>
+                                              <td>@mdo</td>
+                                              <td>@mdo</td>
+                                            </tr>
+                                            <tr>
+                                              <th scope="row">2</th>
+                                              <td>Jacob</td>
+                                              <td>Thornton</td>
+                                              <td>@fat</td>
+                                            </tr>
+                                            <tr>
+                                              <th scope="row">3</th>
+                                              <td>Larry</td>
+                                              <td>the Bird</td>
+                                              <td>@twitter</td>
+                                            </tr>
+                                          </tbody>
+                                        </table>
+                                      </div>
+                                    </div>
                                 </div>
 
                                 <div id= 'Ayer' class="card" style="display: none">
                                     <div class="card-header">
-                                            <canvas id="barChartVentasAyer" height="100px"></canvas>
+                                            <canvas id="chartAyer" height="100px"></canvas>
                                     </div>
-                                    <?php
-                                      include("php/repvenprod/tablaAyer.php");
-                                    ?>
+                                    <div class="card-body">
+                                        <div class="table-responsive">
+                                            <table class="table table-striped table-hover">
+                                              <thead>
+                                                <tr>
+                                                  <th>#</th>
+                                                  <th>First Name</th>
+                                                  <th>Last Name</th>
+                                                  <th>Username</th>
+                                                </tr>
+                                              </thead>
+                                              <tbody>
+                                                <tr>
+                                                  <th scope="row">1</th>
+                                                  <td>Mark</td>
+                                                  <td>Otto</td>
+                                                  <td>@mdo</td>
+                                                </tr>
+                                                <tr>
+                                                  <th scope="row">2</th>
+                                                  <td>Jacob</td>
+                                                  <td>Thornton</td>
+                                                  <td>@fat</td>
+                                                </tr>
+                                                <tr>
+                                                  <th scope="row">3</th>
+                                                  <td>Larry</td>
+                                                  <td>the Bird</td>
+                                                  <td>@twitter</td>
+                                                </tr>
+                                              </tbody>
+                                            </table>
+                                          </div>
+                                        </div>
                                   </div>
                                   
 
                                 <div id= '1primB' class="card" style="display: none">
                                     <div class="card-header">
-                                            <canvas id="barChartVentas7Dias" height="100px"></canvas>
+                                            <canvas id="chart7Dias" height="100px"></canvas>
                                     </div>
-                                    <?php
-                                      include("php/repvenprod/tabla7Dias.php");
-                                    ?>
+                                    <div class="card-body">
+                                      <div class="table-responsive">
+                                        <table class="table table-striped table-hover">
+                                          <thead>
+                                            <tr>
+                                              <th>#</th>
+                                              <th>First Name</th>
+                                              <th>Last Name</th>
+                                              <th>Username</th>
+                                            </tr>
+                                          </thead>
+                                          <tbody>
+                                            <tr>
+                                              <th scope="row">1</th>
+                                              <td>Mark</td>
+                                              <td>Otto</td>
+                                              <td>@mdo</td>
+                                            </tr>
+                                            <tr>
+                                              <th scope="row">2</th>
+                                              <td>Jacob</td>
+                                              <td>Thornton</td>
+                                              <td>@fat</td>
+                                            </tr>
+                                            <tr>
+                                              <th scope="row">3</th>
+                                              <td>Larry</td>
+                                              <td>the Bird</td>
+                                              <td>@twitter</td>
+                                            </tr>
+                                          </tbody>
+                                        </table>
+                                      </div>
+                                    </div>
                                 </div>
 
                                 <div id= '1primC' class="card" style="display: none">
                                     <div class="card-header">
-                                            <canvas id="barChartVentas30Dias" height="100px"></canvas>
+                                            <canvas id="chart30Dias" height="100px"></canvas>
                                     </div>
-                                    <?php
-                                      include("php/repvenprod/tabla30Dias.php");
-                                    ?>
+                                    <div class="card-body">
+                                      <div class="table-responsive">
+                                        <table class="table table-striped table-hover">
+                                          <thead>
+                                            <tr>
+                                              <th>#</th>
+                                              <th>First Name</th>
+                                              <th>Last Name</th>
+                                              <th>Username</th>
+                                            </tr>
+                                          </thead>
+                                          <tbody>
+                                            <tr>
+                                              <th scope="row">1</th>
+                                              <td>Mark</td>
+                                              <td>Otto</td>
+                                              <td>@mdo</td>
+                                            </tr>
+                                            <tr>
+                                              <th scope="row">2</th>
+                                              <td>Jacob</td>
+                                              <td>Thornton</td>
+                                              <td>@fat</td>
+                                            </tr>
+                                            <tr>
+                                              <th scope="row">3</th>
+                                              <td>Larry</td>
+                                              <td>the Bird</td>
+                                              <td>@twitter</td>
+                                            </tr>
+                                          </tbody>
+                                        </table>
+                                      </div>
+                                    </div>
                                 </div>
 
                                 <div id= '1primD' class="card" style="display: none">
                                     <div class="card-header">
-                                            <canvas id="barChartVentas90Dias" height="100px"></canvas>
+                                            <canvas id="chart90Dias" height="100px"></canvas>
                                     </div>
-                                    <?php
-                                      include("php/repvenprod/tabla90Dias.php");
-                                    ?>
+                                    <div class="card-body">
+                                      <div class="table-responsive">
+                                        <table class="table table-striped table-hover">
+                                          <thead>
+                                            <tr>
+                                              <th>#</th>
+                                              <th>First Name</th>
+                                              <th>Last Name</th>
+                                              <th>Username</th>
+                                            </tr>
+                                          </thead>
+                                          <tbody>
+                                            <tr>
+                                              <th scope="row">1</th>
+                                              <td>Mark</td>
+                                              <td>Otto</td>
+                                              <td>@mdo</td>
+                                            </tr>
+                                            <tr>
+                                              <th scope="row">2</th>
+                                              <td>Jacob</td>
+                                              <td>Thornton</td>
+                                              <td>@fat</td>
+                                            </tr>
+                                            <tr>
+                                              <th scope="row">3</th>
+                                              <td>Larry</td>
+                                              <td>the Bird</td>
+                                              <td>@twitter</td>
+                                            </tr>
+                                          </tbody>
+                                        </table>
+                                      </div>
+                                    </div>
                                 </div>
+
 
                             </div>
                         </div>
@@ -227,7 +386,6 @@
     <script src="vendor/chart.js/Chart.min.js"></script>
     <script src="js/charts-custom.js"></script>
     <script src="js/repvenprod.js"></script>
-    <script src="js/Graficasventas.js"></script>
     <script src="js/chart_repvenprod.js"></script>
     <script src="vendor/jquery-validation/jquery.validate.min.js"></script>
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>

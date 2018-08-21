@@ -190,12 +190,13 @@
                                   <th>Órdenes</th>
                                 </tr>
                               </thead>
-                              <tbody>
+                                <?php
+                                    include("php/dashboard/tablaGanORd.php");
+                                ?>
+                              <!--<tbody>
                                 <tr>
                                   <th scope="row">1</th>
                                   <td class="display h4">Hoy</td>
-                                  <!--<td class="display h4">65</td>
-                                  <td class="display h4">35</td>-->
                                   <?php
                                     //include("php/dashboard/gananciaHoy.php");
                                     include("php/dashboard/Hoy.php");
@@ -208,14 +209,10 @@
                                     include("php/dashboard/Ayer.php");
                                     //include("php/dashboard/ordenesAyer.php");
                                   ?>
-                                  <!--<td>50</td>
-                                  <td>15</td>-->
                                 </tr>
                                 <tr>
                                   <th scope="row">3</th>
                                   <td>Hace 7 días</td>
-                                  <!--<td>80</td>
-                                  <td>30</td>-->
                                   <?php
                                     include("php/dashboard/Hace7Dias.php");
                                     //include("php/dashboard/ordenes7Dias.php");
@@ -224,8 +221,6 @@
                                 <tr>
                                   <th scope="row">4</th>
                                   <td>Hace 30 días</td>
-                                  <!--<td>120</td>
-                                  <td>50</td>-->
                                   <?php
                                     include("php/dashboard/Hace30Dias.php");
                                     //include("php/dashboard/ordenes30Dias.php");
@@ -234,14 +229,12 @@
                                 <tr>
                                   <th scope="row">5</th>
                                   <td>Hace 90 días</td>
-                                  <!--<td>81</td>
-                                  <td>40</td>-->
                                   <?php
                                     include("php/dashboard/Hace90Dias.php");
                                     //include("php/dashboard/ordenes90Dias.php");
                                   ?>
                                 </tr>
-                              </tbody>
+                              </tbody>-->
                             </table>
                           </div>
                     </div>
@@ -423,10 +416,10 @@
         <div class="container-fluid">
           <div class="row">
             <div class="col-sm-6">
-              <p>Teknologi &copy; 2018</p>
+              <p>LKE &copy; 2018</p>
             </div>
             <div class="col-sm-6 text-right">
-              <p>Design by <a href="#" class="external">Teknologi</a></p>
+              <p>Design by <a href="">Jorge Rojas</a></p>
 
             </div>
           </div>
@@ -444,7 +437,8 @@
     <script src="vendor/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js"></script>
     <script src="js/charts-home.js"></script>
     <script src="js/tabla-home.js"></script>
-    <script src="js/chart_dashboard.js"></script>
+    <!--<script src="js/chart_dashboard.js"></script>-->
+    <script src="js/app.js"></script>
     <!-- Main File-->
     <script src="js/front.js"></script>
   </body>

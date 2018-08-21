@@ -1,7 +1,7 @@
 <?php
 
 require_once 'conexion.php';
-require('C:/wamp64/www/Samba_Smoothie/prop/fpdf/fpdf.php');
+require('fpdf\fpdf.php');
 
 $pdf = new FPDF();
 $pdf->AddPage();

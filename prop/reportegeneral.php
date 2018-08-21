@@ -41,7 +41,7 @@
         <div class="sidenav-header d-flex align-items-center justify-content-center">
           <!-- Info usuario-->
           <div class="sidenav-header-inner text-center"><img src="img/user.png" alt="person" class="img-fluid rounded-circle">
-            <h2 class="h5">Administrador</h2><span>Bienvenido</span>
+            <h2 class="h5">Propietario</h2><span>Bienvenido</span>
           </div>
           <!-- Small Brand ,cuando minimizas el menu-->
           <div class="sidenav-header-logo"><a href="#" class="brand-small text-center"><img src="img/SAMBA%20FREH.png"></a></div>
@@ -67,12 +67,12 @@
               <ul id="submenuBI" class="collapse list-unstyled ">
                 <li><a href="#tercermenu1" aria-expanded="false" data-toggle="collapse"> <i class="fa fa-certificate"></i>Promociones</a>
                       <ul id="tercermenu1" class="collapse list-unstyled ">
-                        <li><a href="gestionpromo.php"> <i class="fa fa-shopping-cart"></i>Ver promociones</a></li>
+                        <li><a href="verpromo.php"> <i class="fa fa-shopping-cart"></i>Ver promociones</a></li>
                       </ul>
                 </li>
                 <li><a href="#tercermenu2" aria-expanded="false" data-toggle="collapse"> <i class="fa fa-briefcase"></i>Inteligencia de negocios</a>
                       <ul id="tercermenu2" class="collapse list-unstyled ">
-                        <li><a href="dashboard.php"> <i class="fa fa-tachometer"></i>Reporte general</a></li>
+                        <li><a href="reportegeneral.php"> <i class="fa fa-tachometer"></i>Reporte general</a></li>
                         <li><a href="reporteespecifico.php"> <i class="fa fa-shopping-cart"></i>Reportes específicos</a></li>
                       </ul>
                 </li>
@@ -103,69 +103,10 @@
       <section class="dashboard-counts section-padding">
         <div class="container-fluid">
           <div class="row">
-            <!-- Count item widget-->
-            <div class="col-xl-2 col-md-4 col-  6">
-              <div class="wrapper count-title d-flex">
-                <div class="icon"><i class="fa fa-users"></i></div>
-                <div class="name"><strong class="text-uppercase">Clientes Totales</strong>
-                  <div class="count-number">25</div>
-                </div>
-              </div>
-            </div>
-            <!-- Count item widget-->
-            <div class="col-xl-2 col-md-8 col-6">
-              <div class="wrapper count-title d-flex">
-                <div class="icon"><i class="icon-padnote"></i></div>
-                <div class="name"><strong class="text-uppercase">Ordenes Realizadas</strong>
-                  <div class="count-number">400</div>
-                </div>
-              </div>
-            </div>
-            <!-- Count item widget-->
-            <div class="col-xl-2 col-md-4 col-6">
-              <div class="wrapper count-title d-flex">
-                <div class="icon"><i class="icon-check"></i></div>
-                <div class="name"><strong class="text-uppercase">Calificación Producto</strong>
-                  <div class="count-number">342</div>
-                </div>
-              </div>
-            </div>
-            <!-- Count item widget-->
-            <div class="col-xl-2 col-md-4 col-6">
-              <div class="wrapper count-title d-flex">
-                <div class="icon"><i class="icon-check"></i></div>
-                <div class="name"><strong class="text-uppercase">Calificación Servicio</strong>
-                  <div class="count-number">342</div>
-                </div>
-              </div>
-            </div>
-            <!-- Count item widget-->
-            <div class="col-xl-2 col-md-4 col-6">
-              <div class="wrapper count-title d-flex">
-                <div class="icon"><i class="icon-list-1"></i></div>
-                <div class="name"><strong class="text-uppercase">Ordenes Entregadas</strong>
-                  <div class="count-number">123</div>
-                </div>
-              </div>
-            </div>
-            <!-- Count item widget-->
-            <div class="col-xl-2 col-md-4 col-6">
-              <div class="wrapper count-title d-flex">
-                <div class="icon"><i class="icon-list"></i></div>
-                <div class="name"><strong class="text-uppercase">Ordenes Canceladas</strong>
-                  <div class="count-number">92</div>
-                </div>
-              </div>
-            </div>
-            <!-- Count item widget-->
-            <!--<div class="col-xl-2 col-md-4 col-6">
-              <div class="wrapper count-title d-flex">
-                <div class="icon"><i class="icon-list-1"></i></div>
-                <div class="name"><strong class="text-uppercase">New Cases</strong><span>Last 7 days</span>
-                  <div class="count-number">70</div>
-                </div>
-              </div>
-            </div>-->
+            <?php
+              include("php/dashboard/countsSection.php");
+              include("php/dashboard/ordenesCanceladas.php");
+            ?>
           </div>
         </div>
       </section>
@@ -198,38 +139,51 @@
                                   <th>Órdenes</th>
                                 </tr>
                               </thead>
-                              <tbody>
+                                <?php
+                                    include("php/dashboard/tablaGanORd.php");
+                                ?>
+                              <!--<tbody>
                                 <tr>
                                   <th scope="row">1</th>
                                   <td class="display h4">Hoy</td>
-                                  <td class="display h4">65</td>
-                                  <td class="display h4">35</td>
+                                  <?php
+                                    //include("php/dashboard/gananciaHoy.php");
+                                    include("php/dashboard/Hoy.php");
+                                  ?>
                                 </tr>
                                 <tr>
                                   <th scope="row">2</th>
                                   <td>Ayer</td>
-                                  <td>50</td>
-                                  <td>15</td>
+                                  <?php
+                                    include("php/dashboard/Ayer.php");
+                                    //include("php/dashboard/ordenesAyer.php");
+                                  ?>
                                 </tr>
                                 <tr>
                                   <th scope="row">3</th>
                                   <td>Hace 7 días</td>
-                                  <td>80</td>
-                                  <td>30</td>
+                                  <?php
+                                    include("php/dashboard/Hace7Dias.php");
+                                    //include("php/dashboard/ordenes7Dias.php");
+                                  ?>
                                 </tr>
                                 <tr>
                                   <th scope="row">4</th>
                                   <td>Hace 30 días</td>
-                                  <td>120</td>
-                                  <td>50</td>
+                                  <?php
+                                    include("php/dashboard/Hace30Dias.php");
+                                    //include("php/dashboard/ordenes30Dias.php");
+                                  ?>
                                 </tr>
                                 <tr>
                                   <th scope="row">5</th>
                                   <td>Hace 90 días</td>
-                                  <td>81</td>
-                                  <td>40</td>
+                                  <?php
+                                    include("php/dashboard/Hace90Dias.php");
+                                    //include("php/dashboard/ordenes90Dias.php");
+                                  ?>
                                 </tr>
-                              </tbody>
+                              </tbody>-->
                             </table>
                           </div>
                     </div>
@@ -238,7 +192,7 @@
         </div>
       </section>
       <!--seccion gastos ganancias-->
-      <section class="statics">
+      <!--<section class="statics">
         <div class="container-fluid">
               <div class="row d-flex">
                 <div class="col-lg-12">
@@ -248,13 +202,13 @@
                         </div>
                         <div class="card-body form-inline align-items-center">
                             
-                            <!-- Pie Chart-->
+                            Pie Chart
                               <div class=" col-lg-4 ">
                                 <div>
                                   <canvas id="pieChart" width="300" height="200"> </canvas>
                                 </div>
                               </div>
-                            <!--datos gastos ventas-->
+                            datos gastos ventas
                                <div class="col-lg-3">
                                   <div class=" user-activity ">
                                       <div class="strong">VS</div>
@@ -265,10 +219,10 @@
                                     </div>
                                   </div>
                                 </div> 
-                            <!--espacio-->
+                            espacio
                             <div class="col-lg-1">
                             </div>
-                            <!--recomendaciones-->
+                            recomendaciones
                                <div class="col-lg-4">
                                   <div class="to-do">
                                     <h2 class="display h4 strongh2Text">Recomendaciones</h2>
@@ -298,13 +252,13 @@
                                    </div>
                                 </div>      
                                 
-                            <!--fin de gastos vs ganancias-->
+                            fin de gastos vs ganancias
                         </div>
                     </div>
                 </div>
               </div>
             </div>
-        </section>
+        </section>-->
       <!-- Statistics Section-->
       <section class="statistics">
         <div class="container-fluid">
@@ -376,58 +330,10 @@
                         </div>
 
                         <div id="Productos" class="tabcontent">
-                            <div class="card-body">
-                              <div class="table-responsive">
-                                <table class="table table-striped table-sm">
-                                  <thead>
-                                    <tr>
-                                      <th>#</th>
-                                      <th>Producto</th>
-                                      <th>Unidades vendidas</th>
-                                      <th>Ventas generadas</th>
-                                    </tr>
-                                  </thead>
-                                  <tbody>
-                                    <tr>
-                                      <th scope="row">1</th>
-                                      <td>Mark</td>
-                                      <td>Otto</td>
-                                      <td>@mdo</td>
-                                    </tr>
-                                    <tr>
-                                      <th scope="row">2</th>
-                                      <td>Jacob</td>
-                                      <td>Thornton</td>
-                                      <td>@fat</td>
-                                    </tr>
-                                    <tr>
-                                      <th scope="row">3</th>
-                                      <td>Larry</td>
-                                      <td>the Bird</td>
-                                      <td>@twitter      </td>
-                                    </tr>
-                                    <tr>
-                                      <th scope="row">4</th>
-                                      <td>Mark</td>
-                                      <td>Otto</td>
-                                      <td>@mdo</td>
-                                    </tr>
-                                    <tr>
-                                      <th scope="row">5</th>
-                                      <td>Jacob</td>
-                                      <td>Thornton</td>
-                                      <td>@fat</td>
-                                    </tr>
-                                    <tr>
-                                      <th scope="row">6</th>
-                                      <td>Larry</td>
-                                      <td>the Bird</td>
-                                      <td>@twitter       </td>
-                                    </tr>
-                                  </tbody>
-                                </table>
-                              </div>
-                            </div>
+                          <!--Script que muestra la tabla de Top Productos-->
+                          <?php
+                            include("php/dashboard/TopProductos.php");
+                          ?>
                         </div>
 
                       <!--item-->
@@ -441,58 +347,13 @@
               <!-- Recent Activities Widget      -->
               <div id="recent-activities-wrapper" class="card updates activities">
                 <div id="activites-header" class="card-header d-flex justify-content-between align-items-center">
-                  <h2 class="h5 display"><a data-toggle="collapse" data-parent="#recent-activities-wrapper" href="#activities-box" aria-expanded="true" aria-controls="activities-box">Actividades recientes</a></h2><a data-toggle="collapse" data-parent="#recent-activities-wrapper" href="#activities-box" aria-expanded="true" aria-controls="activities-box"><i class="fa fa-angle-down"></i></a>
+                  <h2 class="h5 display"><a data-toggle="collapse" data-parent="#recent-activities-wrapper" href="#activities-box" aria-expanded="true" aria-controls="activities-box">Comentarios recientes</a></h2><a data-toggle="collapse" data-parent="#recent-activities-wrapper" href="#activities-box" aria-expanded="true" aria-controls="activities-box"><i class="fa fa-angle-down"></i></a>
                 </div>
                 <div id="activities-box" role="tabpanel" class="collapse show">
                   <ul class="activities list-unstyled">
-                    <!-- Item-->
-                    <li>
-                      <div class="row">
-                        <div class="col-4 date-holder text-right">
-                          <div class="icon"><i class="icon-clock"></i></div>
-                          <div class="date"> <span>6:00 am</span><span class="text-info">6 hours ago</span></div>
-                        </div>
-                        <div class="col-8 content"><strong>Meeting</strong>
-                          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud.                </p>
-                        </div>
-                      </div>
-                    </li>
-                    <!-- Item-->
-                    <li>
-                      <div class="row">
-                        <div class="col-4 date-holder text-right">
-                          <div class="icon"><i class="icon-clock"></i></div>
-                          <div class="date"> <span>6:00 am</span><span class="text-info">6 hours ago</span></div>
-                        </div>
-                        <div class="col-8 content"><strong>Meeting</strong>
-                          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud.                </p>
-                        </div>
-                      </div>
-                    </li>
-                    <!-- Item-->
-                    <li>
-                      <div class="row">
-                        <div class="col-4 date-holder text-right">
-                          <div class="icon"><i class="icon-clock"></i></div>
-                          <div class="date"> <span>6:00 am</span><span class="text-info">6 hours ago</span></div>
-                        </div>
-                        <div class="col-8 content"><strong>Meeting</strong>
-                          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud.                </p>
-                        </div>
-                      </div>
-                    </li>
-                    <!-- Item-->
-                    <li>
-                      <div class="row">
-                        <div class="col-4 date-holder text-right">
-                          <div class="icon"><i class="icon-clock"></i></div>
-                          <div class="date"> <span>6:00 am</span><span class="text-info">6 hours ago</span></div>
-                        </div>
-                        <div class="col-8 content"><strong>Meeting</strong>
-                          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud.                </p>
-                        </div>
-                      </div>
-                    </li>
+                    <?php
+                      include("php/dashboard/comentariosRecientes.php");
+                    ?>
                   </ul>
                 </div>
               </div>
@@ -504,10 +365,10 @@
         <div class="container-fluid">
           <div class="row">
             <div class="col-sm-6">
-              <p>Teknologi &copy; 2018</p>
+              <p>LKE &copy; 2018</p>
             </div>
             <div class="col-sm-6 text-right">
-              <p>Design by <a href="#" class="external">Teknologi</a></p>
+              <p>Design by <a href="">Jorge Rojas</a></p>
 
             </div>
           </div>
@@ -525,7 +386,8 @@
     <script src="vendor/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js"></script>
     <script src="js/charts-home.js"></script>
     <script src="js/tabla-home.js"></script>
-    <script src="js/chart_dashboard.js"></script>
+    <!--<script src="js/chart_dashboard.js"></script>-->
+    <script src="js/app.js"></script>
     <!-- Main File-->
     <script src="js/front.js"></script>
   </body>
