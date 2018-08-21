@@ -1,7 +1,7 @@
 <?php
 	include("conexion.php"); 
 	$link=Conectarse(); 
-	require('../../fpdf/fpdf.php');
+	require('fpdf/fpdf.php');
     if ($_POST["tipo"]==0) {
 	    class PDF extends FPDF
 		{
