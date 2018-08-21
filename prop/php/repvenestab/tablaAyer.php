@@ -9,13 +9,13 @@
 
     $hoy= getdate();
     $inicio= new DateTime($hoy[year]."-".$hoy[mon]."-".$hoy[mday]." 00:00:00");
-    $inicio->modify("-48 hour");
     $fin= new DateTime($hoy[year]."-".$hoy[mon]."-".$hoy[mday]." 00:00:00");
+    $fin->modify("-48 hour");
     $fin->modify("-24 hour");
     $var1= $inicio->format("Y-m-d H:m:i");
     $var2= $fin->format("Y-m-d H:m:i");
      
-     $result = mysqli_query($link,  "SELECT
+    $result= mysqli_query($link, "SELECT
                             establecimientos.nombre as est,
                             SUM(ordenesdetalles.cantidad) as cantTotal,
                             SUM(platillosestablecimientos.precio) as precTotal
@@ -25,23 +25,20 @@
                         GROUP BY est
                         ORDER BY precTotal DESC");
     
-
     echo "<div class='card-body'>
             <div class='table-responsive'>
                 <table class='table table-striped table-sm' style='font-size:12px;'>";
     echo "<thead>
             <tr>
-                <th>Producto</th>
-                <th>Tipo</th>
-                <th>Cantidad Vendida</th>
-                <th>Ganancia</th>
+                <th>Establecimiento</th>
+                <th>Cantidad de producto</th>
+                <th>Ventas totales</th>
             </tr>
         </thead>
         <tbody>";
     while($row=mysqli_fetch_array($result)){
         echo "<tr>
-                <th scope='row'>$row[nombre]</th>
-                    <td>$row[tipo]</td>
+                <th scope='row'>$row[est]</th>
                     <td>$row[cantTotal]</td>
                     <td>$ $row[precTotal]</td>
             </tr>";

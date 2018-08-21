@@ -3,25 +3,26 @@ $(document).ready(function(){
     'use strict';
     var brandPrimary = 'rgba(51, 179, 90, 1)';
     $.ajax({
-        url:"http://localhost/Samba_Smoothie/prop/php/repvenestab/repHoy.php",
-        //method: "POST",
+        url:"http://localhost/Samba_Smoothie/prop/php/repvenestab/rephoy.php",
         type: "GET",
         success: function(data){
             console.log(data);
-            var ganancias= [];
+            var establecimiento= [];
+            var monto= [];
             var ordenes= [];
             for(var i in data){
-                ganancias.push(data[i].ganancias);
-                ordenes.push(data[i].ordenes);
+                establecimiento.push(data[i].est);
+                monto.push(data[i].precTotal);
+                ordenes.push(data[i].cantTotal);
             }
             var BARCHARTVENTAS= $('#barChartVentasHoy');
             var barGraph= new Chart(BARCHARTVENTAS,{
                 type: 'bar',
                 data: {
-                    labels: ["09:00 hrs.", "10:00 hrs.", "11:00 hrs.", "12:00 hrs.", "13:00 hrs.","14:00 hrs.","15:00 hrs.","16:00 hrs."],
+                    labels: establecimiento,
                     datasets:[
                         {
-                            label: "Ganancia",
+                            label: "Monto Generado",
                             backgroundColor:[
                                 'rgba(51, 179, 90, 0.6)',
                                 'rgba(51, 179, 90, 0.6)',
@@ -37,7 +38,7 @@ $(document).ready(function(){
                                 'rgba(51, 179, 90, 1)'
                             ],
                             borderWidth: 1,
-                            data: ganancias,
+                            data: monto,
                             //data: [65, 50, 80, 120, 81],
                         },
                         {
@@ -79,21 +80,22 @@ $(document).ready(function(){
         //method: "POST",
         type: "GET",
         success: function(data){
-            console.log(data);
-            var ganancias= [];
+            var establecimiento= [];
+            var monto= [];
             var ordenes= [];
             for(var i in data){
-                ganancias.push(data[i].ganancias);
-                ordenes.push(data[i].ordenes);
+                establecimiento.push(data[i].est);
+                monto.push(data[i].precTotal);
+                ordenes.push(data[i].cantTotal);
             }
             var BARCHARTVENTAS= $('#barChartVentasAyer');
             var barGraph= new Chart(BARCHARTVENTAS,{
                 type: 'bar',
                 data: {
-                    labels: ["09:00 hrs.", "10:00 hrs.", "11:00 hrs.", "12:00 hrs.", "13:00 hrs.","14:00 hrs.","15:00 hrs.","16:00 hrs."],
+                    labels: establecimiento,
                     datasets:[
                         {
-                            label: "Ganancia",
+                            label: "Monto Generado",
                             backgroundColor:[
                                 'rgba(51, 179, 90, 0.6)',
                                 'rgba(51, 179, 90, 0.6)',
@@ -109,7 +111,7 @@ $(document).ready(function(){
                                 'rgba(51, 179, 90, 1)'
                             ],
                             borderWidth: 1,
-                            data: ganancias,
+                            data: monto,
                             //data: [65, 50, 80, 120, 81],
                         },
                         {
@@ -142,7 +144,7 @@ $(document).ready(function(){
     });
 });
 
-//Grafica para las ventas de hace 7 dias (por dias)
+//Grafica para las ventas de hace 7 dias
 $(document).ready(function(){
     'use strict';
     var brandPrimary = 'rgba(51, 179, 90, 1)';
@@ -152,20 +154,22 @@ $(document).ready(function(){
         type: "GET",
         success: function(data){
             console.log(data);
-            var ganancias= [];
+            var establecimiento= [];
+            var monto= [];
             var ordenes= [];
             for(var i in data){
-                ganancias.push(data[i].ganancias);
-                ordenes.push(data[i].ordenes);
+                establecimiento.push(data[i].est);
+                monto.push(data[i].precTotal);
+                ordenes.push(data[i].cantTotal);
             }
             var BARCHARTVENTAS= $('#barChartVentas7Dias');
             var barGraph= new Chart(BARCHARTVENTAS,{
                 type: 'bar',
                 data: {
-                    labels: ["Lunes", "Martes", "Miercoles", "Jueves", "Viernes","Sábado","Domingo"],
+                    labels: establecimiento,
                     datasets:[
                         {
-                            label: "Ganancia",
+                            label: "Monto Generado",
                             backgroundColor:[
                                 'rgba(51, 179, 90, 0.6)',
                                 'rgba(51, 179, 90, 0.6)',
@@ -181,7 +185,7 @@ $(document).ready(function(){
                                 'rgba(51, 179, 90, 1)'
                             ],
                             borderWidth: 1,
-                            data: ganancias,
+                            data: monto,
                             //data: [65, 50, 80, 120, 81],
                         },
                         {
@@ -214,30 +218,31 @@ $(document).ready(function(){
     });
 });
 
-//Grafica para las ventas de hace 30 dias (por semanas)
+//Grafica para las ventas de hace 30 dias
 $(document).ready(function(){
     'use strict';
     var brandPrimary = 'rgba(51, 179, 90, 1)';
     $.ajax({
         url:"http://localhost/Samba_Smoothie/prop/php/repvenestab/rep30Dias.php",
-        //method: "POST",
         type: "GET",
         success: function(data){
             console.log(data);
-            var ganancias= [];
+            var establecimiento= [];
+            var monto= [];
             var ordenes= [];
             for(var i in data){
-                ganancias.push(data[i].ganancias);
-                ordenes.push(data[i].ordenes);
+                establecimiento.push(data[i].est);
+                monto.push(data[i].precTotal);
+                ordenes.push(data[i].cantTotal);
             }
             var BARCHARTVENTAS= $('#barChartVentas30Dias');
             var barGraph= new Chart(BARCHARTVENTAS,{
                 type: 'bar',
                 data: {
-                    labels: ["Semana 1", "Semana 2", "Semana 3", "Semana 4"],
+                    labels: establecimiento,
                     datasets:[
                         {
-                            label: "Ganancia",
+                            label: "Monto Generado",
                             backgroundColor:[
                                 'rgba(51, 179, 90, 0.6)',
                                 'rgba(51, 179, 90, 0.6)',
@@ -253,7 +258,7 @@ $(document).ready(function(){
                                 'rgba(51, 179, 90, 1)'
                             ],
                             borderWidth: 1,
-                            data: ganancias,
+                            data: monto,
                             //data: [65, 50, 80, 120, 81],
                         },
                         {
@@ -281,12 +286,12 @@ $(document).ready(function(){
             });
         },
         error:function(data){
-            console.log(data);
+        console.log(data);
         }
     });
 });
 
-//Grafica para las ventas de hace 90 dias (por trimestre)
+//Grafica para las ventas de hace 90 dias
 $(document).ready(function(){
     'use strict';
     var brandPrimary = 'rgba(51, 179, 90, 1)';
@@ -296,20 +301,22 @@ $(document).ready(function(){
         type: "GET",
         success: function(data){
             console.log(data);
-            var ganancias= [];
+            var establecimiento= [];
+            var monto= [];
             var ordenes= [];
             for(var i in data){
-                ganancias.push(data[i].ganancias);
-                ordenes.push(data[i].ordenes);
+                establecimiento.push(data[i].est);
+                monto.push(data[i].precTotal);
+                ordenes.push(data[i].cantTotal);
             }
             var BARCHARTVENTAS= $('#barChartVentas90Dias');
             var barGraph= new Chart(BARCHARTVENTAS,{
                 type: 'bar',
                 data: {
-                    labels: ["Primer mes", "Segundo mes", "Tercer mes"],
+                    labels: establecimiento,
                     datasets:[
                         {
-                            label: "Ganancia",
+                            label: "Monto Generado",
                             backgroundColor:[
                                 'rgba(51, 179, 90, 0.6)',
                                 'rgba(51, 179, 90, 0.6)',
@@ -325,7 +332,7 @@ $(document).ready(function(){
                                 'rgba(51, 179, 90, 1)'
                             ],
                             borderWidth: 1,
-                            data: ganancias,
+                            data: monto,
                             //data: [65, 50, 80, 120, 81],
                         },
                         {

@@ -137,7 +137,7 @@
 
                           <div class="col-md-3">
                             <h6>Rango de fechas</h6>
-                                <select id="status" class="form-control" name="status" onChange="mostrar(this.value);">
+                                <select id="status" class="form-control" name="status" onChange="mostrar(this.value)">
                                     <option selected value="Hoy">Hoy</option>
                                     <option value="Ayer">Ayer</option>
                                     <option value="1primB">Hace 7 días</option>

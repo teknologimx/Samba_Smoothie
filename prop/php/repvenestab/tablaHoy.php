@@ -9,8 +9,8 @@
 
     $hoy= getdate();
     $inicio= new DateTime($hoy[year]."-".$hoy[mon]."-".$hoy[mday]." 00:00:00");
-    $inicio->modify("+1 day");
     $fin= new DateTime($hoy[year]."-".$hoy[mon]."-".$hoy[mday]." 00:00:00");
+    $fin->modify("+24 hour");
     $var1= $inicio->format("Y-m-d H:m:i");
     $var2= $fin->format("Y-m-d H:m:i");
      

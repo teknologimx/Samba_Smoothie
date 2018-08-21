@@ -135,25 +135,36 @@
                                   <div src="php/reportes/creapdf.php" name="ventana"></div>
                               </div>
 
-                          <div class="col-md-3">
-                            <h6>Rango de fechas</h6>
-                                <select id="status" class="form-control" name="status" onChange="mostrar(this.value);">
-                                    <option selected value="Hoy">Hoy</option>
-                                    <option value="Ayer">Ayer</option>
-                                    <option value="1primB">Hace 7 días</option>
-                                    <option value="1primC">Hace 30 días</option>
-                                    <option value="1primD">Hace 90 días</option>
-                                 </select>
+                          <div class="col-md-10 form-inline">
+                              <h6>Rango de fechas:</h6>
+                              &nbsp;&nbsp;
+                              <select id="status" class="form-control" name="status" onChange="mostrar(this.value)">
+                                  <option selected value="Hoy">Hoy</option>
+                                  <option value="Ayer">Ayer</option>
+                                  <option value="1primB">Hace 7 días</option>
+                                  <option value="1primC">Hace 30 días</option>
+                                  <option value="1primD">Hace 90 días</option>
+                              </select>
+                              <!--&nbsp;
+                              &nbsp;
+                              <h6>Sucursal:</h6>
+                              &nbsp;
+                              &nbsp;
+                              <select id="sucursal" class="form-control" name="sucursal" onChange="mostrarSucursal(this.value)">
+                                  <option selected value="SC">Samba Cuernavaca</option>
+                                  <option value="FC">Flor de Canela</option>
+                                  <option value="CB">Cocina Bambú</option>
+                              </select>-->
                           </div>
                               
                           <div class="col-lg-12">
  
                                 <div id= 'Hoy' class="card" style="display: show">
                                     <div class="card-header">
-                                            <canvas id="barChartVentasHoy" height="100px"></canvas>
+                                        <canvas id="barChartVentasHoy" height="100px"></canvas>
                                     </div>
                                     <?php
-                                      include("php/repvenestab/tablaHoy.php");
+                                     include("php/repvenestab/tablaHoy.php");
                                     ?>
                                 </div>
 
@@ -161,17 +172,31 @@
                                     <div class="card-header">
                                             <canvas id="barChartVentasAyer" height="100px"></canvas>
                                     </div>
+                                    
                                     <?php
-                                      include("php/repvenestab/tablaHoy.php");
+                                      include("php/repvenestab/tablaAyer.php");
                                     ?>
                                   </div>
                                   
-
+                                <!--Hace 7 días-->
                                 <div id= '1primB' class="card" style="display: none">
                                     <div class="card-header">
-                                            <canvas id="chart7Dias" height="100px"></canvas>
+                                            <canvas id="barChartVentas7Dias" height="100px"></canvas>
                                     </div>
-                                    <div class="card-body">
+                                    <?php
+                                      include("php/repvenestab/tabla7Dias.php");
+                                    ?>
+                                </div>
+                                <!--Hace 30 días-->
+                                <div id= '1primC' class="card" style="display: none">
+                                    <div class="card-header">
+                                            <canvas id="barChartVentas30Dias" height="100px"></canvas>
+                                    </div>
+                                    <?php
+                                      include("php/repvenestab/tabla30Dias.php");
+                                    ?>
+                                </div>
+                                    <!--<div class="card-body">
                                       <div class="table-responsive">
                                         <table class="table table-striped table-hover">
                                           <thead>
@@ -285,7 +310,7 @@
                                         </table>
                                       </div>
                                     </div>
-                                </div>
+                                </div>-->
 
 
                             </div>
