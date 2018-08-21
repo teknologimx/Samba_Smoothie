@@ -196,6 +196,14 @@
                                       include("php/repvenestab/tabla30Dias.php");
                                     ?>
                                 </div>
+                                <div id= '1primD' class="card" style="display: none">
+                                    <div class="card-header">
+                                            <canvas id="barChartVentas90Dias" height="100px"></canvas>
+                                    </div>
+                                    <?php
+                                      include("php/repvenestab/tabla90Dias.php");
+                                    ?>
+                                </div>
                                     <!--<div class="card-body">
                                       <div class="table-responsive">
                                         <table class="table table-striped table-hover">

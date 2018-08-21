@@ -10,8 +10,8 @@
     $hoy= getdate();
     $inicio= new DateTime($hoy[year]."-".$hoy[mon]."-".$hoy[mday]." 00:00:00");
     $fin= new DateTime($hoy[year]."-".$hoy[mon]."-".$hoy[mday]." 00:00:00");
-    $inicio->modify("-60 week");
-    $fin->modify("-30 week");
+    $inicio->modify("-60 day");
+    $fin->modify("-30 day");
     $var1= $inicio->format("Y-m-d H:m:i");
     $var2= $fin->format("Y-m-d H:m:i");
      
