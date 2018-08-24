@@ -385,7 +385,7 @@ error_reporting(0);
         </div>
       </footer>
     </div>
-      
+
     <script>
        function mostrar(id) {
         if (id == "Hoy") {
@@ -415,7 +415,7 @@ error_reporting(0);
           }
       }
     </script>
-
+      
     <!-- JavaScript files-->
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/popper.js/umd/popper.min.js"> </script>

@@ -101,7 +101,7 @@
                 
 
                 <!-- Log out-->
-                <li class="nav-item"><a href="login.html" class="nav-link logout"> <span class="d-none d-sm-inline-block" style="font-size: 1.5em;">Salir</span><i class="fa fa-power-off" style="font-size: 1.5em;"></i></a></li>
+                <li class="nav-item"><a href="../logout.php" class="nav-link logout"> <span class="d-none d-sm-inline-block" style="font-size: 1.5em;">Salir</span><i class="fa fa-power-off" style="font-size: 1.5em;"></i></a></li>
               </ul>
             </div>
           </div>
@@ -158,7 +158,7 @@
                                 echo '<td>'.$row[3].'</td>';
                                 echo '<td>'.$row[0].'</td>';
                                 echo '<td>';
-                                echo ' <a href='."/ProyectoLKE/Samba_Smoothie/admin/modificarPromoVentas.php?id_promocion=$row[4]".'><input type="button" id="modificar" value=" Modificar " class="btn btn-primary"></a>';
+                                echo ' <a href='."modificarPromoVentas.php?id_promocion=$row[4]".'><input type="button" id="modificar" value=" Modificar " class="btn btn-primary"></a>';
                                 echo '</td>';  
                                 echo '<td>';
 
@@ -176,7 +176,7 @@
                                           echo '<p>&nbsp;'."Presione Eliminar para confirmar".'</p>';
                                       echo '</div>';
                                       echo '<div class="modal-footer">';
-                                          echo ' <a href='."/ProyectoLKE/Samba_Smoothie/admin/eliminarPromoVentas.php?id_promocion=$row[4]".'><input type="button" id="eliminar" value=" Eliminar " class="btn btn-primary"></a>';
+                                          echo ' <a href='."eliminarPromoVentas.php?id_promocion=$row[4]".'><input type="button" id="eliminar" value=" Eliminar " class="btn btn-primary"></a>';
                                           //echo '<button type="button" class="btn btn-primary">'."Eliminar".'</button>';
                                           echo '<button type="button" data-dismiss="modal" class="btn btn-secondary">'."Cancelar".'</button>';
                                       echo '</div>';
@@ -235,7 +235,7 @@
                                 echo '<td>'.$row[2].'</td>';
                                 echo '<td>'.$row[0].'</td>';
                                 echo '<td>';
-                                echo '<a href='."/ProyectoLKE/Samba_Smoothie/admin/modificarPromoPreferencias.php?id_promocion=$row[3]".'><input type="button" id="modificar" value=" Modificar " class="btn btn-primary"></a>';
+                                echo '<a href='."modificarPromoPreferencias.php?id_promocion=$row[3]".'><input type="button" id="modificar" value=" Modificar " class="btn btn-primary"></a>';
                                 echo '</td>';
                                 echo '<td>';
                                 echo '<button type="button" data-toggle="modal" data-target="#myModal2" class="btn btn-secondary">'."Eliminar".'</button>';
@@ -252,7 +252,7 @@
                                           echo '<p>&nbsp;'."Presione Eliminar para confirmar".'</p>';
                                       echo '</div>';
                                       echo '<div class="modal-footer">';
-                                          echo ' <a href='."/ProyectoLKE/Samba_Smoothie/admin/eliminarPromoPreferencias.php?id_promocion=$row[3]".'><input type="button" id="eliminar" value=" Eliminar " class="btn btn-primary"></a>';
+                                          echo ' <a href='."eliminarPromoPreferencias.php?id_promocion=$row[3]".'><input type="button" id="eliminar" value=" Eliminar " class="btn btn-primary"></a>';
                                           echo '<button type="button" data-dismiss="modal" class="btn btn-secondary">'."Cancelar".'</button>';
                                       echo '</div>';
                                    echo '</div>';
@@ -313,7 +313,7 @@
                                 echo '<td>'.$row[4].'</td>';
                                 echo '<td>'.$row[5].'</td>';
                                 echo '<td>';
-                                echo '<a href='."/ProyectoLKE/Samba_Smoothie/admin/modificarPromoEspecial.php?id_promocion=$row[0]".'><input type="button" id="modificar" value=" Modificar " class="btn btn-primary"></a>';
+                                echo '<a href='."modificarPromoEspecial.php?id_promocion=$row[0]".'><input type="button" id="modificar" value=" Modificar " class="btn btn-primary"></a>';
                                 echo '</td>';
                                 echo '<td>';
                                 echo '<button type="button" data-toggle="modal" data-target="#myModal3" class="btn btn-secondary">'."Eliminar".'</button>';
@@ -330,7 +330,7 @@
                                           echo '<p>&nbsp;'."Presione Eliminar para confirmar".'</p>';
                                       echo '</div>';
                                       echo '<div class="modal-footer">';
-                                          echo ' <a href='."/ProyectoLKE/Samba_Smoothie/admin/eliminarPromoEspecial.php?id_promocion=$row[0]".'><input type="button" id="eliminar" value=" Eliminar " class="btn btn-primary"></a>';
+                                          echo ' <a href='."eliminarPromoEspecial.php?id_promocion=$row[0]".'><input type="button" id="eliminar" value=" Eliminar " class="btn btn-primary"></a>';
                                           echo '<button type="button" data-dismiss="modal" class="btn btn-secondary">'."Cancelar".'</button>';
                                       echo '</div>';
                                    echo '</div>';

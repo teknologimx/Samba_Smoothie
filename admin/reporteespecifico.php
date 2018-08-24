@@ -25,8 +25,6 @@
     <link rel="stylesheet" href="css/custom.css">
     <!-- Favicon-->
     <link rel="shortcut icon" href="img/samba.ico">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="vendor/chart.js/Chart.min.js"></script>
     <!-- Tweaks for older IEs--><!--[if lt IE 9]>
     <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
@@ -39,7 +37,7 @@
         <div class="sidenav-header d-flex align-items-center justify-content-center">
           <!-- Info usuario-->
           <div class="sidenav-header-inner text-center"><img src="img/user.png" alt="person" class="img-fluid rounded-circle">
-            <h2 class="h5">Administrador</h2><span>Bienvenido</span>
+            <h2 class="h5">Propietario</h2><span>Bienvenido</span>
           </div>
           <!-- Small Brand ,cuando minimizas el menu-->
           <div class="sidenav-header-logo"><a href="#" class="brand-small text-center"><img src="img/SAMBA%20FREH.png"></a></div>
@@ -65,10 +63,7 @@
               <ul id="submenuBI" class="collapse list-unstyled ">
                 <li><a href="#tercermenu1" aria-expanded="false" data-toggle="collapse"> <i class="fa fa-certificate"></i>Promociones</a>
                       <ul id="tercermenu1" class="collapse list-unstyled ">
-                        <li><a href="promoventas.php"> <i class="fa fa-shopping-cart"></i>Crear promoción basado en ventas</a></li>
-                        <li><a href="promopreferencias.php"> <i class="fa fa-shopping-basket"></i>Crear promoción basada en preferencias</a></li>
-                        <li><a href="promoespecial.php"> <i class="fa fa-star"></i>Crear promoción especial</a></li>
-                        <li><a href="gestionpromo.php"> <i class="fa fa-list-ol"></i>Gestionar promociones</a></li>
+                        <li><a href="verpromo.php"> <i class="fa fa-shopping-cart"></i>Ver promociones</a></li>
                       </ul>
                 </li>
                 <li><a href="#tercermenu2" aria-expanded="false" data-toggle="collapse"> <i class="fa fa-briefcase"></i>Inteligencia de negocios</a>
@@ -92,8 +87,9 @@
               <div class="navbar-header"><a id="toggle-btn" href="#" class="menu-btn"><i class="icon-bars"> </i></a><a href="#" class="navbar-brand">
                   <div class="brand-text d-none d-md-inline-block"><span><img id="logo" src="img/samba_white.png" width="150px"></span></div></a></div>
               <ul class="nav-menu list-unstyled d-flex flex-md-row align-items-md-center">
+
                 <!-- Log out-->
-                <li class="nav-item"><a href="login.html" class="nav-link logout"> <span class="d-none d-sm-inline-block" style="font-size: 1.5em;">Salir</span><i class="fa fa-power-off" style="font-size: 1.5em;"></i></a></li>
+                <li class="nav-item"><a href="../logout.php" class="nav-link logout"> <span class="d-none d-sm-inline-block" style="font-size: 1.5em;">Salir</span><i class="fa fa-power-off" style="font-size: 1.5em;"></i></a></li>
               </ul>
             </div>
           </div>
@@ -103,179 +99,89 @@
       <div class="breadcrumb-holder">
         <div class="container-fluid">
           <ul class="breadcrumb">
-            <li class="breadcrumb-item"><a href="index.php">Inicio</a></li>
+            <li class="breadcrumb-item"><a href="index.html">Inicio</a></li>
             <li class="breadcrumb-item active">Reportes específicos       </li>
           </ul>
         </div>
       </div>
-      <section class="forms">
+      <section class="statistics">
         <div class="container-fluid">
-          <!-- Page Header-->
-          <header> 
-          </header>
           <div class="row">
-            <div class="col-lg-12">
-              <div class="card">
-                <div class="card-header d-flex align-items-center">
-                  <h4>Ventas totales</h4>
+                <div class="col-lg-12"> <header><h1 class="h3 display">Ventas</h1></header></div>
+                <div class="col-lg-2"></div>
+                <div class="col-lg-4">
+                  <!-- Income-->
+                  <div class="card income text-center"><a href="ventasporproducto.php" style="font-size:12px;text-align: right;">Ver informe</a>
+                    <div class="icon"><i class="fa fa-shopping-basket"></i></div>
+                    <div class="number">Ventas</div><strong class="text-primary">por producto</strong>
+                    <p>Valor estamado a partir de las ventas generadas</p>
+                  </div>
                 </div>
-                <div class="card-body">
-                        <div class="row">
-                            <div class="col-lg-12">
- 
-                                  <!-- <canvas id="barChartExample"></canvas> -->
-                                  <canvas id="myChart"></canvas>
-                                  
+                <div class="col-lg-4">
+                  <!-- Income-->
+                  <div class="card income text-center"><a href="ventasporestablecimiento.php" style="font-size:12px;text-align: right;">Ver informe</a>
+                    <div class="icon"><i class="fa fa-shopping-basket"></i></div>
+                    <div class="number">Ventas</div><strong class="text-primary">por establecimiento</strong>
+                    <p>Valor estamado a partir de las ventas generadas</p>
+                  </div>
+                </div>
 
-                            </div>
-                        </div>
+                <div class="col-lg-12"> <header><h1 class="h1 display">Empresas</h1></header></div>
+                <div class="col-lg-2"></div>
+                <div class="col-lg-4">
+                  <!-- Income-->
+                  <div class="card income text-center"><a href="clientesleales.php" style="font-size:12px;text-align: right;">Ver informe</a>
+                    <div class="icon"><i class="fa fa-user-plus"></i></div>
+                    <div class="number">Empresas</div><strong class="text-primary">leales</strong>
+                    <p>Valor estamado a partir de las ventas generadas</p>
+                  </div>
                 </div>
-              </div>
+                <div class="col-lg-4">
+                  <!-- Income-->
+                  <div class="card income text-center"><a href="clientesriesgo.php" style="font-size:12px;text-align: right;">Ver informe</a>
+                    <div class="icon"><i class="fa fa-user-times"></i></div>
+                    <div class="number">Empresas</div><strong class="text-primary">en riesgo</strong>
+                    <p>Valor estamado a partir de las ventas generadas</p>
+                  </div>
+                </div>
+                <div class="col-lg-12"> <header><h1 class="h1 display">Finanzas</h1></header></div>
+                <div class="col-lg-2"></div>
+                <!-- <div class="col-lg-4"> -->
+                  <!-- Income-->
+                  <!-- <div class="card income text-center"><a href="resumenfinanciero.php" style="font-size:12px;text-align: right;">Ver informe</a>
+                    <div class="icon"><i class="fa fa-book fa-fw"></i></div>
+                    <div class="number">Resumen</div><strong class="text-primary">Financiero</strong>
+                    <p>Valor estamado a partir de las ventas generadas</p>
+                  </div> -->
+                <!-- </div> -->
+                <div class="col-lg-4 offset-md-2">
+                  <!-- Income-->
+                  <div class="card income text-center"><a href="pronosticoventas.php" style="font-size:12px;text-align: right;">Ver informe</a>
+                    <div class="icon"><i class="fa fa-money"></i></div>
+                    <div class="number">Pronóstico</div><strong class="text-primary">de ventas</strong>
+                    <p>Valor estamado a partir de las ventas generadas</p>
+                  </div>
+                </div>
+                <div class="col-lg-12"> <header><h1 class="h1 display"></h1></header></div>
+            
             </div>
-            <div class="col-lg-12">
-              <div class="card">
-                <div class="card-body">
-                        <div class="row">
-                          <div class="col-md-12 form-inline">
-                              <div class="col-md-6">
-                                &nbsp;
-                              </div>
-                              <div class="col-md-6">
-                                  <form action="php/reportes/creapdf.php" method="post" target="_blank" name="form" id="form">
-                                    <!-- <span id="url" name="urli">hola</span> -->
-                                    <input type="hidden" id="url" name="url" >
-                                    <button type="submit" value="guardarpdf" name="guardarpdf" class="btn btn-primary"><i class="fa fa-print"></i> Guardar PDF </button>&nbsp;&nbsp;
-                                    <!-- <button type="submit" value="imprime2" name="imprimepdf2" class="btn btn-primary"><i class="fa fa-download"></i> Guardar como .xml </button>&nbsp;&nbsp;
-                                    <button type="submit" value="imprime3" name="imprimepdf3" class="btn btn-primary"><i class="fa fa-clone"></i> Imprimir </button> -->
-                                  </form>
-                                 <!--  <div src="php/reportes/creapdf.php" name="ventana"></div> -->
-                              </div>
-
-                              </div>
-
-                          <div class="col-md-3">
-                            <h6>Rango de fechas</h6>
-                            <select name="account" class="form-control">
-                              <option >option 1</option>
-                              <option>option 2</option>
-                              <option>option 3</option>
-                              <option>option 4</option>
-                            </select>
-                          </div>
-                          <div class="col-md-12">
-                                &nbsp;
-                          </div>
-                          <div class="col-md-12">
-                              <div class="table-responsive">
-                                <table class="table table-striped table-hover">
-                                  <thead>
-                                    <tr>
-                                      <th>#</th>
-                                      <th>First Name</th>
-                                      <th>Last Name</th>
-                                      <th>Username</th>
-                                    </tr>
-                                  </thead>
-                                  <tbody>
-                                    <tr>
-                                      <th scope="row">1</th>
-                                      <td>Mark</td>
-                                      <td>Otto</td>
-                                      <td>@mdo</td>
-                                    </tr>
-                                    <tr>
-                                      <th scope="row">2</th>
-                                      <td>Jacob</td>
-                                      <td>Thornton</td>
-                                      <td>@fat</td>
-                                    </tr>
-                                    <tr>
-                                      <th scope="row">3</th>
-                                      <td>Larry</td>
-                                      <td>the Bird</td>
-                                      <td>@twitter</td>
-                                    </tr>
-                                  </tbody>
-                                </table>
-                              </div>
-                          </div>
-                        </div>
-                    </div>
-                </div>
-              </div>
-              </div>
-            </div>
-<!--         </div> -->
-      </section>
+          </div>
+        </section>
+            
       <footer class="main-footer">
         <div class="container-fluid">
           <div class="row">
             <div class="col-sm-6">
-              <p>Teknologi &copy; 2018</p>
+              <p>LKE &copy; 2018</p>
             </div>
             <div class="col-sm-6 text-right">
-              <p>Design by <a href="https://bootstrapious.com" class="external">Teknologi</a></p>
+              <p>Design by <a href="">Jorge Rojas</a></p>
 
             </div>
           </div>
         </div>
       </footer>
     </div>
-
-    <script>
-     var ctx = document.getElementById("myChart");
-     var data = {
-        labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
-        datasets: [{
-            label: '# of Votes',
-           data: [12, 19, 3, 5, 2, 3],
-            borderWidth: 1,
-            backgroundColor: 'rgba(255, 99, 132, 0.2)',
-            borderColor: 'rgba(255, 99, 132,1)',
-        }]
-    };
-    
-var options = {
-              scales: {
-                      xAxes: [{
-                        ticks: {
-                          fontSize: 10,
-                          maxRotation: 0 // angle in degrees
-                        }
-                      }],
-                      yAxes: [{
-                        ticks: {
-                          fontSize: 10,
-                          maxRotation: 0 // angle in degrees
-                        }
-                      }]
-              },
-              elements: {
-                  line: {
-                      tension: 0, // disables bezier curves
-                  }
-              }
-          };
-var chart1 = new Chart(ctx, {
-    type: 'line',
-    data: data,
-    options: options
-});
-
-      var dataURL = ctx.toDataURL('image/png');
-      
-    </script>
-
-    <script>
-
-   // on the submit event, generate a image from the canvas and save the data in the textarea
-   document.getElementById('form').addEventListener("submit",function(){
-      var image = ctx.toDataURL(); // data:image/png....
-      document.getElementById('url').value = image;
-   },false);
-
-</script>
-
       
     <!-- JavaScript files-->
     <script src="vendor/jquery/jquery.min.js"></script>
@@ -284,6 +190,8 @@ var chart1 = new Chart(ctx, {
     <script src="js/grasp_mobile_progress_circle-1.0.0.min.js"></script>
     <script src="vendor/jquery.cookie/jquery.cookie.js"> </script>
     <script src="vendor/chart.js/Chart.min.js"></script>
+    <script src="js/charts-custom.js"></script>
+    <script src="vendor/jquery-validation/jquery.validate.min.js"></script>
     <script src="vendor/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js"></script>
     <!-- Main File-->
     <script src="js/front.js"></script>
