@@ -116,27 +116,34 @@
                 <div class="card-body">
                         <div class="row">
                           <div class="col-md-12 form-inline">
-                              <div class="col-md-2">
-                                    <h4>Ventas totales</h4>
+                              <div class="col-md-3">
+                                    <h4>Ventas por Producto</h4>
                               </div>
+                              <!--<div class="col-md-4">
+                                    
+                              </div>-->
                               <div class="col-md-4">
                                     
                               </div>
-                              <div class="col-md-1">
-                                    
-                              </div>
                               <div class="col-md-5 form-inline">
-                                  <form action="php/reportes/creapdf.php" method="post" target="ventana">
-                                    <button type="submit" value="imprime" name="imprimepdf" class="btn btn-primary"><i class="fa fa-file-pdf-o"></i> Guardar </button>&nbsp;&nbsp;</form>
+                                  <form action="php/reportes/creapdf.php" method="post" target="_blank" name="form" id="form">
+                                    <input type="hidden" id="url" name="url" >
+                                    <button type="submit" value="imprime" name="imprimepdf" class="btn btn-primary"><i class="fa fa-file-pdf-o"></i> Guardar </button>&nbsp;&nbsp;
+                                  </form>
                                   <form method="post">
                                     <button  type="submit" value="imprime2"  class="btn btn-primary" onclick="window.print();"><i class="fa fa-print"></i> Imprimir </button>&nbsp;&nbsp;
-                                    <button type="submit" value="imprime3" name="imprimepdf3" class="btn btn-primary"><i class="fa fa-download"></i> Exportar </button>
+                                  </form>
+                                  <!--Crear xml-->
+                                  <form action="php/reportes/ventasProductos.php" method="post" target="_blank" name="formHoy" id="formHoy">
+                                      <input type="hidden" id="productos" name="productos">
+                                      <button type="submit" value="imprime3" name="imprimepdf3" class="btn btn-primary"><i class="fa fa-download"></i> Exportar xml</button>
                                   </form>
                                   <div src="php/reportes/creapdf.php" name="ventana"></div>
                               </div>
 
-                          <div class="col-md-3">
+                          <div class="col-md-10 form-inline">
                             <h6>Rango de fechas</h6>
+                            &nbsp;&nbsp;
                                 <select id="status" class="form-control" name="status" onChange="mostrar(this.value)">
                                     <option selected value="Hoy">Hoy</option>
                                     <option value="Ayer">Ayer</option>
@@ -147,7 +154,6 @@
                           </div>
                               
                           <div class="col-lg-12">
- 
                                 <div id= 'Hoy' class="card" style="display: show">
                                     <div class="card-header">
                                             <canvas id="barChartVentasHoy" height="100px"></canvas>

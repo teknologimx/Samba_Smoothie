@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tabla>
+  <Producto>
+    <nombre>Apple bomb</nombre>
+    <tipo>Bebidas</tipo>
+    <cntVend>2</cntVend>
+    <mntGen>40</mntGen>
+    <nombre>Arroz integral</nombre>
+    <tipo>Comidas</tipo>
+    <cntVend>10</cntVend>
+    <mntGen>150</mntGen>
+    <nombre>Baguel de salmón y jamón</nombre>
+    <tipo>Comidas</tipo>
+    <cntVend>6</cntVend>
+    <mntGen>150</mntGen>
+    <nombre>Baguette de pollo</nombre>
+    <tipo>Comidas</tipo>
+    <cntVend>6</cntVend>
+    <mntGen>220</mntGen>
+    <nombre>Brocheta de uva y queso</nombre>
+    <tipo>Comidas</tipo>
+    <cntVend>5</cntVend>
+    <mntGen>0</mntGen>
+    <nombre>Chapata de jamón</nombre>
+    <tipo>Comidas</tipo>
+    <cntVend>3</cntVend>
+    <mntGen>100</mntGen>
+    <nombre>Citrus</nombre>
+    <tipo>Bebidas</tipo>
+    <cntVend>7</cntVend>
+    <mntGen>100</mntGen>
+    <nombre>Deli de pollo</nombre>
+    <tipo>Comidas</tipo>
+    <cntVend>9</cntVend>
+    <mntGen>469</mntGen>
+    <nombre>Ensalada César</nombre>
+    <tipo>Comidas</tipo>
+    <cntVend>2</cntVend>
+    <mntGen>134</mntGen>
+    <nombre>Ensalada Griega</nombre>
+    <tipo>Comidas</tipo>
+    <cntVend>20</cntVend>
+    <mntGen>67</mntGen>
+    <nombre>Ensalada Macavi</nombre>
+    <tipo>Comidas</tipo>
+    <cntVend>9</cntVend>
+    <mntGen>335</mntGen>
+    <nombre>Flat Blaze</nombre>
+    <tipo>Comidas</tipo>
+    <cntVend>9</cntVend>
+    <mntGen>375</mntGen>
+    <nombre>Flat Veggie</nombre>
+    <tipo>Comidas</tipo>
+    <cntVend>4</cntVend>
+    <mntGen>150</mntGen>
+    <nombre>Gelatina sin azúcar</nombre>
+    <tipo>Comidas</tipo>
+    <cntVend>3</cntVend>
+    <mntGen>0</mntGen>
+    <nombre>Hamburguesa</nombre>
+    <tipo>Comidas</tipo>
+    <cntVend>4</cntVend>
+    <mntGen>150</mntGen>
+    <nombre>Mojito</nombre>
+    <tipo>Bebidas</tipo>
+    <cntVend>6</cntVend>
+    <mntGen>70</mntGen>
+    <nombre>Muffin de chocolate</nombre>
+    <tipo>Comidas</tipo>
+    <cntVend>5</cntVend>
+    <mntGen>80</mntGen>
+    <nombre>Muffin sin gluten</nombre>
+    <tipo>Comidas</tipo>
+    <cntVend>1</cntVend>
+    <mntGen>60</mntGen>
+    <nombre>Panacota</nombre>
+    <tipo>Comidas</tipo>
+    <cntVend>11</cntVend>
+    <mntGen>140</mntGen>
+    <nombre>Pasta italiana</nombre>
+    <tipo>Comidas</tipo>
+    <cntVend>2</cntVend>
+    <mntGen>0</mntGen>
+    <nombre>Pollo a la plancha, vegetales y arroz</nombre>
+    <tipo>Comidas</tipo>
+    <cntVend>9</cntVend>
+    <mntGen>300</mntGen>
+    <nombre>Pollo, vegetales y pasta</nombre>
+    <tipo>Comidas</tipo>
+    <cntVend>7</cntVend>
+    <mntGen>180</mntGen>
+    <nombre>Raw</nombre>
+    <tipo>Comidas</tipo>
+    <cntVend>12</cntVend>
+    <mntGen>0</mntGen>
+    <nombre>Sandwich de jamón</nombre>
+    <tipo>Comidas</tipo>
+    <cntVend>14</cntVend>
+    <mntGen>450</mntGen>
+    <nombre>Sandwich de pollo</nombre>
+    <tipo>Comidas</tipo>
+    <cntVend>10</cntVend>
+    <mntGen>385</mntGen>
+    <nombre>Snack de betabel</nombre>
+    <tipo>Comidas</tipo>
+    <cntVend>1</cntVend>
+    <mntGen>0</mntGen>
+    <nombre>Snack de frutas</nombre>
+    <tipo>Comidas</tipo>
+    <cntVend>3</cntVend>
+    <mntGen>0</mntGen>
+    <nombre>Wrap de pollo</nombre>
+    <tipo>Comidas</tipo>
+    <cntVend>8</cntVend>
+    <mntGen>110</mntGen>
+  </Producto>
+</tabla>

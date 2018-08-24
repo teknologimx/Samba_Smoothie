@@ -37,7 +37,7 @@
                 <th>Producto</th>
                 <th>Tipo</th>
                 <th>Cantidad Vendida</th>
-                <th>Ganancia</th>
+                <th>Monto Generado</th>
             </tr>
         </thead>
         <tbody>";

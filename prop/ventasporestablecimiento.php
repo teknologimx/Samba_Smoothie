@@ -116,13 +116,13 @@
                 <div class="card-body">
                         <div class="row">
                           <div class="col-md-12 form-inline">
-                              <div class="col-md-2">
-                                    <h4>Ventas totales</h4>
+                              <div class="col-md-3">
+                                    <h4>Ventas por Establecimiento</h4>
                               </div>
-                              <div class="col-md-4">
+                              <!--<div class="col-md-4">
                                     
-                              </div>
-                              <div class="col-md-1">
+                              </div>-->
+                              <div class="col-md-4">
                                     
                               </div>
                               <div class="col-md-5 form-inline">
@@ -130,7 +130,10 @@
                                     <button type="submit" value="imprime" name="imprimepdf" class="btn btn-primary"><i class="fa fa-file-pdf-o"></i> Guardar </button>&nbsp;&nbsp;</form>
                                   <form method="post">
                                     <button  type="submit" value="imprime2"  class="btn btn-primary" onclick="window.print();"><i class="fa fa-print"></i> Imprimir </button>&nbsp;&nbsp;
-                                    <button type="submit" value="imprime3" name="imprimepdf3" class="btn btn-primary"><i class="fa fa-download"></i> Exportar </button>
+                                  </form>
+                                  <form action="php/reportes/ventasEstablecimientos.php" method="post" target="_blank" name="formHoy" id="formHoy">
+                                      <input type="hidden" id="establecimientos" name="establecimientos">
+                                      <button type="submit" value="imprime3" name="imprimepdf3" class="btn btn-primary"><i class="fa fa-download"></i> Exportar xml</button>
                                   </form>
                                   <div src="php/reportes/creapdf.php" name="ventana"></div>
                               </div>
