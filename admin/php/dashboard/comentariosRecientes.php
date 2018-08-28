@@ -1,6 +1,6 @@
 <?php
     error_reporting(0);
-    include("http://localhost/Samba_Smoothie/admin/php/dashboard/conexion.php");
+    include("../../conexion.php");
     $link=Conectarse(); 
 
     $result = mysqli_query($link,  'SELECT ordenes.calificacion_comentario as cal, ordenes.date_created as fecha 

@@ -25,6 +25,7 @@
     <link rel="stylesheet" href="css/custom.css">
     <!-- Favicon-->
     <link rel="shortcut icon" href="img/samba.ico">
+    <script src="vendor/chart.js/Chart.min.js"></script>
     <!-- Tweaks for older IEs--><!--[if lt IE 9]>
     <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
@@ -68,7 +69,7 @@
                 </li>
                 <li><a href="#tercermenu2" aria-expanded="false" data-toggle="collapse"> <i class="fa fa-briefcase"></i>Inteligencia de negocios</a>
                       <ul id="tercermenu2" class="collapse list-unstyled ">
-                        <li><a href="dashboard.php"> <i class="fa fa-tachometer"></i>Reporte general</a></li>
+                        <li><a href="reportegeneral.php"> <i class="fa fa-tachometer"></i>Reporte general</a></li>
                         <li><a href="reporteespecifico.php"> <i class="fa fa-shopping-cart"></i>Reportes específicos</a></li>
                       </ul>
                 </li>
@@ -89,7 +90,7 @@
               <ul class="nav-menu list-unstyled d-flex flex-md-row align-items-md-center">
 
                 <!-- Log out-->
-                <li class="nav-item"><a href="login.html" class="nav-link logout"> <span class="d-none d-sm-inline-block" style="font-size: 1.5em;">Salir</span><i class="fa fa-power-off" style="font-size: 1.5em;"></i></a></li>
+                <li class="nav-item"><a href="../logout.php" class="nav-link logout"> <span class="d-none d-sm-inline-block" style="font-size: 1.5em;">Salir</span><i class="fa fa-power-off" style="font-size: 1.5em;"></i></a></li>
               </ul>
             </div>
           </div>
@@ -116,24 +117,24 @@
                 <div class="card-body">
                         <div class="row">
                           <div class="col-md-12 form-inline">
-                              <div class="col-md-3">
-                                    <h4>Ventas por Producto</h4>
+                              <div class="col-md-2">
+                                    <h4>Ventas totales</h4>
                               </div>
-                              <!--<div class="col-md-4">
-                                    
-                              </div>-->
                               <div class="col-md-4">
                                     
                               </div>
+                              <div class="col-md-1">
+                                    
+                              </div>
                               <div class="col-md-5 form-inline">
-                                  <form action="php/reportes/creapdf.php" method="post" target="_blank" name="form" id="form">
+                                  <form action="php/reportes/creapdfventasprod.php" method="post" target="_blank" id="form_url" name="form_url">
+                                    <input type="hidden" id="seleccion" name="seleccion" value="">
                                     <input type="hidden" id="url" name="url" >
-                                    <button type="submit" value="imprime" name="imprimepdf" class="btn btn-primary"><i class="fa fa-file-pdf-o"></i> Guardar </button>&nbsp;&nbsp;
-                                  </form>
+                                    <button type="submit" value="imprime" name="imprimepdf" class="btn btn-primary"><i class="fa fa-file-pdf-o"></i> Guardar </button>&nbsp;&nbsp;</form>
                                   <form method="post">
                                     <button  type="submit" value="imprime2"  class="btn btn-primary" onclick="window.print();"><i class="fa fa-print"></i> Imprimir </button>&nbsp;&nbsp;
+                                    <!--<button type="submit" value="imprime3" name="imprimepdf3" class="btn btn-primary"><i class="fa fa-download"></i> Exportar </button>-->
                                   </form>
-                                  <!--Crear xml-->
                                   <form action="php/reportes/ventasProductos.php" method="post" target="_blank" name="formHoy" id="formHoy">
                                       <input type="hidden" id="productos" name="productos">
                                       <button type="submit" value="imprime3" name="imprimepdf3" class="btn btn-primary"><i class="fa fa-download"></i> Exportar xml</button>
@@ -141,11 +142,11 @@
                                   <div src="php/reportes/creapdf.php" name="ventana"></div>
                               </div>
 
-                          <div class="col-md-10 form-inline">
+                          <div class="col-md-3">
                             <h6>Rango de fechas</h6>
-                            &nbsp;&nbsp;
                                 <select id="status" class="form-control" name="status" onChange="mostrar(this.value)">
-                                    <option selected value="Hoy">Hoy</option>
+                                    <!--<option selected value="">Selecciona...</option>-->
+                                    <option value="Hoy">Hoy</option>
                                     <option value="Ayer">Ayer</option>
                                     <option value="1primB">Hace 7 días</option>
                                     <option value="1primC">Hace 30 días</option>
@@ -154,6 +155,7 @@
                           </div>
                               
                           <div class="col-lg-12">
+ 
                                 <div id= 'Hoy' class="card" style="display: show">
                                     <div class="card-header">
                                             <canvas id="barChartVentasHoy" height="100px"></canvas>
@@ -232,9 +234,7 @@
     <script src="vendor/jquery.cookie/jquery.cookie.js"> </script>
     <script src="vendor/chart.js/Chart.min.js"></script>
     <script src="js/charts-custom.js"></script>
-    <script src="js/repvenprod.js"></script>
-    <script src="js/Graficasventas.js"></script>
-    <script src="js/chart_repvenprod.js"></script>
+    <script src="js/GraficasVentas.js"></script>
     <script src="vendor/jquery-validation/jquery.validate.min.js"></script>
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
     <script src="vendor/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js"></script>

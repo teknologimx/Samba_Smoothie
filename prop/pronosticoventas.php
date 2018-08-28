@@ -94,7 +94,7 @@ error_reporting(0);
               <ul class="nav-menu list-unstyled d-flex flex-md-row align-items-md-center">
 
                 <!-- Log out-->
-                <li class="nav-item"><a href="login.html" class="nav-link logout"> <span class="d-none d-sm-inline-block" style="font-size: 1.5em;">Salir</span><i class="fa fa-power-off" style="font-size: 1.5em;"></i></a></li>
+                <li class="nav-item"><a href="../logout.php" class="nav-link logout"> <span class="d-none d-sm-inline-block" style="font-size: 1.5em;">Salir</span><i class="fa fa-power-off" style="font-size: 1.5em;"></i></a></li>
               </ul>
             </div>
           </div>
@@ -386,6 +386,26 @@ error_reporting(0);
       </footer>
     </div>
       
+    <script>
+       function mostrar(id) {
+        if (id == "1primB") {
+            $("#1primC").hide();
+            $("#1primD").hide();
+            $("#1primB").show();
+          }
+        if (id == "1primC") {
+            $("#1primC").show();
+            $("#1primB"). hide();
+            $("#1primD"). hide();
+          }
+         if (id == "1primD") {
+            $("#1primD").show();
+            $("#1primB"). hide();
+            $("#1primC"). hide();
+          }
+      }
+    </script>
+
     <!-- JavaScript files-->
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/popper.js/umd/popper.min.js"> </script>

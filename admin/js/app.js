@@ -2,7 +2,7 @@ $(document).ready(function(){
     'use strict';
     var brandPrimary = 'rgba(51, 179, 90, 1)';
     $.ajax({
-        url:"http://localhost/Samba_Smoothie/admin/php/dashboard/barChart.php",
+        url:"php/dashboard/barChart.php",
         //method: "POST",
         type: "GET",
         success: function(data){

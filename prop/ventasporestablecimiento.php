@@ -25,6 +25,8 @@
     <link rel="stylesheet" href="css/custom.css">
     <!-- Favicon-->
     <link rel="shortcut icon" href="img/samba.ico">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="vendor/chart.js/Chart.min.js"></script>
     <!-- Tweaks for older IEs--><!--[if lt IE 9]>
     <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
@@ -89,7 +91,7 @@
               <ul class="nav-menu list-unstyled d-flex flex-md-row align-items-md-center">
 
                 <!-- Log out-->
-                <li class="nav-item"><a href="login.html" class="nav-link logout"> <span class="d-none d-sm-inline-block" style="font-size: 1.5em;">Salir</span><i class="fa fa-power-off" style="font-size: 1.5em;"></i></a></li>
+                <li class="nav-item"><a href="../logout.php" class="nav-link logout"> <span class="d-none d-sm-inline-block" style="font-size: 1.5em;">Salir</span><i class="fa fa-power-off" style="font-size: 1.5em;"></i></a></li>
               </ul>
             </div>
           </div>
@@ -116,20 +118,23 @@
                 <div class="card-body">
                         <div class="row">
                           <div class="col-md-12 form-inline">
-                              <div class="col-md-3">
-                                    <h4>Ventas por Establecimiento</h4>
+                              <div class="col-md-2">
+                                    <h4>Ventas totales</h4>
                               </div>
-                              <!--<div class="col-md-4">
-                                    
-                              </div>-->
                               <div class="col-md-4">
                                     
                               </div>
+                              <div class="col-md-1">
+                                    
+                              </div>
                               <div class="col-md-5 form-inline">
-                                  <form action="php/reportes/creapdf.php" method="post" target="ventana">
+                                  <form action="php/reportes/creapdfventasest.php" method="post" target="_blank" name="form_url" id="form_url">
+                                    <input type="hidden" id="seleccion" name="seleccion" value="">
+                                    <input type="hidden" id="url" name="url" >
                                     <button type="submit" value="imprime" name="imprimepdf" class="btn btn-primary"><i class="fa fa-file-pdf-o"></i> Guardar </button>&nbsp;&nbsp;</form>
                                   <form method="post">
                                     <button  type="submit" value="imprime2"  class="btn btn-primary" onclick="window.print();"><i class="fa fa-print"></i> Imprimir </button>&nbsp;&nbsp;
+                                    <!--<button type="submit" value="imprime3" name="imprimepdf3" class="btn btn-primary"><i class="fa fa-download"></i> Exportar </button>-->
                                   </form>
                                   <form action="php/reportes/ventasEstablecimientos.php" method="post" target="_blank" name="formHoy" id="formHoy">
                                       <input type="hidden" id="establecimientos" name="establecimientos">
@@ -142,7 +147,8 @@
                               <h6>Rango de fechas:</h6>
                               &nbsp;&nbsp;
                               <select id="status" class="form-control" name="status" onChange="mostrar(this.value)">
-                                  <option selected value="Hoy">Hoy</option>
+                                  <option selected value="">Selecciona...</option>
+                                  <option value="Hoy">Hoy</option>
                                   <option value="Ayer">Ayer</option>
                                   <option value="1primB">Hace 7 días</option>
                                   <option value="1primC">Hace 30 días</option>
@@ -230,9 +236,7 @@
     <script src="vendor/jquery.cookie/jquery.cookie.js"> </script>
     <script src="vendor/chart.js/Chart.min.js"></script>
     <script src="js/charts-custom.js"></script>
-    <script src="js/repvenprod.js"></script>
     <script src="js/GraficasEstablecimientos.js"></script>
-    <script src="js/chart_repvenprod.js"></script>
     <script src="vendor/jquery-validation/jquery.validate.min.js"></script>
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
     <script src="vendor/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js"></script>

@@ -1,3 +1,7 @@
+<?php session_start();
+  if(!isset($_SESSION['k_user']) || $_SESSION['k_tipo']!=0)//Si la variable de sesiÃ³n no es verdadera, redirijimos
+    //header("Location: ../index.php");
+?>
 <!DOCTYPE html>
 <html>
   <head>
@@ -92,7 +96,7 @@
                 <!-- Notificaciones
 
                 <!-- Log out-->
-                <li class="nav-item"><a href="login.html" class="nav-link logout"> <span class="d-none d-sm-inline-block" style="font-size: 1.5em;">Salir</span><i class="fa fa-power-off" style="font-size: 1.5em;"></i></a></li>
+                <li class="nav-item"><a href="../logout.php" class="nav-link logout"> <span class="d-none d-sm-inline-block" style="font-size: 1.5em;">Salir</span><i class="fa fa-power-off" style="font-size: 1.5em;"></i></a></li>
               </ul>
             </div>
           </div>
@@ -102,7 +106,7 @@
       <section class="dashboard-counts section-padding">
         <div class="container-fluid">
           <div class="row">
-            <!-- Count item widget-->
+            
           </div>
         </div>
       </section>
@@ -110,8 +114,10 @@
       <section class="dashboard-header section-padding">
         <div class="container-fluid">
           <div class="row d-flex align-items-md-stretch">
-            <!-- To Do List-->
-
+            <h3>Bienvenido al sistema <?php echo $_SESSION['k_name'];?></h3>
+          </div>
+          <div class="row d-flex align-items-md-stretch">
+           <h4><?php if($_SESSION['k_tipo'] == '2') echo"Propietario"; else echo "Administrador"; ?></h4>
           </div>
         </div>
       </section>

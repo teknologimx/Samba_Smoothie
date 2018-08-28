@@ -388,30 +388,20 @@ error_reporting(0);
 
     <script>
        function mostrar(id) {
-        if (id == "Hoy") {
-            $("#Hoy").show();
-        $("#Ayer").hide();
-            $("#1primB").hide();
-        $("#1primC").hide();
-        }
-     
-        if (id == "Ayer") {
-               $("#Hoy").hide();
-          $("#Ayer").show();
-              $("#1primB").hide();
-          $("#1primC").hide();
-          }
         if (id == "1primB") {
-               $("#Hoy").hide();
-          $("#Ayer").hide();
-              $("#1primB").show();
-          $("#1primC").hide();
+            $("#1primC").hide();
+            $("#1primD").hide();
+            $("#1primB").show();
           }
         if (id == "1primC") {
-               $("#Hoy").hide();
-          $("#Ayer").hide();
-              $("#1primB"). hide();
-          $("#1primC"). show();
+            $("#1primC").show();
+            $("#1primB"). hide();
+            $("#1primD"). hide();
+          }
+         if (id == "1primD") {
+            $("#1primD").show();
+            $("#1primB"). hide();
+            $("#1primC"). hide();
           }
       }
     </script>

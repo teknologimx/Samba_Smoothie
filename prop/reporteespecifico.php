@@ -89,7 +89,7 @@
               <ul class="nav-menu list-unstyled d-flex flex-md-row align-items-md-center">
 
                 <!-- Log out-->
-                <li class="nav-item"><a href="login.html" class="nav-link logout"> <span class="d-none d-sm-inline-block" style="font-size: 1.5em;">Salir</span><i class="fa fa-power-off" style="font-size: 1.5em;"></i></a></li>
+                <li class="nav-item"><a href="../logout.php" class="nav-link logout"> <span class="d-none d-sm-inline-block" style="font-size: 1.5em;">Salir</span><i class="fa fa-power-off" style="font-size: 1.5em;"></i></a></li>
               </ul>
             </div>
           </div>
@@ -146,15 +146,15 @@
                 </div>
                 <div class="col-lg-12"> <header><h1 class="h1 display">Finanzas</h1></header></div>
                 <div class="col-lg-2"></div>
-                <div class="col-lg-4">
+                <!-- <div class="col-lg-4"> -->
                   <!-- Income-->
-                  <div class="card income text-center"><a href="resumenfinanciero.php" style="font-size:12px;text-align: right;">Ver informe</a>
+                  <!-- <div class="card income text-center"><a href="resumenfinanciero.php" style="font-size:12px;text-align: right;">Ver informe</a>
                     <div class="icon"><i class="fa fa-book fa-fw"></i></div>
                     <div class="number">Resumen</div><strong class="text-primary">Financiero</strong>
                     <p>Valor estamado a partir de las ventas generadas</p>
                   </div>
-                </div>
-                <div class="col-lg-4">
+                </div> -->
+                <div class="col-lg-4 offset-md-2">
                   <!-- Income-->
                   <div class="card income text-center"><a href="pronosticoventas.php" style="font-size:12px;text-align: right;">Ver informe</a>
                     <div class="icon"><i class="fa fa-money"></i></div>

@@ -30,10 +30,12 @@
         <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
   </head>
   <body>
-    <div class="page login-page">
-      <div class="container">
+    <div class="page login-page" style="background-image:url(fond.jpg);width:100%;height:auto;">
+      <div class="container" style="opacity: 0.9;filter: alpha(opacity=90);">
         <div class="form-outer text-center d-flex align-items-center center">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
           <div class="form-inner">
+            <div><img src="logsamba.png"></div>
+            <p>&nbsp;</p>
             <div class="logo text-uppercase"><span>Iniciar</span><strong class="text-primary"> Sesión</strong></div>
             <p>Ingrese su usuario y contraseña para acceder al sistema.</p>
             <form action="validar_usuario.php" method="post" class="text-left form-validate">
@@ -52,7 +54,7 @@
             </form>
           </div>
           <div class="copyrights text-center">
-            <p>Design by <a href="#" class="external">Teknologi</a></p>
+            <p>Design by <a href="#" class="external">LKE BUAP</a></p>
           </div>
         </div>
       </div>

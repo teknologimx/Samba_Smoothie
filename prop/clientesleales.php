@@ -1,5 +1,4 @@
 <?php session_start();
-   error_reporting(0);
    include("conexion.php"); 
    $link=Conectarse(); 
 ?>
@@ -94,7 +93,7 @@
               <ul class="nav-menu list-unstyled d-flex flex-md-row align-items-md-center">
 
                 <!-- Log out-->
-                <li class="nav-item"><a href="login.html" class="nav-link logout"> <span class="d-none d-sm-inline-block" style="font-size: 1.5em;">Salir</span><i class="fa fa-power-off" style="font-size: 1.5em;"></i></a></li>
+                <li class="nav-item"><a href="../logout.php" class="nav-link logout"> <span class="d-none d-sm-inline-block" style="font-size: 1.5em;">Salir</span><i class="fa fa-power-off" style="font-size: 1.5em;"></i></a></li>
               </ul>
             </div>
           </div>
@@ -171,6 +170,7 @@
                                              $query1 = mysqli_query($link, "SELECT  id, nombre, contacto_email FROM empresas");
                                               while($row1 = mysqli_fetch_array($query1)){ 
                                                 $id=$row1["id"];
+                                                //$id_1 = "'".$id."'";
                                                 // echo "SELECT  COUNT(*) as TOTAL, last_updated FROM embarques WHERE  empresa_id = '".$id."' ";
                                                 $query = mysqli_query($link, "SELECT  COUNT(*) as TOTAL, last_updated FROM embarques WHERE  empresa_id = '".$id."' ");
                                                   $row = mysqli_fetch_array($query); 
