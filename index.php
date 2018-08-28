@@ -54,7 +54,7 @@
             </form>
           </div>
           <div class="copyrights text-center">
-            <p>Design by <a href="#" class="external">LKE BUAP</a></p>
+          <p>Design by <a href="http://www.lke.buap.mx/">LKE BUAP</a></p>
           </div>
         </div>
       </div>
