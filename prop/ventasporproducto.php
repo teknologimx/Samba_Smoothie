@@ -137,7 +137,7 @@
                                   </form>
                                   <form action="php/reportes/ventasProductos.php" method="post" target="_blank" name="formHoy" id="formHoy">
                                       <input type="hidden" id="productos" name="productos">
-                                      <button type="submit" value="imprime3" name="imprimepdf3" class="btn btn-primary"><i class="fa fa-download"></i> Exportar xml</button>
+                                      <!--<button type="submit" value="imprime3" name="imprimepdf3" class="btn btn-primary"><i class="fa fa-download"></i> Exportar xml</button>-->
                                   </form>
                                   <div src="php/reportes/creapdf.php" name="ventana"></div>
                               </div>
@@ -218,7 +218,7 @@
               <p>LKE &copy; 2018</p>
             </div>
             <div class="col-sm-6 text-right">
-              <p>Design by <a href="">Jorge Rojas</a></p>
+            <p>Design by <a href="http://www.lke.buap.mx/">LKE BUAP</a></p>
 
             </div>
           </div>

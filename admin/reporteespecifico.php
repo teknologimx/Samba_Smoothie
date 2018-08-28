@@ -109,7 +109,7 @@
           <div class="row">
                 <div class="col-lg-12"> <header><h1 class="h3 display">Ventas</h1></header></div>
                 <div class="col-lg-2"></div>
-                <div class="col-lg-4">
+                <div class="col-lg-4 offset-md-2">
                   <!-- Income-->
                   <div class="card income text-center"><a href="ventasporproducto.php" style="font-size:12px;text-align: right;">Ver informe</a>
                     <div class="icon"><i class="fa fa-shopping-basket"></i></div>
@@ -118,12 +118,12 @@
                   </div>
                 </div>
                 <div class="col-lg-4">
-                  <!-- Income-->
+                  <!-- Income
                   <div class="card income text-center"><a href="ventasporestablecimiento.php" style="font-size:12px;text-align: right;">Ver informe</a>
                     <div class="icon"><i class="fa fa-shopping-basket"></i></div>
                     <div class="number">Ventas</div><strong class="text-primary">por establecimiento</strong>
                     <p>Valor estamado a partir de las ventas generadas</p>
-                  </div>
+                  </div>-->
                 </div>
 
                 <div class="col-lg-12"> <header><h1 class="h1 display">Empresas</h1></header></div>
@@ -168,14 +168,14 @@
           </div>
         </section>
             
-      <footer class="main-footer">
+        <footer class="main-footer">
         <div class="container-fluid">
           <div class="row">
             <div class="col-sm-6">
               <p>LKE &copy; 2018</p>
             </div>
             <div class="col-sm-6 text-right">
-              <p>Design by <a href="">Jorge Rojas</a></p>
+            <p>Design by <a href="http://www.lke.buap.mx/">LKE BUAP</a></p>
 
             </div>
           </div>

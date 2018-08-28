@@ -360,7 +360,7 @@
                   else
                     echo '<input type="checkbox" value="Flor de Canela" onclick="funcion_sucursal2()" name="sucursales2" id="sucursales2">Flor de Canela';
                 ?>
-              </label>&nbsp&nbsp&nbsp
+              </label>&nbsp;&nbsp;&nbsp;
               <label class="checkbox-inline">
                 <?php 
                    if($suc3!='0')
@@ -474,10 +474,10 @@
         <div class="container-fluid">
           <div class="row">
             <div class="col-sm-6">
-              <p>Teknologi &copy; 2018</p>
+              <p>LKE &copy; 2018</p>
             </div>
             <div class="col-sm-6 text-right">
-              <p>Design by <a href="#" class="external">Teknologi</a></p>
+            <p>Design by <a href="http://www.lke.buap.mx/">LKE BUAP</a></p>
 
             </div>
           </div>

@@ -220,7 +220,7 @@
               <p>LKE &copy; 2018</p>
             </div>
             <div class="col-sm-6 text-right">
-              <p>Design by <a href="">Jorge Rojas</a></p>
+            <p>Design by <a href="http://www.lke.buap.mx/">LKE BUAP</a></p>
 
             </div>
           </div>
